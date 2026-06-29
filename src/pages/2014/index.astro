@@ -1,0 +1,90 @@
+---
+import Fpsf2014Layout from '@layouts/Fpsf2014Layout.astro';
+import snapshot from '@data/snapshot-2014.json';
+
+const assetBase = '/shared-assets/2014';
+---
+<Fpsf2014Layout>
+  <div class="content group">
+    <section id="video_prime">
+      <div class="video">
+        <div class="video_hed"></div>
+        <a
+          href={snapshot.hero.videoUrl}
+          rel="fpsfMusicVid"
+          title={snapshot.hero.videoTitle}
+          class="play"
+        >
+          <i class="ss-icon ss-symbolicons-line">Play</i>
+        </a>
+        <img
+          src={`${assetBase}/${snapshot.hero.image}`}
+          width="100%"
+          alt={snapshot.hero.videoTitle}
+        />
+      </div>
+    </section>
+
+    <section id="passes" class="group">
+      <div class="hed_major" style={`background-color:${snapshot.hero.messageBackground}`}>
+        <h3>{snapshot.hero.message}</h3>
+      </div>
+    </section>
+
+    <section id="video_home">
+      <div class="hed_major">
+        <h3>#FPSF now</h3>
+        <div class="previous">
+          <div class="social_services group">
+            <ul>
+              {snapshot.social.map((link) => (
+                <li>
+                  <a
+                    class={`ss-icon ss-social-circle ${link.className}`}
+                    title={link.title}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <br />
+            <br />
+          </div>
+        </div>
+      </div>
+
+      <div class="chunk group">
+        <div class="announcements">
+          <div class="tweet_bloc">
+            <a href={snapshot.announcements[0].href}>
+              <img src={`${assetBase}/${snapshot.announcements[0].image}`} alt={snapshot.announcements[0].label} />
+            </a>
+          </div>
+        </div>
+
+        <div id="twitter">
+          <div class="tweets">
+            <div class="tweet_bloc">
+              <img
+                src={`${assetBase}/${snapshot.announcements[1].image}`}
+                border="0"
+                alt={snapshot.announcements[1].label}
+              />
+              <ul style="display:flex; gap:14px; list-style:none; padding:8px 0 0; margin:0">
+                {snapshot.announcements[1].links?.map((link) => (
+                  <li>
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Fpsf2014Layout>

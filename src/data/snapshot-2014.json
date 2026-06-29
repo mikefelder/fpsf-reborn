@@ -1,0 +1,159 @@
+{
+  "year": 2014,
+  "edition": "Free Press Summer Festival",
+  "dates": "May 31 + June 1, 2014",
+  "location": "Eleanor Tinsley Park, Houston TX",
+  "sourceSnapshot": "20140116065620",
+  "sourceDomain": "fpsf.com",
+  "phase": "blind-presale",
+  "title": "Free Press Summer Festival | Eleanor Tinsley Park, Houston TX",
+  "description": "Free Press Summer Festival (FPSF) is an annual music and arts festival held at Eleanor Tinsley Park in Houston, Texas.",
+  "header": {
+    "title": "Free Press Summer Festival",
+    "byline": "May 31 + June 1, 2014, Eleanor Tinsley Park, Houston TX",
+    "image": "assets/img/static/hed-index.png"
+  },
+  "primaryNav": [
+    {
+      "label": "Learn",
+      "className": "learn",
+      "href": "/2014/learn",
+      "subnav": [
+        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos" },
+        { "label": "SHOP", "href": "http://fpsf.shop.redstarmerch.com/" }
+      ]
+    },
+    {
+      "label": "Go",
+      "className": "go",
+      "href": "/2014/go",
+      "subnav": [
+        { "label": "General Info", "href": "/2014/go#general_info" },
+        { "label": "Get passes", "href": "/2014/go#passes" },
+        { "label": "Pass FAQs", "href": "/2014/go#pass_info" },
+        { "label": "Parking & transportation", "href": "/2014/go#parking" },
+        { "label": "What to bring, not to bring", "href": "/2014/go#permitted" }
+      ]
+    },
+    {
+      "label": "Join",
+      "className": "join",
+      "href": "/2014/join",
+      "subnav": [
+        { "label": "Volunteer", "href": "/2014/join#volunteer" },
+        { "label": "Vendors", "href": "/2014/join#vendors" },
+        { "label": "Sponsors", "href": "/2014/join#sponsors" },
+        { "label": "Bands", "href": "/2014/join#bands" },
+        { "label": "Art submissions", "href": "/2014/join#art" }
+      ]
+    }
+  ],
+  "secondaryNav": [
+    { "label": "Contact", "className": "contact", "href": "/2014/contact" },
+    { "label": "Main", "className": "main", "href": "/2014/" }
+  ],
+  "hero": {
+    "videoUrl": "https://youtu.be/JxrmwJq-12c",
+    "videoTitle": "FPSF 2014 Blind Presale",
+    "image": "assets/img/static/blindsoldout.png",
+    "message": "BLIND PRESALE SOLD OUT. STAY TUNED FOR LINEUP RELEASE & MORE PASSES EARLY 2014.",
+    "messageBackground": "#F10026"
+  },
+  "social": [
+    { "label": "Twitter", "className": "twitter", "href": "http://twitter.com/fpsf", "title": "Follow FPSF on Twitter" },
+    { "label": "Facebook", "className": "facebook", "href": "http://www.facebook.com/FPSFHOUSTON", "title": "Follow FPSF on Facebook" },
+    { "label": "Vimeo", "className": "vimeo", "href": "https://vimeo.com/60763386", "title": "Watch FPSF videos on Vimeo" },
+    { "label": "YouTube", "className": "youtube", "href": "http://www.youtube.com/watch?v=JfFaSedd2vw", "title": "Leave rude comments for FPSF on YouTube" },
+    { "label": "Flickr", "className": "flickr", "href": "http://tinyurl.com/flickrFPSF", "title": "Check out FPSF photos on Flickr" }
+  ],
+  "announcements": [
+    {
+      "label": "SHOP",
+      "href": "http://fpsf.com/shop",
+      "image": "assets/img/static/shop.jpg"
+    },
+    {
+      "label": "Free Press Houston / Pegstar",
+      "image": "assets/img/static/fphpegstar.png",
+      "links": [
+        { "label": "FREE PRESS HOUSTON", "href": "http://freepresshouston.com" },
+        { "label": "PEGSTAR.NET", "href": "http://pegstar.net" }
+      ]
+    }
+  ],
+  "sponsors": [
+    { "name": "Budweiser", "href": "http://www.budweiser.com/en//_age_gate?redirect=%2fen%2fus%2f", "image": "assets/img/logos/budweiser.png" },
+    { "name": "Cracker Jack'd", "href": "http://www.crackerjackd.com/", "image": "assets/img/logos/crackerjackd.png" },
+    { "name": "Absolut", "href": "http://www.absolut.com/us", "image": "assets/img/logos/absolut.png" },
+    { "name": "Chipotle", "href": "http://www.chipotle.com", "image": "assets/img/logos/chipotle.png" },
+    { "name": "29-95", "href": "http://www.29-95.com/", "image": "assets/img/logos/2995.png" },
+    { "name": "Lowe's", "href": "http://www.lowes.com/", "image": "assets/img/logos/lowes.png" },
+    { "name": "Barefoot Wine", "href": "http://barefootwine.com", "image": "assets/img/logos/barefoot.png" },
+    { "name": "Kroger", "href": "http://www.kroger.com/", "image": "assets/img/logos/kroger.png" },
+    { "name": "AIO Wireless", "href": "http://www.aiowireless.com/home.html", "image": "assets/img/logos/aio.png" },
+    { "name": "Ikea", "href": "http://www.ikea.com/us/en/store/houston", "image": "assets/img/logos/ikea.png" },
+    { "name": "Texas Lottery", "href": "http://www.texaslottery.org", "image": "assets/img/logos/txlottery.png" },
+    { "name": "MKTBar", "href": "http://phoeniciafoods.com/locations/mkt-bar/", "image": "assets/img/logos/mktbar.png" },
+    { "name": "Copy.com", "href": "http://www.copydotcom.com/", "image": "assets/img/logos/copydotcom.png" },
+    { "name": "SEIDIO", "href": "http://www.seidioonline.com/", "image": "assets/img/logos/seidio.png" },
+    { "name": "Honest Tea", "href": "http://www.honesttea.com/", "image": "assets/img/logos/honesttea.png" },
+    { "name": "Ikan Corp", "href": "http://www.ikancorp.com/", "image": "assets/img/logos/ikan.png" }
+  ],
+  "footerMap": [
+    {
+      "heading": "Learn",
+      "className": "learn",
+      "href": "/2014/learn",
+      "items": [
+        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos" }
+      ]
+    },
+    {
+      "heading": "Go",
+      "className": "go",
+      "href": "/2014/go",
+      "items": [
+        { "label": "Get passes", "href": "/2014/go#passes" },
+        { "label": "Parking & transportation", "href": "/2014/go#parking" },
+        { "label": "What to bring", "href": "/2014/go#permitted" },
+        { "label": "What not to bring", "href": "/2014/go#prohibited" }
+      ]
+    },
+    {
+      "heading": "Join",
+      "className": "join",
+      "href": "/2014/join",
+      "items": [
+        { "label": "Volunteer", "href": "/2014/join#volunteer" },
+        { "label": "Vendors", "href": "/2014/join#vendors" },
+        { "label": "Sponsors", "href": "/2014/join#sponsors" },
+        { "label": "Bands", "href": "/2014/join#bands" },
+        { "label": "Art submissions", "href": "/2014/join#art" }
+      ]
+    },
+    {
+      "heading": "Contact",
+      "className": "contact",
+      "href": "/2014/contact",
+      "items": [
+        { "label": "FPSF contact info", "href": "/2014/contact#resources" },
+        { "label": "Media inquiries", "href": "/2014/contact#resources" }
+      ]
+    }
+  ],
+  "footerLegal": "Site contents copyright © 2013 Free Press Summer Festival. All rights reserved. Sponsor logos, signage, and names may be trademarked. These materials may not be reproduced elsewhere, except by their respective copyright and trademark holders.",
+  "knownGaps": [
+    "Sponsor logos lowes.png, mktbar.png, and txlottery.png were not in the canonical capture; queued for closest-CDX recovery.",
+    "Hero image assets/img/static/blindsoldout.png is missing; placeholder text retained.",
+    "Twitter/Pegstar image assets/img/static/fphpegstar.png is missing.",
+    "Webfonts assets/webfonts/ss-social.css, ss-standard.css, ss-social.js, ss-standard.js were not in the canonical capture (ss-symbolicons-line is present).",
+    "Typekit font kit (sir3lyk) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted.",
+    "Sub-pages (learn, go, join, contact, videos) are not yet rebuilt; nav links are stubs."
+  ]
+}

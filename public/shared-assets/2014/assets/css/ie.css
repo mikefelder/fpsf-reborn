@@ -1,0 +1,83 @@
+	.mod-no-csscolumns .multicol_list p {
+		float: left;
+		width: 23.5%;
+		margin-right: 1.5%;
+	}
+
+	.mod-no-backgroundsize .punchlist li {
+		background-image: none;
+		list-style-image: url(/web/20130305072916im_/http://fpsf.com/assets/img/static/x-bullet-alt.png);
+		list-style-position: inside;
+		padding-left: 0;
+	}
+	
+	.ie8 .nav,
+	.ie8 .nav li ul li a,
+	.ie8 .map_main h4 a,
+	.ie8 .map_second h4 a,
+	.ie8 .subscribe label,
+	.ie8 .form_submit,
+	.ie8 .pass_level h3,
+	.ie8 .pass_level .pricing,
+	.ie8 .pass_button,
+	.ie8 .outrider_main p,
+	.ie8 #video_previous .video .video_hed h4,
+	.ie8 .subchunk h4,
+	.ie8 strong,
+	.ie8 .hed_minor h3,
+	.ie9 .nav,
+	.ie9 .nav li ul li a,
+	.ie9 .map_main h4 a,
+	.ie9 .map_second h4 a,
+	.ie9 .subscribe label,
+	.ie9 .form_submit,
+	.ie9 .pass_level h3,
+	.ie9 .pass_level .pricing,
+	.ie9 .pass_button,
+	.ie9 .outrider_main p,
+	.ie9 #video_previous .video .video_hed h4,
+	.ie9 .subchunk h4,
+	.ie9 strong,
+	.ie9 .hed_minor h3
+	{
+		letter-spacing: 0;
+	}
+	
+	.ie8 .map_main h4 a,
+	.ie8 .map_second h4 a,
+	.ie9 .map_main h4 a,
+	.ie9 .map_second h4 a {
+		padding: 0.1875em 0.25em 0.06875em 0.25em;
+	}
+	
+	.ie8 .chunk_content {
+		padding-bottom: 0.5em;
+	}
+		
+	@media screen and (max-width:800px) {
+
+		.ie9 .home {
+		left: 0;
+		}
+	
+	}
+/*
+     FILE ARCHIVED ON 07:29:16 Mar 05, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:08:59 Jun 28, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.817
+  exclusion.robots: 0.073
+  exclusion.robots.policy: 0.056
+  esindex: 0.014
+  cdx.remote: 6.356
+  LoadShardBlock: 74.939 (3)
+  PetaboxLoader3.datanode: 66.122 (4)
+  PetaboxLoader3.resolve: 69.185 (2)
+  load_resource: 78.962
+*/
