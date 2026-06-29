@@ -1,0 +1,311 @@
+/* FPSF 2011 — preserved CSS from raw/2011/20110207140205/index.html
+   Image paths rewritten from /images/<file> and images/<file> to
+   /shared-assets/2011/images/<file>.
+   Custom font face declarations omitted because Knockout-HTF28-JuniorFeatherwt
+   is not redistributable and the original files are not in the archive.
+*/
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  font-family: Verdana, Helvetica, Arial, Tahoma, sans-serif;
+  color: #636361;
+  font-size: 62.5%;
+}
+
+#main_wrap {
+  height: auto;
+  width: 100%;
+  position: absolute;
+}
+
+#page_wrap {
+  position: relative;
+  height: auto;
+  width: 960px;
+  margin: 0px auto 0px auto;
+  padding: 0px 17px;
+  background: url('/shared-assets/2011/images/BGshadow.png') repeat-y 0px 845px;
+}
+
+.container {
+  position: relative;
+  height: auto;
+  padding: 0px 10px 20px 10px;
+  margin: 0px 0px 0px 0px;
+}
+
+.fontface_K {
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+#header {
+  position: relative;
+  z-index: 1;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  bottom: -35px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+a img { border: none; }
+
+a { text-decoration: none; color: #699; }
+
+/* NAVIGATION */
+#navcenter {
+  margin: auto;
+  width: 960px;
+}
+
+#nav {
+  margin: auto;
+  padding: 0;
+  padding-top: 10px;
+  position: relative;
+  z-index: 3;
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  margin-left: 0;
+  padding: 3px 10px 0px 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#nav li {
+  display: inline;
+  margin: 0;
+}
+
+#nav li a.active {
+  background-color: #666;
+  color: #FFF;
+}
+
+#nav a:link {
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+}
+
+#nav a:visited {
+  color: #FFF;
+  background-color: #000;
+}
+
+#nav a:hover {
+  color: #9FC;
+  background-color: #000;
+  text-decoration: none;
+}
+
+#nav_break_bottom {
+  margin-top: -5px;
+  width: 100%;
+  height: 10px;
+  background-color: #000;
+  border-top: none;
+  border: #000 thin solid;
+}
+
+/* SUBSCRIBE */
+#subscribe_box {
+  text-transform: uppercase;
+  background: #53C9AC;
+  letter-spacing: 2px;
+  width: 240px;
+  height: 150px;
+  padding-right: 15px;
+}
+
+#subscribe {
+  padding: 10px 5px;
+  color: #000;
+  overflow: hidden;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+/* BOXES */
+div.slidebox {
+  width: 425px;
+  height: 250px;
+  border: 0px;
+  margin-left: 15px;
+  padding-top: 30px;
+}
+
+#scrolling-box {
+  width: 750px;
+  margin: auto;
+  padding: 15px;
+  height: 80%;
+}
+
+#box {
+  float: left;
+  margin: 10px;
+}
+
+.box_border {
+  border: #000 1px solid;
+}
+
+/* BREAKS / LINES */
+#break {
+  width: 100%;
+  border-bottom: #999 1px solid;
+  margin: 20px auto;
+}
+
+#break_small {
+  width: 100%;
+  border-bottom: #999 1px solid;
+  margin: 10px auto;
+}
+
+.pad {
+  width: 100%;
+  border-bottom: #666 thin solid;
+  margin: 10px 20px;
+}
+
+/* FOOTERS */
+#footer1 { float: left; width: 100%; color: #000; }
+#footer2 { float: right; width: 100%; }
+
+div.footerboxleft { float: left; }
+div.footerboxright {}
+
+#footer_bottom {
+  background: url('/shared-assets/2011/images/bottom_shadow.png') no-repeat;
+  height: 40px;
+  margin: auto;
+  width: 994px;
+}
+
+#twitter_box {
+  border: #000 medium solid;
+  letter-spacing: .3em;
+  background-color: #FFF;
+  width: 245px;
+  padding: 5px;
+  border-radius: 24px 0;
+}
+
+.Twitter { color: #000; }
+
+/* column container */
+.colmask {
+  position: relative;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+.colright,
+.colmid,
+.colleft {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.col1,
+.col2,
+.col3 {
+  float: left;
+  position: relative;
+  padding: 0 0 1em 0;
+  overflow: hidden;
+}
+
+.col3 { background-color: #FFF; }
+
+.col1 {
+  border-left: #666 thin solid;
+  border-right: #666 thin solid;
+}
+
+.threecol .colmid { right: 25%; }
+.threecol .colleft { right: 52%; }
+
+.threecol .col1 {
+  width: 53%;
+  left: 100%;
+}
+
+.threecol .col2 {
+  width: 20%;
+  left: 25%;
+}
+
+.threecol .col3 {
+  width: 20%;
+  left: 82%;
+}
+
+#stripe {
+  width: 100%;
+  height: 40px;
+  background: url('/shared-assets/2011/images/dbk.gif') repeat;
+  float: left;
+}
+
+/* Slideshow placeholder shell */
+#fadeshow1 {
+  width: 450px;
+  height: 300px;
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+#fadeshow1 .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  animation-name: fpsf-fade;
+  animation-duration: 24500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fpsf-fade {
+  0%, 14% { opacity: 1; }
+  21%, 100% { opacity: 0; }
+}
+
+#fadeshow1 .slide.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Subscribe form table */
+#subscribe table { border-collapse: collapse; }
+#subscribe input[type="text"] {
+  width: 12em;
+  font-size: 1.1em;
+  padding: 2px 4px;
+  border: 1px solid #000;
+}

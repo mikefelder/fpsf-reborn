@@ -1,0 +1,59 @@
+---
+import snapshot2011 from '@data/snapshot-2011.json';
+
+const showYears = [
+  { year: 2009, status: 'planned', era: 'Legacy static', edition: 'Free Press Summer Fest' },
+  { year: 2010, status: 'planned', era: 'Legacy static', edition: 'Free Press Summer Fest II' },
+  { year: 2011, status: 'live', era: 'Legacy PHP', edition: snapshot2011.edition, href: '/2011/' },
+  { year: 2012, status: 'planned', era: 'Sparse transition', edition: 'Free Press Summer Fest IV' },
+  { year: 2013, status: 'planned', era: 'FPSF assets', edition: 'Free Press Summer Fest V' },
+  { year: 2014, status: 'planned', era: 'FPSF assets', edition: 'Free Press Summer Fest VI' },
+  { year: 2015, status: 'planned', era: 'App / Foundation', edition: 'Free Press Summer Fest VII' },
+  { year: 2016, status: 'planned', era: 'WordPress / Forte', edition: 'Free Press Summer Fest VIII' },
+  { year: 2017, status: 'planned', era: 'WordPress / Forte', edition: 'Free Press Summer Fest IX' }
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FPSF Reborn — Free Press Summer Fest archive</title>
+    <style>
+      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      body { margin: 0; background: #f6f5f0; color: #1a1a1a; }
+      main { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
+      h1 { font-size: 2.2em; letter-spacing: 0.04em; margin: 0 0 4px; }
+      .lede { color: #555; margin: 0 0 32px; line-height: 1.5; }
+      ul.years { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+      li.year { background: #fff; border: 1px solid #e2dfd5; border-radius: 8px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+      .year .yr { font-weight: 700; font-size: 1.3em; min-width: 4ch; }
+      .year .meta { flex: 1; }
+      .year .edition { font-weight: 600; }
+      .year .era { color: #666; font-size: 0.92em; }
+      .year a { color: #0a6; text-decoration: none; font-weight: 600; }
+      .year .status-planned { color: #999; font-size: 0.9em; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>FPSF Reborn</h1>
+      <p class="lede">Archive rebuild of <em>Free Press Summer Fest</em> (Houston, 2009&ndash;2017), reconstructed from raw Wayback captures in the sibling <code>fpsf-archivist</code> repository.</p>
+      <ul class="years">
+        {showYears.map((show) => (
+          <li class="year">
+            <span class="yr">{show.year}</span>
+            <span class="meta">
+              <span class="edition">{show.edition}</span>
+              <br />
+              <span class="era">{show.era}</span>
+            </span>
+            {show.status === 'live' && show.href
+              ? <a href={show.href}>Visit &rarr;</a>
+              : <span class="status-planned">Planned</span>}
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>

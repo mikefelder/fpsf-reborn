@@ -1,0 +1,29 @@
+{
+  "name": "fpsf-reborn",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^6.0.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.0.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

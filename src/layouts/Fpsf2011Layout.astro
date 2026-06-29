@@ -1,0 +1,54 @@
+---
+import '@styles/fpsf-2011.css';
+
+export interface Props {
+  title: string;
+  bodyClass?: string;
+  activeNavId?: string;
+}
+
+const { title, bodyClass, activeNavId } = Astro.props;
+import snapshot from '@data/snapshot-2011.json';
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1024" />
+    <title>{title}</title>
+    <link rel="icon" href="/shared-assets/2011/images/header.png" />
+  </head>
+  <body class={bodyClass}>
+    <a href="/2011/">
+      <div id="header" style="text-align:center">
+        <img src="/shared-assets/2011/images/header.png" alt={snapshot.edition} />
+      </div>
+    </a>
+
+    <div id="navcenter" style="text-align:left">
+      <div id="nav" class="fontface_K">
+        <ul id="nav">
+          {snapshot.nav.map((item) => (
+            <li id={item.id}>
+              <a
+                href={item.href}
+                class={activeNavId === item.id ? 'active' : ''}
+              >{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div id="nav_break_bottom"></div>
+    </div>
+
+    <div id="main_wrap">
+      <div id="page_wrap">
+        <div class="container">
+          <slot />
+        </div>
+      </div>
+      <div id="footer_bottom"></div>
+    </div>
+  </body>
+</html>
