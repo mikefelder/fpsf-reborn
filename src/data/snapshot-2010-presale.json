@@ -1,0 +1,44 @@
+{
+  "year": 2010,
+  "edition": "Free Press Summer Fest 2010",
+  "dates": "TBD",
+  "location": "Eleanor Tinsley Park on Buffalo Bayou, Houston, Texas",
+  "sourceSnapshot": "20100213030907",
+  "sourceDomain": "www.freepresssummerfest.com",
+  "phase": "presale",
+  "title": "Free Press Summer Fest 2010 :|: Full Line Up Coming Soon",
+  "description": "Free Press Summer Fest 2010 presale holding page (Feb 13 2010). Lineup not yet announced; 2009 recap video and newsletter signup.",
+  "header": {
+    "title": "Free Press Summer Fest 2010",
+    "byline": "Full Line Up Coming Soon"
+  },
+  "nav": [],
+  "tagline": "2010 Full Line Up Coming Soon",
+  "subscribePrompt": "Subscribe for the latest news and exclusive contests",
+  "vimeo": {
+    "id": "LAMTd6S2nFk",
+    "title": "FREE PRESS SUMMER FEST 2009 recap",
+    "platform": "youtube"
+  },
+  "subscribe": {
+    "actionUrl": "http://www.freepresssummerfest.com/formmail/formmail.php",
+    "actionNote": "Original formmail endpoint is defunct; form preserved for layout fidelity but does not submit.",
+    "fields": [
+      { "name": "realname", "label": "*Name", "required": true },
+      { "name": "email", "label": "*Email", "required": true },
+      { "name": "phone", "label": "SMS Ph.#", "required": false }
+    ]
+  },
+  "social": [
+    { "label": "Facebook", "href": "http://www.facebook.com/freepresshouston" },
+    { "label": "Twitter", "href": "http://twitter.com/free_press" },
+    { "label": "Vimeo", "href": "http://vimeo.com/user2385997" },
+    { "label": "FreePressHouston.com", "href": "http://www.FreePressHouston.com" }
+  ],
+  "sponsors": [],
+  "knownGaps": [
+    "Background images (canvasback.gif, header2.png, offwhitebackground.png, Color_Slide_Shine_Mega_Color___by_EvilJekyll.png) are not in any 2010 capture; CSS falls back to solid colors and a textual header.",
+    "FormMail.pl subscribe handler is defunct; form preserved for layout fidelity but does not submit.",
+    "Dates and venue confirmation came after this presale capture; the page intentionally omits them."
+  ]
+}

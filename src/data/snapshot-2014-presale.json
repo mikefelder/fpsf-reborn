@@ -13,7 +13,7 @@
     "byline": "May 31 + June 1, 2014, Eleanor Tinsley Park, Houston TX",
     "image": "assets/img/static/hed-index.png"
   },
-  "primaryNav": [
+  "nav": [
     {
       "label": "Learn",
       "className": "learn",

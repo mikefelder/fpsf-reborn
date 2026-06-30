@@ -1,0 +1,50 @@
+.tumblr {
+			list-style: none;
+			width:100%;
+			margin-bottom: 1em;
+			padding: 0;
+			font-family:'KlavikaRegularPlain', Helvetica, Tahoma, Geneva, sans-serif;
+		}
+		.tumblr li {
+			margin-bottom: 1em;
+		}
+		.tumblr p {
+			margin: 0;
+			font-size:1.5em;
+			line-height:16px;
+		}
+		.tumblr img {
+			display: block;
+		}
+		.tumblr em {
+			display: block;
+			margin-top: 0.2em;
+		}
+		.tumblr .tumblr-post-date{
+			display: block;
+			font-size: 1.2em;
+			margin-top: 0.5em;
+		
+		}
+		
+		#tumblr-badge {}
+/*
+     FILE ARCHIVED ON 01:30:52 May 10, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:57:59 Jun 29, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.468
+  exclusion.robots: 0.054
+  exclusion.robots.policy: 0.045
+  esindex: 0.007
+  cdx.remote: 12.213
+  LoadShardBlock: 84.47 (3)
+  PetaboxLoader3.datanode: 73.512 (4)
+  PetaboxLoader3.resolve: 65.317 (2)
+  load_resource: 90.997
+*/

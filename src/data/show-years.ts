@@ -1,0 +1,129 @@
+import type { BuiltRoute, ShowYearSummary, SnapshotLink } from '../types/snapshot';
+
+// Source of truth for which years and sub-routes are live in fpsf-reborn.
+// Add a route entry when a new page goes live. A year with empty `routes`
+// is still planned.
+//
+// Route conventions (matching dayfornight-reborn):
+//   /{year}/                 canonical event-state landing
+//   /{year}/presale/         earlier presale state (where captured)
+//   /{year}/recap/           post-festival recap state (where captured)
+//   /{year}/lineup/          lineup page
+//   /{year}/schedule/        schedule page
+//   /{year}/sponsors/        sponsors page
+//   /{year}/{nav-target}/    any other sub-page the year's original nav had
+export const showYears: ShowYearSummary[] = [
+  { year: 2009, edition: 'Free Press Summer Fest', routes: [] },
+  {
+    year: 2010,
+    edition: 'Free Press Summer Fest 2010',
+    routes: [
+      {
+        label: 'Main',
+        href: '/2010/',
+        description: 'February-March 2010 canonical event-state main page (lineup announced, June 5-6)',
+        sourceSnapshot: '20100218095214',
+      },
+      {
+        label: 'Presale',
+        href: '/2010/presale/',
+        description: 'Feb 13 2010 "Full Line Up Coming Soon" holding page',
+        sourceSnapshot: '20100213030907',
+      },
+    ],
+  },
+  {
+    year: 2011,
+    edition: 'Free Press Summer Fest III',
+    routes: [
+      {
+        label: 'Main',
+        href: '/2011/',
+        description: 'June 2011 event-time main page (lineup announced)',
+        sourceSnapshot: '20110605020053',
+      },
+      {
+        label: 'Presale',
+        href: '/2011/presale/',
+        description: 'February 2011 presale state',
+        sourceSnapshot: '20110207140205',
+      },
+    ],
+  },
+  { year: 2012, edition: 'Free Press Summer Fest IV', routes: [] },
+  { year: 2013, edition: 'Free Press Summer Fest V', routes: [] },
+  {
+    year: 2014,
+    edition: 'Free Press Summer Festival',
+    routes: [
+      {
+        label: 'Main',
+        href: '/2014/',
+        description: 'May 2014 lineup-released main page',
+        sourceSnapshot: '20140517104510',
+      },
+      {
+        label: 'Presale',
+        href: '/2014/presale/',
+        description: 'January 2014 blind-presale state',
+        sourceSnapshot: '20140116065620',
+      },
+    ],
+  },
+  { year: 2015, edition: 'Free Press Summer Festival 2015', routes: [
+    {
+      label: 'Main',
+      href: '/2015/',
+      description: 'July 2015 lineup-released main page (Foundation-era at NRG Park)',
+      sourceSnapshot: '20150703195456',
+    },
+  ] },
+  { year: 2016, edition: 'Free Press Summer Fest VIII', routes: [] },
+  { year: 2017, edition: 'Free Press Summer Fest IX', routes: [] },
+];
+
+export const liveShowYears = showYears.filter((show) => show.routes.length > 0);
+
+// Flat, ordered list of every live (year, route) for rotation, year-pill
+// prev/next, and the root landing index.
+export const liveSnapshots: SnapshotLink[] = showYears.flatMap((show) =>
+  show.routes.map((route) => ({
+    year: show.year,
+    edition: show.edition,
+    label: route.label,
+    href: route.href,
+    description: route.description,
+  })),
+);
+
+export function findShowYear(year: number): ShowYearSummary | undefined {
+  return showYears.find((show) => show.year === year);
+}
+
+// Best entry point for a year. Returns `/{year}/` if a canonical landing
+// is live, otherwise the first available sub-route, otherwise undefined.
+export function canonicalHref(year: number): string | undefined {
+  const show = findShowYear(year);
+  if (!show || show.routes.length === 0) return undefined;
+  const root = show.routes.find((route) => route.href === `/${year}/`);
+  return (root ?? show.routes[0]).href;
+}
+
+// Snapshot list neighbors for the year-pill. `currentHref` should exactly
+// match an entry in liveSnapshots; otherwise the helper returns just
+// the surrounding endpoints.
+export function adjacentSnapshots(currentHref: string): {
+  prev?: SnapshotLink;
+  next?: SnapshotLink;
+} {
+  const index = liveSnapshots.findIndex((entry) => entry.href === currentHref);
+  if (index === -1) return {};
+  return {
+    prev: index > 0 ? liveSnapshots[index - 1] : undefined,
+    next: index < liveSnapshots.length - 1 ? liveSnapshots[index + 1] : undefined,
+  };
+}
+
+export function findSnapshot(currentHref: string): SnapshotLink | undefined {
+  return liveSnapshots.find((entry) => entry.href === currentHref);
+}

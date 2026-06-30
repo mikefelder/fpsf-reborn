@@ -1,0 +1,82 @@
+---
+export interface Props {
+  year: number;
+  gaps: string[];
+  show?: boolean;
+}
+
+// Defaults to dev-only. Pass show={true} to force, show={false} to hide.
+const { year, gaps, show } = Astro.props;
+const visible = show ?? import.meta.env.DEV;
+if (!visible || gaps.length === 0) {
+  return Astro.locals && null;
+}
+---
+{visible && gaps.length > 0 && (
+  <details class="fpsf-known-gaps" aria-label={`Known archival gaps for ${year}`}>
+    <summary>
+      <span class="fpsf-known-gaps__badge">archive</span>
+      <span class="fpsf-known-gaps__label">{year} — {gaps.length} known gap{gaps.length === 1 ? '' : 's'}</span>
+    </summary>
+    <ul>
+      {gaps.map((gap) => <li>{gap}</li>)}
+    </ul>
+  </details>
+)}
+
+<style is:global>
+  .fpsf-known-gaps {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 9998;
+    max-width: 360px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    background: #fff8c5;
+    color: #5a4500;
+    border: 1px solid #d4b800;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .fpsf-known-gaps summary {
+    cursor: pointer;
+    padding: 6px 10px;
+    list-style: none;
+    user-select: none;
+  }
+
+  .fpsf-known-gaps summary::-webkit-details-marker { display: none; }
+
+  .fpsf-known-gaps__badge {
+    display: inline-block;
+    background: #d4b800;
+    color: #000;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-right: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 10px;
+  }
+
+  .fpsf-known-gaps__label {
+    font-weight: 500;
+  }
+
+  .fpsf-known-gaps[open] {
+    padding: 0 12px 10px;
+  }
+
+  .fpsf-known-gaps ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+  }
+
+  .fpsf-known-gaps li + li { margin-top: 4px; }
+
+  @media print { .fpsf-known-gaps { display: none; } }
+</style>

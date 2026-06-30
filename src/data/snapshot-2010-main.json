@@ -1,0 +1,68 @@
+{
+  "year": 2010,
+  "edition": "Free Press Summer Fest 2010",
+  "dates": "Saturday-Sunday, June 5-6 2010, 12PM-10PM",
+  "location": "Eleanor Tinsley Park on Buffalo Bayou, Houston, Texas",
+  "sourceSnapshot": "20100218095214",
+  "sourceDomain": "www.freepresssummerfest.com",
+  "phase": "event",
+  "title": "Free Press Summer Fest 2010 :: June 5-6, 2010 :: 12PM-10PM",
+  "description": "Free Press Summer Fest 2010 — Houston's outdoor music festival at Eleanor Tinsley Park on Buffalo Bayou, June 5-6, 2010. Full lineup announced.",
+  "header": {
+    "title": "Free Press Summer Fest 2010",
+    "byline": "June 5-6, 2010 — 12PM-10PM",
+    "image": "crosssite/headergif.gif"
+  },
+  "nav": [
+    { "id": "nav-full_line_up", "label": "FULL LINE UP", "href": "/2010/lineup" },
+    { "id": "nav-pass", "label": "GET A PASS", "href": "/2010/pass" },
+    { "id": "nav-info", "label": "FEST INFO", "href": "/2010/info" },
+    { "id": "nav-map", "label": "MAP", "href": "/2010/map" },
+    { "id": "nav-partners", "label": "SPONSORS", "href": "/2010/sponsors" },
+    { "id": "nav-vendors", "label": "VENDORS", "href": "/2010/vendors" },
+    { "id": "nav-fpsf2009", "label": "FPSF 2009", "href": "/2010/fpsf2009" },
+    { "id": "nav-faqs", "label": "FAQs", "href": "/2010/faq" },
+    { "id": "nav-contact", "label": "CONTACT", "href": "/2010/contact" }
+  ],
+  "slideshow": {
+    "wrapperId": "fpsf-images",
+    "width": 425,
+    "height": 250,
+    "images": [],
+    "intervalMs": 4000,
+    "fadeMs": 500,
+    "note": "Original FPSFImages.html iframe slideshow content not archived; slot renders empty."
+  },
+  "vimeo": {
+    "id": "LAMTd6S2nFk",
+    "title": "FREE PRESS SUMMER FEST 2009",
+    "platform": "youtube"
+  },
+  "subscribe": {
+    "actionUrl": "/cgi-bin/FormMail.pl",
+    "actionNote": "Original FormMail.pl endpoint is defunct; form preserved for layout fidelity but does not submit.",
+    "fields": [
+      { "name": "name", "label": "Name*", "required": true },
+      { "name": "email", "label": "Email*", "required": true },
+      { "name": "SMS", "label": "Phone", "required": false }
+    ]
+  },
+  "sponsors": [],
+  "social": [
+    { "label": "Facebook", "href": "http://www.facebook.com/freepresshouston" },
+    { "label": "Twitter", "href": "http://twitter.com/free_press" },
+    { "label": "Vimeo", "href": "http://vimeo.com/user2385997" },
+    { "label": "YouTube", "href": "http://www.youtube.com/results?search_query=free+press+summer+fest" },
+    { "label": "FreePressHouston.com", "href": "http://www.FreePressHouston.com" },
+    { "label": "Pegstar", "href": "http://www.jagi.cc/" }
+  ],
+  "knownGaps": [
+    "Background images (crosssite/headergif.gif, whitecanvas.jpg, home/graybox.png, home/purpleboxleft.png, home/scrollbox.png, home/bluebottomrect.png) are not in any captured 2010 timestamp; CSS falls back to solid colors. CDX recovery pass for 2010 imagery is pending.",
+    "FPSFImages.html slideshow iframe content is not archived; left column slidebox renders empty.",
+    "News ticker (news.html iframe) and Twitter feed (feed.html iframe) are not archived; replaced with static social links.",
+    "Custom Cufon-rendered LHF_American_Sans font is present in shared-assets/2010/cufon/ but the original Cufon JavaScript rewrites are skipped; layout falls back to Helvetica/Arial stack.",
+    "FormMail.pl subscribe handler is defunct; form is preserved for layout fidelity but does not submit.",
+    "Footer image-map (bluebottomrect.png) is missing; replaced with text-link social list.",
+    "Sub-pages (lineup, pass, info, map, sponsors, vendors, fpsf2009, faq, contact) are not yet rebuilt; nav links are stubs."
+  ]
+}

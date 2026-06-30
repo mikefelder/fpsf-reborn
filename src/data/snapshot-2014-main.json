@@ -1,0 +1,182 @@
+{
+  "year": 2014,
+  "edition": "Free Press Summer Festival",
+  "dates": "May 31 + June 1, 2014",
+  "location": "Eleanor Tinsley Park, Houston TX",
+  "sourceSnapshot": "20140517104510",
+  "sourceDomain": "fpsf.com",
+  "phase": "event",
+  "title": "Free Press Summer Festival | Eleanor Tinsley Park, Houston TX",
+  "description": "Free Press Summer Festival (FPSF) — May 31 + June 1, 2014 at Eleanor Tinsley Park in Houston, Texas. 2014 lineup-released main page with passes on sale.",
+  "header": {
+    "title": "Free Press Summer Festival",
+    "byline": "May 31 + June 1, 2014, Eleanor Tinsley Park, Houston TX",
+    "image": "assets/img/static/hed-index.png"
+  },
+  "nav": [
+    {
+      "label": "Learn",
+      "className": "learn",
+      "href": "/2014/learn",
+      "subnav": [
+        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos" },
+        { "label": "SHOP", "href": "http://fpsf.shop.redstarmerch.com/" }
+      ]
+    },
+    {
+      "label": "Go",
+      "className": "go",
+      "href": "/2014/go",
+      "subnav": [
+        { "label": "General Info", "href": "/2014/go#general_info" },
+        { "label": "Get passes", "href": "/2014/go#passes" },
+        { "label": "Pass FAQs", "href": "/2014/go#pass_info" },
+        { "label": "Parking & transportation", "href": "/2014/go#parking" },
+        { "label": "What to bring, not to bring", "href": "/2014/go#permitted" }
+      ]
+    },
+    {
+      "label": "Join",
+      "className": "join",
+      "href": "/2014/join",
+      "subnav": [
+        { "label": "Volunteer", "href": "/2014/join#volunteer" },
+        { "label": "Vendors", "href": "/2014/join#vendors" },
+        { "label": "Sponsors", "href": "/2014/join#sponsors" },
+        { "label": "Bands", "href": "/2014/join#bands" },
+        { "label": "Art submissions", "href": "/2014/join#art" }
+      ]
+    }
+  ],
+  "secondaryNav": [
+    { "label": "Contact", "className": "contact", "href": "/2014/contact" },
+    { "label": "Main", "className": "main", "href": "/2014/" }
+  ],
+  "hero": {
+    "videoUrl": "https://youtu.be/_7HmBdlIidQ",
+    "videoTitle": "FPSF 2014 Lineup Release",
+    "image": "assets/img/static/2014vidthumb.jpg"
+  },
+  "passes": [
+    {
+      "name": "General admission",
+      "price": "$158.50",
+      "priceTerms": "NOW",
+      "details": [
+        "Weekend general admission pass gives you 2-day access to FPSF"
+      ],
+      "buyHref": "http://fpsf.frontgatetickets.com/",
+      "buyTitle": "Buy your general admission passes. Click. Do it now."
+    },
+    {
+      "name": "Fancy Pants",
+      "price": "$255.50",
+      "priceTerms": "NOW",
+      "details": [
+        "Includes 2-day access to FPSF",
+        "Rapid entry",
+        "Access to massive semi-baller air-conditioned tents with semi-good-looking people and lounge seating",
+        "Access to private bar with shorter lines",
+        "Private viewing areas"
+      ],
+      "buyHref": "http://fpsf.frontgatetickets.com/",
+      "buyTitle": "Fancy Pants, eh? Well done."
+    },
+    {
+      "name": "Silk Pajamas",
+      "price": "$599.00",
+      "priceTerms": "per person",
+      "details": [
+        "Includes 2-day access to FPSF",
+        "Premium viewing areas with express access at the Mars, Saturn and Neptune stages",
+        "Private air conditioned catering/dining area",
+        "Private Bars (complimentary beer and water)",
+        "Air conditioned restrooms near catering area and in Artist Village",
+        "Rapid entry",
+        "Provided parking",
+        "Access to the private Artist Village",
+        "Lunch and Dinner for both Saturday and Sunday",
+        "Swag bag that includes our exclusive 2014 Silk Pajamas t-shirt"
+      ],
+      "buyHref": "http://fpsf.frontgatetickets.com/",
+      "buyTitle": "Buy your Silk Pajamas pass."
+    }
+  ],
+  "social": [
+    { "label": "Twitter", "className": "twitter", "href": "http://twitter.com/fpsf", "title": "Follow FPSF on Twitter" },
+    { "label": "Facebook", "className": "facebook", "href": "http://www.facebook.com/FPSFHOUSTON", "title": "Follow FPSF on Facebook" },
+    { "label": "Vimeo", "className": "vimeo", "href": "https://vimeo.com/60763386", "title": "Watch FPSF videos on Vimeo" },
+    { "label": "YouTube", "className": "youtube", "href": "http://www.youtube.com/watch?v=JfFaSedd2vw", "title": "Leave rude comments for FPSF on YouTube" },
+    { "label": "Flickr", "className": "flickr", "href": "http://tinyurl.com/flickrFPSF", "title": "Check out FPSF photos on Flickr" }
+  ],
+  "sponsors": [
+    { "name": "Budweiser", "href": "http://www.budweiser.com/en//_age_gate?redirect=%2fen%2fus%2f", "image": "assets/img/logos/budweiser2014.png" },
+    { "name": "Cracker Jack'd", "href": "http://www.crackerjackd.com/", "image": "assets/img/logos/crackerjackd2014.png" },
+    { "name": "NRG Energy", "href": "http://www.nrgenergy.com/", "image": "assets/img/logos/nrg2014.png" },
+    { "name": "Absolut", "href": "http://www.absolut.com/us", "image": "assets/img/logos/absolut2014.png" },
+    { "name": "Verizon", "href": "http://www.verizon.com/home/verizonglobalhome/ghp_landing.aspx", "image": "assets/img/logos/verizon2014.png" },
+    { "name": "Taco Bell", "href": "http://www.tacobell.com/", "image": "assets/img/logos/tacobell2014.png" },
+    { "name": "Monster Energy", "href": "http://www.monsterenergy.com/", "image": "assets/img/logos/monster2014.png" },
+    { "name": "PlayStation", "href": "http://us.playstation.com/", "image": "assets/img/logos/ps42014.png" },
+    { "name": "Lipton Tea", "href": "http://www.liptontea.com/", "image": "assets/img/logos/lipton2014.png" },
+    { "name": "Barefoot Wine", "href": "http://barefootwine.com/", "image": "assets/img/logos/barefoot2014.png" },
+    { "name": "Kroger", "href": "https://www.kroger.com/", "image": "assets/img/logos/kroger2014.png" },
+    { "name": "Chacos (25th Anniversary)", "href": "http://www.chacos.com/US/en/25Anniversary", "image": "assets/img/logos/chaco2014.png" }
+  ],
+  "footerMap": [
+    {
+      "heading": "Learn",
+      "className": "learn",
+      "href": "/2014/learn",
+      "items": [
+        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos" }
+      ]
+    },
+    {
+      "heading": "Go",
+      "className": "go",
+      "href": "/2014/go",
+      "items": [
+        { "label": "Get passes", "href": "/2014/go#passes" },
+        { "label": "Parking & transportation", "href": "/2014/go#parking" },
+        { "label": "What to bring", "href": "/2014/go#permitted" },
+        { "label": "What not to bring", "href": "/2014/go#prohibited" }
+      ]
+    },
+    {
+      "heading": "Join",
+      "className": "join",
+      "href": "/2014/join",
+      "items": [
+        { "label": "Volunteer", "href": "/2014/join#volunteer" },
+        { "label": "Vendors", "href": "/2014/join#vendors" },
+        { "label": "Sponsors", "href": "/2014/join#sponsors" },
+        { "label": "Bands", "href": "/2014/join#bands" },
+        { "label": "Art submissions", "href": "/2014/join#art" }
+      ]
+    },
+    {
+      "heading": "Contact",
+      "className": "contact",
+      "href": "/2014/contact",
+      "items": [
+        { "label": "FPSF contact info", "href": "/2014/contact#resources" },
+        { "label": "Media inquiries", "href": "/2014/contact#resources" }
+      ]
+    }
+  ],
+  "footerLegal": "Site contents copyright © 2013 Free Press Summer Festival. All rights reserved. Sponsor logos, signage, and names may be trademarked. These materials may not be reproduced elsewhere, except by their respective copyright and trademark holders.",
+  "knownGaps": [
+    "Hero image assets/img/static/2014vidthumb.jpg is not in any captured 2014 timestamp; placeholder rendering until closest-CDX recovery succeeds.",
+    "2014-versioned sponsor logos (absolut2014, barefoot2014, budweiser2014, lipton2014, monster2014, nrg2014, ps42014, tacobell2014, verizon2014) are not in canonical or sibling captures; sponsor runner renders text fallback for missing images.",
+    "Webfonts assets/webfonts/ss-social.css, ss-standard.css, ss-social.js, ss-standard.js were not in the canonical capture; only ss-symbolicons-line is present.",
+    "Typekit font kit (sir3lyk) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted.",
+    "Sub-pages (learn, go, join, contact, videos) are not yet rebuilt; nav links are stubs."
+  ]
+}

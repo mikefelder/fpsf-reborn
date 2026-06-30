@@ -1,0 +1,66 @@
+---
+import '@styles/fpsf-2010-presale.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import snapshot from '@data/snapshot-2010-presale.json';
+---
+<BaseLayout
+  title={snapshot.title}
+  description={snapshot.description}
+  bodyClass="fpsf-2010-presale"
+  year={snapshot.year}
+  knownGaps={snapshot.knownGaps}
+  currentHref="/2010/presale/"
+>
+  <div id="presale_wrapper">
+    <a href="/2010/" style="text-decoration:none">
+      <div id="header">
+        <h1>{snapshot.header.title}</h1>
+        <div class="byline">{snapshot.header.byline}</div>
+      </div>
+    </a>
+
+    <div id="navbar">{snapshot.tagline}</div>
+
+    <div class="nest_box">
+      <div class="video_box">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${snapshot.vimeo.id}?rel=0`}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope"
+          allowfullscreen
+          title={snapshot.vimeo.title}
+        ></iframe>
+      </div>
+
+      <div class="subscribetext">
+        <p>{snapshot.subscribePrompt}</p>
+        <form method="post" action={snapshot.subscribe.actionUrl} name="SampleForm">
+          <table border="0" cellspacing="5">
+            {snapshot.subscribe.fields.map((field) => (
+              <tr>
+                <td><p>{field.label}:</p></td>
+                <td>
+                  <input type="text" name={field.name} required={field.required} />
+                </td>
+              </tr>
+            ))}
+            <tr>
+              <td><input type="submit" value="Submit" /></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <div class="presale-social">
+      <strong style="letter-spacing:0.08em">FOLLOW THE FEST</strong>
+      <ul>
+        {snapshot.social.map((link) => (
+          <li>
+            <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,94 @@
+{
+  "year": 2015,
+  "edition": "Free Press Summer Festival 2015",
+  "dates": "June 6 + June 7, 2015",
+  "location": "NRG Park — Yellow Lot, Houston, TX",
+  "sourceSnapshot": "20150703195456",
+  "sourceDomain": "www.fpsf.com",
+  "phase": "main",
+  "title": "FPSF 2015 - Home",
+  "description": "Free Press Summer Festival 2015 — June 6+7 at NRG Park (Yellow Lot), Houston, TX. Lineup-released main page, Foundation-era responsive design.",
+  "header": {
+    "title": "Free Press Summer Festival",
+    "byline": "FPSF 2015 — Home"
+  },
+  "logoAriaTitle": "FP — Free Press Summer Festival",
+  "nav": [
+    { "label": "Home", "href": "/2015/" },
+    { "label": "Passes", "href": "/2015/passes" },
+    { "label": "Learn", "href": "/2015/learn" },
+    { "label": "Videos", "href": "/2015/videos" },
+    { "label": "Info", "href": "/2015/info" },
+    { "label": "Map", "href": "/2015/map" },
+    { "label": "Shop", "href": "http://fpsf.shop.redstarmerch.com/", "external": true }
+  ],
+  "appLinks": {
+    "prompt": "Hey! Did you know that we have a mobile app?",
+    "appStoreUrl": "https://itunes.apple.com/app/id635924852",
+    "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.greencopper.android.fpsf",
+    "learnMoreHref": "/2015/app"
+  },
+  "social": [
+    { "label": "Instagram", "className": "instagram", "href": "https://instagram.com/fpsf" },
+    { "label": "Twitter", "className": "twitter", "href": "https://twitter.com/fpsf" },
+    { "label": "Facebook", "className": "facebook", "href": "https://www.facebook.com/FPSFHOUSTON" },
+    { "label": "YouTube", "className": "youtube", "href": "http://www.youtube.com/watch?v=JfFaSedd2vw" },
+    { "label": "Rdio", "className": "rdio", "href": "http://on.rdio.com/1HHmdFF" }
+  ],
+  "banner": {
+    "videoUrl": "https://www.youtube.com/embed/QZ7FL7HduvU?modestbranding=0&autohide=1&showinfo=0&controls=0&rel=0",
+    "videoTitle": "FPSF 2015 lineup release",
+    "title": ["FREE", "PRESS", "SUMMER", "FESTIVAL"],
+    "posterThumb": "images/poster-th.png",
+    "posterFull": "images/2015-Lineup-Release-Poster-18x24-may2015-v2.jpg",
+    "passesUrl": "https://fpsf.frontgatetickets.com/",
+    "passesLabel": "Get passes",
+    "bannerImages": {
+      "small": "images/banner/br-home-sm.jpg",
+      "medium": "images/banner/br-home-md.jpg",
+      "large": "images/banner/br-home-lg.jpg"
+    }
+  },
+  "eventDate": {
+    "headline": "NRG Park - Yellow Lot",
+    "city": "Houston, TX",
+    "presentingSponsorImage": "images/site/Budweiser-cl.png",
+    "presentingSponsorAlt": "Budweiser"
+  },
+  "sponsors": [
+    { "name": "Budweiser", "className": "budweiser" },
+    { "name": "Taco Bell", "className": "tacobell" },
+    { "name": "NRG", "className": "nrg" },
+    { "name": "Deep Eddy", "className": "deep-eddy" },
+    { "name": "Verizon", "className": "verison" },
+    { "name": "Monster Energy", "className": "monster" },
+    { "name": "Flipflop Wines", "className": "flipflop", "href": "http://www.flipflopwines.com" },
+    { "name": "PlayStation 4", "className": "ps4" },
+    { "name": "Xfinity", "className": "xfinity" },
+    { "name": "Ford", "className": "ford", "href": "http://www.fordentertowin.com/fpsummer" },
+    { "name": "University of Houston-Downtown", "className": "uhd" },
+    { "name": "Rdio", "className": "rdio", "href": "http://on.rdio.com/1BcZmzC" },
+    { "name": "Kroger", "className": "kroger" },
+    { "name": "Chaco", "className": "chaco" },
+    { "name": "Uber", "className": "uber" }
+  ],
+  "newsletter": {
+    "actionUrl": "http://oi.vresp.com?fid=3b167e5cc2",
+    "actionNote": "Original VerticalResponse signup is defunct; form preserved for layout fidelity but does not submit."
+  },
+  "ticketingWidget": {
+    "platform": "GoEvent",
+    "loaderUrl": "https://s3.amazonaws.com/goevent-web-freepresssummerfestival-2015/widgets/widgets_loader.min.js",
+    "accountWidgetId": "!account",
+    "programWidgetId": "!programmation"
+  },
+  "knownGaps": [
+    "Responsive banner images (images/banner/br-home-sm.jpg, br-home-md.jpg, br-home-lg.jpg) are not in any 2015 capture; banner falls back to a gradient overlay.",
+    "Sponsor logos referenced by CSS classes (budweiser, tacobell, nrg, deep-eddy, verison, monster, flipflop, ps4, xfinity, ford, uhd, rdio, kroger, chaco, uber) load via background-image rules in app.css; those image files were not archived.",
+    "Presenting sponsor image (/images/site/Budweiser-cl.png) is not archived.",
+    "GoEvent ticketing widget loads from s3.amazonaws.com/goevent-web-freepresssummerfestival-2015/ which is offline; widget container renders empty.",
+    "VerticalResponse newsletter handler is defunct; form preserved for layout fidelity but does not submit.",
+    "Sub-pages (passes, learn, videos, info, map, app) are not yet rebuilt; nav links are stubs.",
+    "Foundation framework JS (foundation.min.js + libs.min.js + app.min.js) is loaded and may execute, but its behavior depends on full asset availability."
+  ]
+}

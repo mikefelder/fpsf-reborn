@@ -1,0 +1,127 @@
+/* Main-state overrides for the 2011 FPSF III canonical event page.
+   Loaded by /2011/index.astro on top of the shared fpsf-2011.css base.
+   Captures the June 2011 visual differences from the Feb 2011 presale state.
+*/
+
+body.state-main #header {
+  width: 960px;
+  height: 270px;
+  position: relative;
+  margin: 30px auto 0;
+  clear: both;
+}
+
+body.state-main #header #bunny {
+  float: left;
+  border: 0;
+  outline: none;
+}
+
+body.state-main #header #logo_text {
+  float: right;
+  border: 0;
+  outline: none;
+}
+
+/* Subscribe box flipped from teal (presale) to purple (event/main). */
+body.state-main #subscribe_box {
+  background: #623E91;
+  color: #fff;
+}
+
+body.state-main #subscribe {
+  color: #fff;
+}
+
+/* Slideshow wrapped in a dark fade frame on main. */
+body.state-main #fade_frame {
+  background-color: #333;
+  width: 470px;
+  height: 330px;
+  padding-top: 5px;
+  border: 5px solid #333;
+}
+
+body.state-main #fade_frame #fadeshow1 {
+  background: #111;
+  width: 450px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero callout — big red "PASSES STILL ON SALE" text. */
+body.state-main .hero-callout {
+  font-size: 35px;
+  color: #ff1011;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+body.state-main .high-roller {
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+body.state-main .high-roller p {
+  margin: 0 0 8px;
+}
+
+body.state-main .high-roller a {
+  color: #ff1011;
+}
+
+body.state-main .high-roller .cta-link {
+  font-style: italic;
+  color: #ff1011;
+}
+
+/* Center column — WEEZER headliner block. */
+body.state-main #side_local {
+  display: block;
+  margin: 0 0 6px;
+}
+
+body.state-main #side_local font {
+  font-size: 2em;
+  color: #ff1011;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: 700;
+}
+
+body.state-main #local_text {
+  background: #ff1011;
+  color: #fff;
+  text-align: left;
+  font-size: 1.4em;
+  line-height: 1.2;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+body.state-main #local_text a {
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: 700;
+}
+
+body.state-main #local_text a:hover {
+  color: #A1CDB2;
+}
+
+/* Tumblr/News block on the right column. */
+body.state-main .news-label {
+  font-size: 1.6em;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: 700;
+}
+
+body.state-main .news-label a { color: #000; }
+
+body.state-main .news-source {
+  font-size: 1em;
+  color: #666;
+  margin: 4px 0 8px;
+}

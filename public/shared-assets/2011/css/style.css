@@ -1,0 +1,77 @@
+
+	@font-face { 
+font-family:Knockout-HTF28-JuniorFeatherwt; 
+src: url('/web/20110207140630im_/http://freepresssummerfest.com/css/fonts/Knockout-HTF28-JuniorFeatherwt.ttf'); } 
+
+@font-face { 
+font-family:Knockout-HTF28-JuniorFeatherwt; 
+src: url('/web/20110207140630im_/http://freepresssummerfest.com/css/fonts/Knockout-HTF28-JuniorFeatherwt.eot'); } 
+
+.fontface_K { 
+font-family:Knockout-HTF28-JuniorFeatherwt, Helvetica, Tahoma, Geneva, sans-serif; } 
+
+	
+		
+
+body {
+	color:#000;
+font-family:Verdana, Helvetica, Arial, Tahoma, sans-serif;	
+font-size:62.5%;
+}
+
+#ul_list2 {
+	list-style: none;
+	margin:0; padding: 0;
+	width: 220px;
+font-family:Verdana, Helvetica, Arial, Tahoma, sans-serif;	
+height:75px;
+}
+
+
+#ul_list2 li {
+	padding: 0 0 35px;
+	margin-bottom: 20px;
+	font-size:1em;
+	color:#000;
+font-family:Verdana, Helvetica, Arial, Tahoma, sans-serif;	
+line-height:1em;
+}
+
+
+#ul_list2 li a {
+	color: #000;
+	text-decoration: none;
+font-family:Verdana, Helvetica, Arial, Tahoma, sans-serif;	
+text-transform:uppercase;
+}
+
+.ul_list_withjs {
+	height: 90px;
+		text-decoration: none;
+	overflow:hidden;
+font-family:Verdana, Helvetica, Arial, Tahoma, sans-serif;	
+text-transform:uppercase;
+font-size:1em;
+	
+	
+}
+/*
+     FILE ARCHIVED ON 14:06:30 Feb 07, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:03:49 Jun 27, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.465
+  exclusion.robots: 0.051
+  exclusion.robots.policy: 0.04
+  esindex: 0.008
+  cdx.remote: 17.065
+  LoadShardBlock: 60.478 (3)
+  PetaboxLoader3.datanode: 70.408 (4)
+  PetaboxLoader3.resolve: 53.66 (2)
+  load_resource: 90.342
+*/

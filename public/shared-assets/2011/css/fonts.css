@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+@font-face {
+    font-family:'Knockout-HTF28-JuniorFeatherwt';
+    src: url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/Knockout-HTF28-JuniorFeatherwt.eot') format('eot'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/Knockout-HTF28-JuniorFeatherwt.woff') format('woff'),
+		 url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/Knockout-HTF28-JuniorFeatherwt.ttf') format('truetype'),
+		 url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/Knockout-HTF28-JuniorFeatherwt.svg') format('svg');
+		 font-weight: normal;
+    	 font-style: normal;
+}
+
+.fontface_K { 
+font-family:'Knockout-HTF28-JuniorFeatherwt', Helvetica, Tahoma, Geneva, sans-serif;
+font-weight: normal;
+font-style: normal; } 
+
+
+@font-face {
+    font-family: 'KlavikaBold';
+    src: url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaboldbold-webfont.eot') format('eot'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaboldbold-webfont.woff') format('woff'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaboldbold-webfont.ttf') format('truetype'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaboldbold-webfont.svg#webfontLEk5WtOe') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaRegularPlain';
+    src: url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaregular-plain-webfont.eot') format('eot'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaregular-plain-webfont.woff') format('woff'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaregular-plain-webfont.ttf') format('truetype'),
+         url('/web/20110510013048im_/http://www.freepresssummerfest.com/fonts/klavikaregular-plain-webfont.svg#webfontoJuaNI6D') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.fontface_klav_pl {
+font-family: 'KlavikaRegularPlain', Helvetica, Tahoma, Geneva, sans-serif;
+font-weight: normal;
+font-style: normal; } 
+
+.fontface_klav_b {
+font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+font-weight: normal;
+font-style: normal; } 
+/*
+     FILE ARCHIVED ON 01:30:48 May 10, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:07:48 Jun 27, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.643
+  exclusion.robots: 0.088
+  exclusion.robots.policy: 0.077
+  esindex: 0.009
+  cdx.remote: 67.781
+  LoadShardBlock: 197.013 (3)
+  PetaboxLoader3.datanode: 126.858 (4)
+  load_resource: 168.056
+  PetaboxLoader3.resolve: 67.199
+*/

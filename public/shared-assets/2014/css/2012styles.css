@@ -1,0 +1,1094 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html, body 
+{ 
+height: 100%; 
+margin: 0px; 
+padding: 0px; 
+}
+	
+body {
+margin:0;
+padding:0;
+border:0;			 
+width:100%;
+font-size:100%;
+font-family: 'TradeGothicLTStdCnNo.18', helvetica, arial, sans-serif;
+text-transform:uppercase;
+min-width:800px;
+background-color:#000;
+}
+
+
+ a {
+color:#f15a22;
+margin:0;
+padding:0px;
+text-decoration:none;
+transition: all .3s linear;
+   -o-transition: all .3s linear;
+   -moz-transition: all .3s linear;
+   -webkit-transition: all .3s linear;
+
+
+}
+
+a:link, a:active {
+color:#F10026;
+display:inline;
+padding-top:0px;
+padding-bottom:0px;
+ 
+}
+
+a:hover {
+color:#212323;
+}
+
+
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+a {outline:none; }
+
+.clear {
+	clear:both;
+	
+}
+
+img { 
+border: none; 
+} 
+
+
+
+
+/*Fixed width columns*/
+
+.full_width {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+.half {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+
+
+.thirds {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 380px;
+}
+
+.quarter {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 285px;
+}
+
+.fifth {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 228px;
+}
+
+
+.eightTen {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:810px;
+}
+
+.sixEighty {
+	
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:680px;
+	
+}
+
+
+.fourSixty {
+	
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:460px;
+	
+}
+
+
+.schedDate {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:436px;
+}
+
+
+.threeThirty {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:330px;
+}
+
+
+.stagesOne_Three {
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+    width:225px;
+	line-height:25px;
+}
+
+.stageFour_Eight {
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    overflow: hidden;
+    width: 220px;
+	line-height:25px;
+}
+
+
+#bandSchedWrap {
+ }
+
+
+
+/* column container */
+.colmask {
+position:relative;	/* This fixes the IE7 overflow hidden bug */
+clear:both;
+float:left;
+width:100%;			/* width of whole page */
+overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colleft,
+.colmid,
+.colright {
+float:left;
+width:100%;
+position:relative;
+}
+.col1,
+.col2,
+.col3 {
+float:left;
+position:relative;
+padding:0 0 1em 0;
+overflow:hidden;
+}
+
+
+
+/* Three column */
+
+
+.threecol {
+}
+.threecol .colmid {
+right:25%;			/* width of the right column */
+/* center column background colour */
+}
+.threecol .colleft {
+right:50%;			/* width of the middle column */
+/* left column background colour */
+}
+.threecol .col1 {
+width:46%;			/* width of center column content (column width minus padding on either side) */
+left:102%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+width:21%;			/* Width of left column content (column width minus padding on either side) */
+left:31%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+width:21%;			/* Width of right column content (column width minus padding on either side) */
+left:85%;			/* Please make note of the brackets here:
+		(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+/* 3 Column blog style settings */
+.blogstyle {
+ /* right column background colour */
+}
+.blogstyle .colmid {
+right:25%;			/* width of the right column */
+	/* center column background colour */
+}
+.blogstyle .colleft {
+right:25%;			/* width of the middle column */
+		/* left column background colour */
+}
+.blogstyle .col1 {
+width:46%;			/* width of center column content (column width minus padding on either side) */
+left:52%;			/* 100% plus left padding of center column */
+}
+.blogstyle .col2 {
+    left: 54%;
+    width: 30%;
+}
+ 
+ .blogstyle .col3 {
+    left: 54%;
+    line-height: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 24%;
+}
+ 
+/* 2 Column (left menu) settings */
+.leftmenu {
+		/* right column background colour */
+}
+.leftmenu .colleft {
+right:75%;			/* right column width */
+/* left column background colour */
+}
+.leftmenu .col1 {
+width:71%;			/* right column content width */
+left:102%;			/* 100% plus left column left padding */
+}
+.leftmenu .col2 {
+width:21%;			/* left column content width (column width minus left and right padding) */
+left:6%;			/* (right column left and right padding) plus (left column left padding) */
+}
+/* 2 Column (right menu) settings */
+.rightmenu {
+		/* right column background colour */
+}
+.rightmenu .colleft {
+right:25%;			/* right column width */
+		/* left column background colour */
+}
+.rightmenu .col1 {
+width:71%;			/* left column content width (left column width minus left and right padding) */
+left:27%;			/* (right column width) plus (left column left padding) */
+}
+.rightmenu .col2 {
+width:21%;			/* right column content width (right column width minus left and right padding) */
+left:31%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+/* 2 Column (double page) settings */
+.doublepage {
+ 		/* right column background colour */
+}
+.doublepage .colleft {
+right:50%;			/* right column width */
+		/* left column background colour */
+}
+.doublepage .col1 {
+width:46%;			/* left column content width (column width minus left and right padding) */
+left:52%;			/* right column width plus left column left padding */
+}
+.doublepage .col2 {
+width:46%;			/* right column content width (column width minus left and right padding) */
+left:56%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+/* Full page settings */
+.fullpage {
+		/* page background colour */
+}
+.fullpage .col1 {
+width:96%;			/* page width minus left and right padding */
+left:2%;			/* page left padding */
+}
+
+
+
+/*Header style*/
+
+#header {
+clear:both;
+float:left;
+width:100%;
+background-color:#000;
+
+}
+
+#header img {
+display: block;
+margin: 60px 0 0;
+}
+
+
+/* Navigation styles */
+
+
+#navbar {
+position:fixed;
+top:0;
+margin:0;
+z-index:9999;
+padding:0;
+border-bottom:2px solid #000;
+width:100%;
+border-top:2px solid #000;
+ background-color:#212323;
+ list-style-type:none;
+
+}
+
+#navbar ul {
+margin:0 auto;
+padding:0;
+list-style:none;
+text-align:center;
+width:1140px; 
+}
+
+
+#navbar li.first {
+    border-left: 2px solid #000000;
+    margin-left: 1px;
+}
+#navbar ul li.last {
+    width:155px;
+}
+
+#navbar li {
+float:left;
+line-height:40px;
+padding:0;
+position:relative;
+ 
+}
+
+#navbar li a {
+    -moz-transition: all 0.3s linear 0s;
+    border-left: 1px solid #333132;
+    border-right: 2px solid #000000;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: 'Maven Pro',sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 15px 13px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navbar li a:hover {
+color:#f15a22;	
+padding-top:15px;
+padding-bottom:10px;
+background-color:#000;
+border-left:1px solid #000;
+border-right:2px solid #000;
+}
+
+
+
+#navbar li ul {
+	left: 0;
+    list-style-type: none;
+    margin:50px 0 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    width: 120px;
+}
+
+
+#navbar li:hover ul { opacity: 1; }
+
+
+
+
+#navbar li ul li {
+float: none; 
+position: static;
+height: 0; 
+line-height: 0; 
+border:none;
+color: #FFFFFF;
+text-align: left;
+text-decoration: none;
+top:0px
+ 
+  }
+
+#navbar li:hover ul li { 
+height:50px; 
+line-height:50px; 
+top:50px;
+border:none;
+
+   
+ }
+
+
+
+#navbar li ul li a {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: 'TradeGothicLTStdCnNo.18', helvetica, arial, sans-serif;
+    font-weight: 100;
+	 background-color:#212323;
+	 border:none;
+
+}
+
+#navbar li ul li a:hover {
+ color: #f15a22;
+ background-color:#212323;
+ border:none;
+
+}
+
+
+#navbar li ul { 
+   -moz-transition: all .5s; 
+-webkit-transition: all .5s; }
+
+
+
+/* styles*/
+
+#main_wrap {
+margin: 0 auto;
+padding: 0;
+position:relative;
+width: 100%;
+z-index: 999;
+background-color:#B4B5BF;
+}
+
+#wrap_one {
+margin: 0 auto;
+overflow: hidden;
+width: 100%;
+padding: 0;
+position:relative;
+
+ }
+
+#wrap_two {
+margin: 0 auto;
+overflow: hidden;
+width: 100%;
+padding: 0;
+position:relative;
+border-bottom:#212323 thin solid;	
+
+}
+
+
+#wrap_three {
+margin: 0 auto;
+overflow: hidden;
+width: 100%;
+padding: 0;
+position:relative;
+border-bottom:#212323 thin solid;	
+
+}
+
+.container_wrap {
+    margin: 0 auto;
+    width: 75%;
+}
+
+/*Homepage Styles*/
+
+
+#social a {
+	text-decoration:none;
+	border:none;
+	outline:none;
+	
+}
+
+
+#social {
+    padding-bottom: 10px;
+    padding-top:10px;
+	margin-top:0px; 
+	float:right; 
+	padding-left:10px; 
+	clear:both;
+}
+
+#social img {
+    margin-left: 8px;
+    margin-right: 5px;
+	width:70px;
+}
+
+
+.flickr a {
+color:#80ECCE;
+ 
+}
+
+.flickr a:link, a:active {
+color:#80ECCE;
+display:inline;
+padding-top:0px;
+padding-bottom:0px;
+ 
+}
+
+.flickr a:hover {
+color:#f15a22;
+}
+
+
+.vid_wrap {
+display:block;
+line-height:0;
+z-index:888;
+}
+
+
+
+#getapass{
+
+}
+
+
+
+
+#getapass img{ 
+width:100%;
+padding-top:35%;
+
+}
+
+#band_info{
+
+}
+
+#band_info img{
+width:100%;
+padding-top:35%;
+
+}
+
+
+.info a {
+text-decoration:none;
+color:#F15A22;
+}
+
+.info a:hover {
+color:#B0D363;
+}
+
+
+
+
+#image_colorCrowd {
+    margin: 0 auto;
+    padding: 14px 0 0 6px;
+    width: 213px;
+}
+
+#vol_img{
+width:100%;
+}
+
+
+#trill_wrap {
+ 	
+}
+
+#trillX {
+	
+	height:99px;
+	width:871px;
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+	line-height:0px;
+	
+}
+
+
+#trill .transp_fill {
+    padding-top: 13px;
+    position: absolute;
+    z-index: 8;
+}
+
+
+#trill {
+	height:268px;
+	width:268px;
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+
+
+#news {
+	height:268px;
+	width:435px;
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+	
+}
+
+
+
+#radio {
+	width:435px;
+	float:right;
+	line-height:0;
+	display: inline-block;
+    overflow: hidden;
+}
+
+#trill .slideshow { height: 268px; width: 268px; margin: auto; }
+#trill .slideshow img { padding: 15px; position:absolute; z-index:4; }
+
+
+
+.transp_fill {
+position:absolute;
+z-index:8; 
+}
+
+
+
+#trill {
+	height:269px;
+	width:269px;
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+
+
+#news {
+	height:269px;
+	width:602px;
+	display: inline-block;
+    float: left;
+    overflow: hidden;
+	
+}
+
+#radio {
+	width:269px;
+	float:right;
+	 display: inline-block;
+     overflow: hidden;
+}
+
+.slideshow { height: 232px; width: 232px; margin: auto; }
+.slideshow img { padding: 15px; position:absolute; z-index:4; }
+
+
+.line_ht_0 {
+line-height:0;
+	
+}
+
+
+
+#subscribe {
+	width:100%;
+	margin:0;
+}
+
+
+.volunteer {
+	font-size:90%;
+}
+
+
+#volunteer {
+ }
+ 
+ 
+.home_bottom {
+	height:327px;
+}
+
+
+#pass {
+	
+}
+
+#contact {
+	
+}
+
+
+.vidTopper {
+	height:40px;
+}
+
+
+.homeTopPassBtn {
+    display: inline-block;
+    float: left;
+    height: 380px;
+    overflow: hidden;
+    width: 460px;
+}
+
+.homeTopVideo {
+    display: block;
+    float: left;
+     overflow: hidden;
+}
+
+
+.homeTopImage {
+    display: inline-block;
+    float: left;
+    height: 380px;
+    overflow: hidden;
+    width: 675px;
+}
+
+
+
+.homeTop3 {
+    display: inline-block;
+    float: left;
+    height: 330px;
+    overflow: hidden;
+    width: 330px;
+}
+
+/* Pass stuff */
+
+
+#passWrap {
+    background: url("/web/20140105221024im_/http://fpsf.com/images/pass/passBack.jpg") no-repeat scroll 100% 100% transparent;
+}
+
+.highRoller {
+height:775px;
+}
+
+.fancyPants {
+	height:515px;
+}
+
+.generalAdmission {
+	height:289px;
+}
+
+.passDetails
+{
+	padding:20px;
+	 
+}
+
+
+
+.passDetails p
+{
+	 
+	font-size:21px;
+	line-height:21px;
+	
+}
+
+.locations {
+	height:115px;
+}
+
+.locationDetails
+{
+	padding:10px 0 0 10px;
+	font-size:17px;
+	letter-spacing:1px;
+	 
+}
+
+.locationDetails img
+{
+ margin:0 auto;
+ width:180px;
+	 
+}
+
+
+.locationExtra {
+    font-size: 20px;
+    line-height: 18px;
+    margin-top:0px;
+	padding-top:0px;
+    width: 90%;
+}
+
+
+/*Lineup styles*/
+
+
+#allBands {
+	font-size:22px;
+	line-height:30px;
+	height:800px;
+	 
+}
+
+#allBandsHead {
+    font-size: 23px;
+    height: 430px;
+    letter-spacing: 1.5px;
+    line-height: 36px;
+    position: relative;
+    z-index: 300;
+}
+
+#allBandsHeadTop {
+    font-size: 43px;
+    height: 400px;
+    letter-spacing: 3px;
+    line-height: 48px;
+    position: relative;
+    z-index: 300;
+}
+
+
+#allBandsNew {
+    font-size: 20px;
+    height: 600px;
+    line-height: 28px;
+	position:relative;
+	z-index:300;
+	letter-spacing:1px;
+}
+
+.inner_bands {
+	padding:20px;
+}
+
+
+
+
+/*Info styles*/
+
+.dateblock img {
+	width:100%;
+	margin:0 auto;
+	
+}
+
+
+
+
+/*Effects*/	
+
+/*Fade image on hover*/	
+
+.fade {
+position: relative;
+top: 0px;
+left:0px;
+width:100%;
+}
+
+.fade div {
+position: absolute;
+top: 0;
+left: 0;
+display: none;
+width:100%;
+}
+
+.fade img {
+
+width:100%;
+display:block;
+}
+
+#twitter, #fb, #vimeo, #youTube {
+	float:left;
+}
+
+
+
+/*Art styles*/
+
+.artBlog {
+	padding:20px;
+	height:500px;
+}
+
+.artGuidelines {
+	padding:20px;
+	height:500px;
+	line-height:20px;
+}
+
+.artGallery {
+ 	height:380px;
+	line-height:0px;
+}
+
+.artGallerySide {
+ 	height:340px;
+	padding:20px;
+}
+
+
+.artGuidelines a {
+text-decoration:none;
+color:#F15A22;
+}
+
+.artGuidelines a:hover {
+color:#B0D363;
+}
+
+
+/*Sponsors*/
+
+#sponsorboxWrap {
+	padding:20px;
+	width:1100px;
+	margin:0 auto;
+	text-align:center;
+	 
+}
+
+.sponsorboxL {
+    display: inline-block;
+     padding: 40px;
+    text-align: center;
+    width: 280px;
+}
+ 
+ .sponsorboxL img {
+	width:100%; 
+ }
+ 
+ 
+.sponsorboxM {
+    display: inline-block;
+    padding: 20px 40px 40px;
+    text-align: center;
+    width: 180px;
+}
+ 
+  .sponsorboxM img {
+	width:100%; 
+ }
+ 
+ 
+
+
+.sponsorbox_ftrMain {
+    display: inline-block;
+   padding: 20px 17px 8px;
+    width: 110px;
+}
+.sponsorbox_ftrMain img {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sponsorbox_ftrMain2 {
+    display: inline-block;
+   padding: 9px 8px 8px;
+    width: 107px;
+}
+.sponsorbox_ftrMain2 img {
+    margin: 0 auto;
+    width: 100%;
+}
+
+ 
+
+/*Volunteers*/
+
+#volunteerResults h1, h2 {
+	margin-top:0px;
+}
+
+#heat a {
+color:#F6FF85;
+ 
+}
+
+#heat a:link, a:active {
+color:#F6FF85;
+display:inline;
+padding-top:0px;
+padding-bottom:0px;
+ 
+}
+
+#heat a:hover {
+color:#80ECCE;
+}
+
+#volKey a {
+color:#fff;
+margin:0;
+padding:0px;
+text-decoration:none;
+transition: all .3s linear;
+   -o-transition: all .3s linear;
+   -moz-transition: all .3s linear;
+   -webkit-transition: all .3s linear;
+
+
+}
+
+#volKey a:link, a:active {
+color:#fff;
+display:inline;
+padding-top:0px;
+padding-bottom:0px;
+ 
+}
+
+#volKey a:hover {
+color:#00BFE0;
+}
+
+#volKey h1, h2, h3 {
+	margin-top:10px;
+	margin-bottom:20px;
+}
+
+
+
+/*
+     FILE ARCHIVED ON 22:10:24 Jan 05, 2014 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:08:17 Jun 28, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.434
+  exclusion.robots: 0.04
+  exclusion.robots.policy: 0.03
+  esindex: 0.008
+  cdx.remote: 9.676
+  LoadShardBlock: 69.859 (3)
+  PetaboxLoader3.datanode: 73.242 (4)
+  PetaboxLoader3.resolve: 78.688 (2)
+  load_resource: 240.545
+*/

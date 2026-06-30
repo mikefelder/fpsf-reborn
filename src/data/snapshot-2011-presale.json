@@ -7,7 +7,12 @@
   "sourceDomain": "freepresssummerfest.com",
   "phase": "presale",
   "title": "Free Press Summer Fest III :: June 4-5, 2011 :: Houston, Texas :: Eleanor Tinsley Park on Buffalo Bayou",
-  "headerImage": "header.png",
+  "description": "Free Press Summer Fest III — Houston's 2011 weekend outdoor music festival at Eleanor Tinsley Park on Buffalo Bayou, June 4-5, 2011.",
+  "header": {
+    "title": "Free Press Summer Fest",
+    "byline": "Saturday-Sunday, June 4th & 5th 2011",
+    "image": "header.png"
+  },
   "nav": [
     { "id": "nav-pass", "label": "GET A PASS", "href": "/2011/pass" },
     { "id": "nav-full_line_up", "label": "LINE UP", "href": "/2011/lineup" },

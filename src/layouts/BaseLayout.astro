@@ -1,0 +1,52 @@
+---
+import PageHead from '@components/PageHead.astro';
+import YearRotationPill from '@components/YearRotationPill.astro';
+import KnownGapsBanner from '@components/KnownGapsBanner.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  favicon?: string;
+  htmlLang?: string;
+  htmlClass?: string;
+  bodyClass?: string;
+  // Year of this page; controls the known-gaps banner.
+  year?: number;
+  knownGaps?: string[];
+  // Used to position this page within the live-snapshots list for
+  // the year-pill prev/next navigation. Should exactly match an entry
+  // in liveSnapshots (e.g. "/2011/presale/").
+  currentHref?: string;
+  // Set false to hide the year-pill on the root landing.
+  showYearPill?: boolean;
+}
+
+const {
+  title,
+  description,
+  favicon,
+  htmlLang = 'en',
+  htmlClass,
+  bodyClass,
+  year,
+  knownGaps = [],
+  currentHref,
+  showYearPill = true,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={htmlLang} class={htmlClass}>
+  <head>
+    <PageHead title={title} description={description} favicon={favicon}>
+      <slot name="head" />
+    </PageHead>
+  </head>
+  <body class={bodyClass}>
+    <slot />
+    {showYearPill && <YearRotationPill currentHref={currentHref} />}
+    {year !== undefined && knownGaps.length > 0 && (
+      <KnownGapsBanner year={year} gaps={knownGaps} />
+    )}
+  </body>
+</html>
+

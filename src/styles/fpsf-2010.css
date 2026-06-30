@@ -1,0 +1,305 @@
+
+body
+{
+background-color:black;
+}
+
+#header {
+	width: 891px;
+	height:272px;
+    position:relative;
+	z-index:1;
+	bottom:-25px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right:15px;
+	
+}
+
+a img {border: none; } 
+
+div.wrapper{
+    width: 848px;
+padding: 6px;
+	margin-left: auto;
+    margin-right: auto;
+	background-image:url(/shared-assets/2010/images/whitecanvas.jpg); background-repeat:repeat;
+	
+	
+}
+
+    #nav {
+	margin: 0;
+	padding:0;
+	padding-top:10px;
+	padding-left:30px;
+	position:relative;
+	z-index:3;
+	
+  
+	}
+   
+   #nav a{
+   color: #000;
+   text-decoration:none;
+   font-family: helvetica, arial, verdana; 
+   font-size:14px;
+   font-stretch: ultra-expanded; 
+   letter-spacing:1px;
+   
+   }
+   
+   #nav li {
+   display:inline;
+   padding:0;
+   margin:0;
+
+  
+   }
+
+   #nav a:hover {
+   color:#FFF;
+   background:#000;
+   }
+
+	
+
+div.my_left_box{
+    float: left;
+	margin-left: 20px; 
+    padding-top: 10px;
+	width: 462px;
+}
+
+div.slidebox{
+	width: 425px;
+	height: 250px;
+	border: 0px;
+	margin-left:15px;
+	padding-top: 30px;
+	
+	}
+
+div.my_right_box{
+    float: right;
+	margin-right:23px;
+	padding-top: 10px;
+    width: 342px;
+ 
+}
+
+div.news{
+    float: left;
+	margin-left: 20px;
+    padding-top:2px;
+    padding-bottom:2px;
+    width: 807px;
+    
+}
+
+div.graybox {
+	background-image:url(/shared-assets/2010/images/home/graybox.png);
+	background-repeat: no-repeat;
+    height: 402px;
+    width: 462px;
+}
+
+div.purplebox {
+	background-image:url(/shared-assets/2010/images/home/purpleboxleft.png);
+	background-repeat: no-repeat;
+    height: 272px;
+    width: 462px;
+	
+}
+
+div.video {
+	width:404px;
+	height:220px;
+	padding-top:15px;
+	padding-left:25px;
+	color:#EDECDA;
+	font-size: 20px;
+}
+
+div.scrollingbox {
+	background-image:url(/shared-assets/2010/images/home/scrollbox.png);
+	background-repeat: no-repeat;
+    height: 173px;
+    width: 807px;
+}
+
+div.scrollingboxover {
+    width: 780px;
+    padding-left:20px;
+	padding-top: 5;
+	overflow:hidden;
+	scrolling:no;
+	
+}
+
+div.tealright {
+	background-image:url(/shared-assets/2010/images/home/tealright.png);
+	background-repeat: no-repeat;
+    height: 524px;
+    width: 339px;
+	text-decoration:none;
+}
+
+div.greenbox {
+	background-image:url(/shared-assets/2010/images/home/greenbox.png);
+	background-repeat: no-repeat;
+    height: 122px;
+    width: 342px;
+}
+
+div.orangeright {
+	background-image:url(/shared-assets/2010/images/home/orangeright.png);
+	background-repeat: no-repeat;
+    height: 150px;
+    width: 339px;
+	
+}
+
+div.greenover_box{
+    padding-right:5px;
+	padding-top: 8px;
+    width: 330px;
+    border: 0px;
+	float: right;
+	color:#FFF; font-family:Helvetica, Century Gothic, Arial, Verdana; font-size:12px; font-variant:small-caps; font-weight:bold;
+	line-height: 20px;
+}
+   
+
+div.pass_box{
+    padding-left:30px;
+	padding-top: 20px;
+    width: 300px;
+    border: 0px;
+	float: right;
+	color: #FFF;
+    font: small-caps 2em helvetica, arial, verdana;
+   
+}
+
+div.subscribe_box{
+	padding-right:5px;
+	padding-top: 20px;
+    width: 320px;
+    border: 0px;
+	float: right;
+	color:#FFF; font-family:Helvetica, Century Gothic, Arial, Verdana; font-size:12px; font-variant:small-caps; font-weight:bold;
+    text-transform:uppercase;
+}
+
+div.subscribetext {
+	line-height:100%;
+	padding-top:8px;
+	padding-bottom:5px;
+	text-transform:none;
+	font-variant: normal;
+
+   } 
+   
+	
+	label{
+	display:block;
+	float:left;
+	width:40px;
+	font-weight:bold;
+}
+	
+.subutton {
+  color: #FFF;
+  width:60px;
+  height:17px;
+  background-color:#12777D;
+  font-weight: bold;
+  font-size:12px;
+  font-family:Helvetica, Arial, Verdana;
+  border:#069 thin;  
+ 
+}
+.subutton:hover {
+  color: #FFF;
+  background: #666;
+}
+
+input {
+background-color: #FFF;
+color: #306;
+height:13px;
+width:200px;
+font-family:Helvetica, Arial, Verdana;
+font-weight: bold;
+font-size: 8pt;
+border:#000 1px solid;
+letter-spacing: 1px;
+}
+
+div.my_footer{
+    clear:both;
+	margin-left: 19px;
+    padding-top: 1px;
+	padding-bottom:5px;
+    width: 807px;
+    border: 0px;
+}
+
+div.footerboxleft{
+    float: left;
+	background-image:url(/shared-assets/2010/images/home/bottomleftclipped.png); background-repeat:no-repeat;
+	margin-left:2px;
+    padding-bottom:1px;
+	width: 403px;
+	height:119px;
+}
+
+div.twitter_box{
+    padding-left:15px;
+	padding-top: 26px;
+    width: 370px;
+	height:85px;
+    border: 0px;
+	float: left;
+	
+   
+}
+
+div.head{
+  margin-left: 20px;
+  padding-left: 0px;
+
+  }
+
+
+/* ===== Fallback color scheme for missing background images =====
+   The original site relied on uncaptured background images for the colored
+   boxes. These fallbacks keep the layout readable until CDX recovery brings
+   the imagery back. */
+body { background-color: #000; color: #EDECDA; }
+div.wrapper { background-color: #fff; }
+div.graybox { background-color: #d6d4cc; }
+div.purplebox { background-color: #623E91; color: #EDECDA; }
+div.scrollingbox { background-color: #2a2a2a; color: #fff; padding: 8px 12px; }
+div.tealright { background-color: #5fb6b6; min-height: 60px; }
+div.orangeright { background-color: #ff8c1a; min-height: 120px; padding: 12px; }
+div.subscribe_box { color: #000; font-size: 14px; }
+.fpsf-2010-page-header {
+  background: #111;
+  color: #EDECDA;
+  text-align: center;
+  padding: 18px 0;
+}
+.fpsf-2010-page-header h1 {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.2em;
+  letter-spacing: 0.04em;
+}
+.fpsf-2010-page-header .byline {
+  color: #b6b3a3;
+  font-size: 1em;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}

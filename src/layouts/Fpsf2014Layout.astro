@@ -1,133 +1,163 @@
 ---
-import snapshot from '@data/snapshot-2014.json';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import type { Snapshot } from '@/types/snapshot';
+import { canonicalHref } from '@data/show-years';
 
 export interface Props {
+  snapshot: Snapshot;
   title?: string;
   description?: string;
   bodyClass?: string;
+  // The href of the current page within the live-snapshots list,
+  // used for year-pill prev/next navigation.
+  currentHref?: string;
 }
 
-const { title = snapshot.title, description = snapshot.description, bodyClass = 'index' } = Astro.props;
-const assetBase = '/shared-assets/2014';
----
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+const {
+  snapshot,
+  title,
+  description,
+  bodyClass = 'index',
+  currentHref,
+} = Astro.props;
 
+const data = snapshot;
+const pageTitle = title ?? data.title;
+const pageDescription = description ?? data.description;
+const assetBase = '/shared-assets/2014';
+const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  htmlClass="no-js"
+  bodyClass={bodyClass}
+  year={data.year}
+  knownGaps={data.knownGaps}
+  currentHref={currentHref}
+>
+  <Fragment slot="head">
     <link rel="stylesheet" href={`${assetBase}/video/css/fpsfMusicVid.css`} type="text/css" media="screen" />
     <link rel="stylesheet" href={`${assetBase}/assets/css/reset.css`} />
     <link rel="stylesheet" href={`${assetBase}/assets/css/ie.css`} />
     <link rel="stylesheet" href={`${assetBase}/assets/css/normalize.css`} />
     <link rel="stylesheet" href={`${assetBase}/assets/css/main.css`} />
     <link rel="stylesheet" href={`${assetBase}/assets/webfonts/ss-symbolicons-line.css`} />
-
     <script src={`${assetBase}/assets/js/modernizr.js`} is:inline></script>
-  </head>
-  <body class={bodyClass}>
-    <div id="container">
-      <header>
-        <div class="header_slide">
-          <div id="header">
-            <div id="ratio">
-              <div class="page_hed">
-                <h1><span class="escape">{snapshot.header.title}</span></h1>
-                <p class="escape">{snapshot.header.byline}</p>
-                <img src={`${assetBase}/${snapshot.header.image}`} alt={snapshot.header.title} />
-              </div>
+  </Fragment>
+
+  <div id="container">
+    <header>
+      <div class="header_slide">
+        <div id="header">
+          <div id="ratio">
+            <div class="page_hed">
+              <h1><span class="escape">{data.header.title}</span></h1>
+              <p class="escape">{data.header.byline}</p>
+              {data.header.image && (
+                <img src={`${assetBase}/${data.header.image}`} alt={data.header.title ?? data.edition} />
+              )}
             </div>
           </div>
+        </div>
 
-          <div id="navigation">
-            <ul class="nav main">
-              {snapshot.primaryNav.map((item) => (
-                <li class={item.className}>
-                  <a href={item.href} title={`Visit ${item.label}`}>{item.label}</a>
-                  <a class="nav_toggle" title="There's more menu under here.">
-                    <i class="ss-navigatedown"></i>
-                  </a>
-                  <ul class="subnav">
-                    {item.subnav.map((sub) => (
-                      <li><a href={sub.href}>{sub.label}</a></li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+        <div id="navigation">
+          <ul class="nav main">
+            {data.nav.map((item) => (
+              <li class={item.className}>
+                <a href={item.href} title={`Visit ${item.label}`}>{item.label}</a>
+                {item.subnav && item.subnav.length > 0 && (
+                  <>
+                    <a class="nav_toggle" title="There's more menu under here.">
+                      <i class="ss-navigatedown"></i>
+                    </a>
+                    <ul class="subnav">
+                      {item.subnav.map((sub) => (
+                        <li><a href={sub.href}>{sub.label}</a></li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
 
+          {data.secondaryNav && data.secondaryNav.length > 0 && (
             <ul class="nav secondary">
-              {snapshot.secondaryNav.map((item) => (
+              {data.secondaryNav.map((item) => (
                 <li>
                   <a class={item.className} href={item.href} title={item.label}>{item.label}</a>
                 </li>
               ))}
             </ul>
-          </div>
+          )}
         </div>
+      </div>
 
-        <a class="home" href="/2014/" title="Return to home"></a>
-      </header>
+      <a class="home" href={homeHref} title="Return to home"></a>
+    </header>
 
-      <slot />
+    <slot />
 
-      <section id="sponsor_runner">
-        <div class="content">
-          <div class="hed_minor">
-            <h3 class="roman">Sponsors</h3>
-          </div>
-          <ul class="sponsor_premier group" style="border-bottom:1px solid #f6f5f1">
-            {snapshot.sponsors.map((sponsor) => (
-              <li>
-                <a href={sponsor.href} target="_blank" rel="noopener noreferrer">
-                  <img src={`${assetBase}/${sponsor.image}`} alt={sponsor.name} />
-                </a>
-              </li>
-            ))}
-          </ul>
+    <section id="sponsor_runner">
+      <div class="content">
+        <div class="hed_minor">
+          <h3 class="roman">Sponsors</h3>
         </div>
-      </section>
-
-      <footer>
-        <div class="footer_slide">
-          {snapshot.footerMap.map((column) => (
-            <div class="map_main">
-              <h4><a class={column.className} href={column.href}>{column.heading}</a></h4>
-              <ul>
-                {column.items.map((link) => (
-                  <li><a href={link.href}>{link.label}</a></li>
-                ))}
-              </ul>
-            </div>
+        <ul class="sponsor_premier group" style="border-bottom:1px solid #f6f5f1">
+          {data.sponsors.map((sponsor) => (
+            <li>
+              <a href={sponsor.href} target="_blank" rel="noopener noreferrer">
+                {sponsor.image
+                  ? <img
+                      src={`${assetBase}/${sponsor.image}`}
+                      alt={sponsor.name}
+                      onerror="this.outerHTML=`<span class='sponsor-fallback'>${this.alt}</span>`"
+                    />
+                  : <span class="sponsor-fallback">{sponsor.name}</span>}
+              </a>
+            </li>
           ))}
+        </ul>
+      </div>
+    </section>
 
-          <div id="signup" class="map_second">
-            <h4><a class="social">Keep in touch</a></h4>
-            <div class="social_services group">
-              <ul>
-                {snapshot.social.map((link) => (
-                  <li>
-                    <a
-                      class={`ss-icon ss-social-circle ${link.className}`}
-                      title={link.title}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <footer>
+      <div class="footer_slide">
+        {data.footerMap?.map((column) => (
+          <div class="map_main">
+            <h4><a class={column.className} href={column.href}>{column.heading}</a></h4>
+            <ul>
+              {column.items.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
           </div>
+        ))}
 
-          <p class="legal">{snapshot.footerLegal}</p>
+        <div id="signup" class="map_second">
+          <h4><a class="social">Keep in touch</a></h4>
+          <div class="social_services group">
+            <ul>
+              {data.social.map((link) => (
+                <li>
+                  <a
+                    class={`ss-icon ss-social-circle ${link.className}`}
+                    title={link.title}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </footer>
-    </div>
-  </body>
-</html>
+
+        {data.footerLegal && <p class="legal">{data.footerLegal}</p>}
+      </div>
+    </footer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,98 @@
+---
+import { findSnapshot, adjacentSnapshots } from '@data/show-years';
+
+export interface Props {
+  // The href of the current page (e.g. "/2011/presale/").
+  // Used to determine prev/next from the flat live-snapshots list.
+  currentHref?: string;
+}
+
+const { currentHref } = Astro.props;
+const current = currentHref ? findSnapshot(currentHref) : undefined;
+const { prev, next } = currentHref ? adjacentSnapshots(currentHref) : {};
+
+function pillLabel(entry: { year: number; label: string }): string {
+  return entry.label === 'Main' || entry.label === 'Event'
+    ? `FPSF ${entry.year}`
+    : `${entry.year} ${entry.label}`;
+}
+---
+<aside class="fpsf-year-pill" aria-label="FPSF snapshot navigation">
+  {prev && (
+    <a
+      class="fpsf-year-pill__nav fpsf-year-pill__nav--prev"
+      href={prev.href}
+      title={`${prev.year} — ${prev.edition} (${prev.label})`}
+    >
+      &larr; {pillLabel(prev)}
+    </a>
+  )}
+  <a class="fpsf-year-pill__home" href="/" title="All FPSF snapshots">
+    {current ? pillLabel(current) : 'FPSF Reborn'}
+  </a>
+  {next && (
+    <a
+      class="fpsf-year-pill__nav fpsf-year-pill__nav--next"
+      href={next.href}
+      title={`${next.year} — ${next.edition} (${next.label})`}
+    >
+      {pillLabel(next)} &rarr;
+    </a>
+  )}
+</aside>
+
+<style is:global>
+  .fpsf-year-pill {
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: stretch;
+    background: rgba(20, 20, 20, 0.85);
+    color: #fff;
+    border-radius: 999px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .fpsf-year-pill a {
+    color: #fff !important;
+    text-decoration: none;
+    padding: 8px 14px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  .fpsf-year-pill__nav {
+    opacity: 0.7;
+  }
+
+  .fpsf-year-pill__nav:hover,
+  .fpsf-year-pill__home:hover {
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 1;
+  }
+
+  .fpsf-year-pill__home {
+    font-weight: 600;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .fpsf-year-pill__nav--prev {
+    border-radius: 999px 0 0 999px;
+  }
+
+  .fpsf-year-pill__nav--next {
+    border-radius: 0 999px 999px 0;
+  }
+
+  @media print {
+    .fpsf-year-pill { display: none; }
+  }
+</style>

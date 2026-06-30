@@ -1,0 +1,97 @@
+{
+  "year": 2011,
+  "edition": "Free Press Summer Fest III",
+  "dates": "Saturday-Sunday, June 4th & 5th 2011, 11AM-10PM",
+  "location": "Eleanor Tinsley Park on Buffalo Bayou, Just West of Downtown, Houston, Texas",
+  "sourceSnapshot": "20110605020053",
+  "sourceDomain": "freepresssummerfest.com",
+  "phase": "event",
+  "title": "Free Press Summer Fest III :: June 4-5, 2011 :: Houston, Texas :: Eleanor Tinsley Park on Buffalo Bayou",
+  "description": "Free Press Summer Fest III — Houston's 2011 weekend outdoor music festival at Eleanor Tinsley Park on Buffalo Bayou. 100+ national and local acts on June 4-5, 2011, headlined by Weezer.",
+  "header": {
+    "title": "Free Press Summer Fest",
+    "byline": "June 4-5 2011",
+    "image": "logo_text.png",
+    "mascotImage": "bunny_face_left.png"
+  },
+  "nav": [
+    { "id": "nav-pass", "label": "GET A PASS", "href": "/2011/pass" },
+    { "id": "nav-full_line_up", "label": "LINE UP", "href": "/2011/lineup" },
+    { "id": "nav-info", "label": "INFO", "href": "/2011/info" },
+    { "id": "nav-map", "label": "FAQ", "href": "/2011/faq" },
+    { "id": "nav-partners", "label": "SPONSORS", "href": "/2011/sponsors" },
+    { "id": "nav-vendors", "label": "VENDORS", "href": "/2011/vendors" },
+    { "id": "nav-fpsf2009", "label": "PRESS", "href": "/2011/press" },
+    { "id": "nav-contact", "label": "CONTACT", "href": "/2011/contact" }
+  ],
+  "intro": {
+    "headline": "FREE PRESS SUMMER FEST",
+    "subhead": "JUNE 4TH & 5TH 2011 — SATURDAY-SUNDAY, 11AM-10PM",
+    "tagline": "AT ELEANOR TINSLEY PARK ON BUFFALO BAYOU, JUST WEST OF DOWNTOWN",
+    "paragraphs": [
+      "PASSES STILL ON SALE ONLINE AND AVAILABLE AT THE BOX OFFICE THE DAYS OF THE FEST."
+    ]
+  },
+  "ctas": {
+    "highRollerUrl": "http://www.stubwire.com/event/freepresssummerfest2011pass/eleanortinsleypark/houston/1058/",
+    "highRollerCopy": "SINGLE HIGH ROLLER PASSES W/ SIDE STAGE VIEWING AREA AT THE MAIN STAGE, PLUS FOOD AND DRINKS INCLUDED ALL FOR THE PRICE OF $225. CLICK HERE TO GET ONE NOW. ONLY 20 AVAILABLE.",
+    "cabanaImage": "smallcabana.jpg",
+    "cabanaHref": "/2011/pass#footer1",
+    "passUrl": "/2011/pass",
+    "passImage": "buypass_btn_a.jpg",
+    "passImageHover": "buypass_btn_b.jpg",
+    "hotelUrl": "https://resweb.passkey.com/Resweb.do?mode=welcome_gi_new&groupID=3272487",
+    "hotelImage": "hotel_button_a.gif",
+    "hotelImageHover": "hotel_button_b.gif",
+    "shirtUrl": "http://www.stubwire.com/event/freepresssummerfest2011/eleanortinsleypark/houston/1055/",
+    "shirtImage": "shirtbtn.jpg",
+    "shirtImageHover": "shirtbtn2.jpg"
+  },
+  "headliner": {
+    "name": "WEEZER",
+    "lineupHref": "/2011/lineup",
+    "tagline": "CHECK OUT THE ENTIRE 2011 LINE UP FEATURING 100+ OF THE BEST NATIONAL AND LOCAL ACTS"
+  },
+  "vimeo": {
+    "id": "20397258",
+    "title": "FPSF 2010 / Promo recap"
+  },
+  "tumblr": {
+    "blogUrl": "http://fpsf.tumblr.com/",
+    "label": "NEWS — From Tumblr Feed"
+  },
+  "subscribe": {
+    "actionUrl": "http://ymlp.com/subscribe.php?id=geqhemugmgh",
+    "fields": [
+      { "name": "YMP0", "label": "*E-mail", "required": true },
+      { "name": "YMP1", "label": "*Name", "required": true },
+      { "name": "YMP2", "label": "Phone", "required": false }
+    ],
+    "submitImage": "done.png",
+    "background": "#623E91"
+  },
+  "sponsors": [
+    { "name": "Dos Equis", "href": "http://www.dosequis.com" },
+    { "name": "Urban Outfitters", "href": "http://urbanoutfitters.com" },
+    { "name": "Red Bull", "href": "http://RedBull.com" },
+    { "name": "Ikea", "href": "http://Ikea.com" },
+    { "name": "29-95", "href": "http://29-95.com" }
+  ],
+  "sponsorBarImage": "sponsorbar.png",
+  "social": [
+    { "label": "Facebook", "href": "http://www.facebook.com/freepresssummerfest" },
+    { "label": "Twitter", "href": "http://twitter.com/fpsummerfest" },
+    { "label": "Vimeo", "href": "http://vimeo.com/user2385997" },
+    { "label": "YouTube", "href": "http://www.youtube.com/results?search_query=free+press+summer+fest" },
+    { "label": "FreePressHouston.com", "href": "http://www.FreePressHouston.com" },
+    { "label": "Pegstar", "href": "http://www.jagi.cc/" }
+  ],
+  "twitterFeedUrl": "feed.php",
+  "knownGaps": [
+    "Fade-frame slideshow image array is in inline JS in the canonical capture; mainslide images were not separately archived, so the slideshow renders empty until those URLs land via closest-CDX.",
+    "Custom Klavika font family referenced by the original CSS is non-redistributable; layout falls back to Helvetica/Tahoma stack.",
+    "Facebook fan-box, StatCounter, and live Tumblr feed are deprecated external widgets; replaced by static links.",
+    "Hover-state images for pass/hotel/shirt buttons exist in shared-assets but the original rollover behavior used jsAnim; current implementation renders the static state only.",
+    "Sub-pages (pass, lineup, info, faq, sponsors, vendors, press, contact) are not yet rebuilt; nav links are stubs."
+  ]
+}

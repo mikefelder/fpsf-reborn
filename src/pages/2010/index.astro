@@ -1,0 +1,89 @@
+---
+import Fpsf2010Layout from '@layouts/Fpsf2010Layout.astro';
+import snapshot from '@data/snapshot-2010-main.json';
+---
+<Fpsf2010Layout snapshot={snapshot} currentHref="/2010/">
+  <div class="my_left_box">
+    <a href="/2010/pass">
+      <div class="graybox">
+        <div class="slidebox" style="padding-top:30px;text-align:center;color:#444">
+          <div style="display:inline-block;width:425px;height:250px;background:#888 url(/shared-assets/2010/images/BLIND.png) center/contain no-repeat">
+            <span style="display:inline-block;margin-top:110px;font-family:Helvetica,Arial,sans-serif;color:#fff;background:rgba(0,0,0,0.4);padding:6px 12px;font-size:13px;letter-spacing:0.08em">FPSFImages slideshow — content not archived</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="purplebox">
+      <div class="video">
+        <iframe
+          width="404"
+          height="220"
+          src={`https://www.youtube-nocookie.com/embed/${snapshot.vimeo.id}?rel=0`}
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope"
+          allowfullscreen
+          title={snapshot.vimeo.title}
+        ></iframe>
+        <a>{snapshot.vimeo.title}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="my_right_box">
+    <a href="/2010/lineup">
+      <div class="tealright"></div>
+    </a>
+
+    <div class="orangeright">
+      <div class="subscribe_box">
+        SIGN UP FOR THE LATEST NEWS via email &amp; SMS
+        <br /><br />
+        <form method="post" action={snapshot.subscribe.actionUrl}>
+          <div class="subscribetext">
+            {snapshot.subscribe.fields.map((field) => (
+              <>
+                <label for={field.name}>{field.label}</label>
+                <input type="text" id={field.name} name={field.name} required={field.required} />
+                <br /><br />
+              </>
+            ))}
+            <button class="subutton" type="submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="news">
+    <div class="scrollingbox">
+      <div class="scrollingboxover" style="padding:14px 18px">
+        <strong style="text-transform:uppercase;letter-spacing:0.1em">News</strong>
+        <p style="margin:6px 0 0;font-size:14px;line-height:1.4;color:#ccc">
+          The original site embedded a scrolling news ticker via <code>news.html</code> iframe. That capture is not archived; visit the social links below for period news.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="my_footer">
+    <div class="footerboxleft">
+      <div class="twitter_box" style="background:#fff;color:#000;padding:10px 14px;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.4">
+        <strong>@free_press</strong> — Twitter feed iframe not archived. <a href="http://twitter.com/free_press" target="_blank" rel="noopener noreferrer">Visit on Twitter</a>.
+      </div>
+    </div>
+
+    <div class="footerboxcenter" style="background:#234e8a;color:#fff;padding:14px 18px;font-family:Helvetica,Arial,sans-serif;font-size:13px">
+      <strong style="display:block;margin-bottom:6px;letter-spacing:0.08em">FOLLOW THE FEST</strong>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px">
+        {snapshot.social.map((link) => (
+          <li>
+            <a href={link.href} target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Fpsf2010Layout>

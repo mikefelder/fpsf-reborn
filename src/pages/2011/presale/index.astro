@@ -1,33 +1,36 @@
 ---
-import '@styles/fpsf-2011-main.css';
 import Fpsf2011Layout from '@layouts/Fpsf2011Layout.astro';
-import snapshot from '@data/snapshot-2011-main.json';
+import snapshot from '@data/snapshot-2011-presale.json';
 
-const assetBase = '/shared-assets/2011/images';
+const slideCount = snapshot.slideshow.images.length;
+const slideDelayMs = snapshot.slideshow.intervalMs;
+const totalDurationMs = slideDelayMs * slideCount;
 ---
-<Fpsf2011Layout
-  snapshot={snapshot}
-  title={snapshot.title}
-  bodyClass="state-main"
-  currentHref="/2011/"
->
+<Fpsf2011Layout snapshot={snapshot} title={snapshot.title} currentHref="/2011/presale/">
   <div class="colmask threecol">
     <div class="colmid">
       <div class="colleft">
         <div class="col1">
-          <div style="padding:0 14px">
-            <div id="fade_frame">
-              <div id="fadeshow1" aria-label="FPSF 2011 hero slideshow placeholder"></div>
+          <div style="padding:0px 20px 0px 20px">
+            <div id="fadeshow1" aria-label="FPSF 2011 hero slideshow">
+              {snapshot.slideshow.images.map((image, index) => (
+                <div
+                  class="slide placeholder"
+                  style={`animation-duration:${totalDurationMs}ms;animation-delay:${index * slideDelayMs}ms;background-image:url('/shared-assets/2011/images/mainslide/${image}')`}
+                >
+                  {image}
+                </div>
+              ))}
             </div>
 
             <div class="fontface_K" style="padding-top:20px">
-              <div style="color:#000000;font-size:2.4em;line-height:1.1;letter-spacing:-1px">
+              <div style="color:#000000;font-size:2.6em;line-height:1.1">
                 {snapshot.intro.headline}
               </div>
-              <div style="color:#999;font-size:1.8em;line-height:1.2">
+              <div style="color:#999;font-size:2em;line-height:1.2">
                 {snapshot.intro.subhead}
               </div>
-              <div style="color:#333;font-size:1.2em">
+              <div style="color:#333;font-size:1.4em">
                 {snapshot.intro.tagline}
               </div>
             </div>
@@ -35,72 +38,49 @@ const assetBase = '/shared-assets/2011/images';
             <div id="break_small"></div>
 
             {snapshot.intro.paragraphs.map((paragraph) => (
-              <p class="hero-callout">{paragraph}</p>
+              <p style="font-size:1.2em;line-height:1.5">{paragraph}</p>
             ))}
-
-            <div class="high-roller">
-              <a href={snapshot.ctas.highRollerUrl} target="_blank" rel="noopener noreferrer">
-                <p>{snapshot.ctas.highRollerCopy}</p>
-              </a>
-              <a href={snapshot.ctas.cabanaHref}>
-                <img
-                  src={`${assetBase}/${snapshot.ctas.cabanaImage}`}
-                  alt="Cabana pass detail"
-                  style="width:100%; max-width:400px; border:0"
-                  onerror="this.style.display='none'"
-                />
-              </a>
-            </div>
           </div>
         </div>
 
         <div class="col2" style="text-align:center">
-          <a id="side_local" href={snapshot.headliner.lineupHref} title="Line Up">
-            <font size="+3">{snapshot.headliner.name}</font>
+          <a href={snapshot.ctas.passUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={`/shared-assets/2011/images/${snapshot.ctas.passImage}`}
+              alt="Get a blind pass"
+              style="width:100%"
+            />
           </a>
-          <div id="local_text">
-            <a href={snapshot.headliner.lineupHref}>{snapshot.headliner.tagline}</a>
+          <div id="break"></div>
+
+          <a href={snapshot.ctas.sonicbidsUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={`/shared-assets/2011/images/${snapshot.ctas.sonicbidsImage}`}
+              alt="Sonicbids — local band submissions"
+              style="width:70%"
+            />
+          </a>
+          <div id="break"></div>
+
+          <div style="color:#333;font-size:2em" class="fontface_K">
+            {snapshot.ctas.lineupTeaser}
           </div>
-
-          <div id="break"></div>
-
-          <a href={snapshot.ctas.passUrl}>
-            <img
-              src={`${assetBase}/${snapshot.ctas.passImage}`}
-              alt="Get a pass"
-              style="width:100%; border:0"
-            />
-          </a>
-
-          <div id="break"></div>
-
-          <a href={snapshot.ctas.hotelUrl} target="_blank" rel="noopener noreferrer">
-            <img
-              src={`${assetBase}/${snapshot.ctas.hotelImage}`}
-              alt="Hotel booking via Passkey"
-              style="width:100%; border:0"
-            />
-          </a>
         </div>
 
         <div class="col3">
-          <a href={snapshot.ctas.shirtUrl} target="_blank" rel="noopener noreferrer">
+          <a href={snapshot.ctas.passUrl} target="_blank" rel="noopener noreferrer">
             <img
-              src={`${assetBase}/${snapshot.ctas.shirtImage}`}
-              alt="FPSF merch"
-              style="width:100%; border:0"
+              src={`/shared-assets/2011/images/${snapshot.ctas.passRightImage}`}
+              alt="Get a pass"
+              style="width:100%"
             />
           </a>
-
           <div id="break"></div>
-
-          <div class="news-label">
-            <a href={snapshot.tumblr.blogUrl} target="_blank" rel="noopener noreferrer">NEWS</a>
-          </div>
-          <div class="news-source">From Tumblr Feed</div>
-          <p style="font-size:1.1em">
-            Visit the <a href={snapshot.tumblr.blogUrl} target="_blank" rel="noopener noreferrer">FPSF Tumblr</a> for archived news posts.
-          </p>
+          <img
+            src={`/shared-assets/2011/images/${snapshot.ctas.photographerCredit}`}
+            alt="Photographer credit"
+            style="width:100%"
+          />
         </div>
       </div>
     </div>
@@ -121,7 +101,7 @@ const assetBase = '/shared-assets/2011/images';
             ></iframe>
           </div>
 
-          <div id="box" style="padding:10px; padding-bottom:5px; background-color:#a1cdb2; margin:0; margin-left:10px; height:295px; width:240px">
+          <div id="box" style="padding:10px; padding-bottom:5px; background-color:#FF0; margin:0; margin-left:10px; height:295px; width:240px">
             <h3 class="fontface_K" style="margin:0; letter-spacing:2px; font-size:1.6em">FOLLOW THE FEST</h3>
             <ul style="list-style:none; padding:0; margin-top:10px; font-size:1.3em; line-height:1.7">
               {snapshot.social.map((link) => (
@@ -136,14 +116,10 @@ const assetBase = '/shared-assets/2011/images';
 
           <div id="box" style="margin:0; margin-left:10px">
             <div id="twitter_box">
-              <div style="font-size:18px; color:#000; padding:8px; letter-spacing:1px">FROM TWITTER</div>
+              <br />
+              <div style="font-size:18px; color:#000; padding:5px; margin-left: 8px">FROM TWITTER</div>
               <p style="padding:8px 12px; font-size:1.1em; line-height:1.4; margin:0">
-                <a
-                  href={snapshot.social.find((link) => link.label === 'Twitter')?.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style="color:#000"
-                >@fpsummerfest</a>
+                <a href={snapshot.social.find((link) => link.label === 'Twitter')?.href} target="_blank" rel="noopener noreferrer" style="color:#000">@fpsummerfest</a>
               </p>
             </div>
           </div>
@@ -167,7 +143,12 @@ const assetBase = '/shared-assets/2011/images';
                           {field.label}:
                         </td>
                         <td style="vertical-align:top">
-                          <input type="text" name={field.name} size="18" required={field.required} />
+                          <input
+                            type="text"
+                            name={field.name}
+                            size="18"
+                            required={field.required}
+                          />
                         </td>
                       </tr>
                     ))}
@@ -175,7 +156,7 @@ const assetBase = '/shared-assets/2011/images';
                       <td colspan="2" style="padding-top:6px">
                         <input
                           type="image"
-                          src={`${assetBase}/${snapshot.subscribe.submitImage}`}
+                          src={`/shared-assets/2011/images/${snapshot.subscribe.submitImage}`}
                           alt="Subscribe"
                         />
                       </td>
@@ -195,15 +176,15 @@ const assetBase = '/shared-assets/2011/images';
       <div id="box" style="width:100%; padding:0 10px 10px 0; margin-top:0">
         <div class="footerboxleft">
           <img
-            src={`${assetBase}/${snapshot.sponsorBarImage}`}
+            src={`/shared-assets/2011/images/${snapshot.sponsorBarImage}`}
             alt="FPSF 2011 sponsors"
-            style="display:block; max-width:100%"
+            style="display:block"
           />
           <ul style="display:flex; gap:14px; list-style:none; padding:6px 0 0; margin:0; font-size:1.1em">
             {snapshot.sponsors.map((sponsor) => (
               <li>
                 <a href={sponsor.href} target="_blank" rel="noopener noreferrer" style="color:#333">
-                  {sponsor.name}
+                  {sponsor.label}
                 </a>
               </li>
             ))}

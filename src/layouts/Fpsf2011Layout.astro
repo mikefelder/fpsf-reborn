@@ -1,54 +1,88 @@
 ---
 import '@styles/fpsf-2011.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import type { Snapshot } from '@/types/snapshot';
+import { canonicalHref } from '@data/show-years';
 
 export interface Props {
-  title: string;
+  snapshot: Snapshot;
+  title?: string;
+  description?: string;
   bodyClass?: string;
   activeNavId?: string;
+  // The href of the current page within the live-snapshots list,
+  // used for year-pill prev/next navigation.
+  currentHref?: string;
 }
 
-const { title, bodyClass, activeNavId } = Astro.props;
-import snapshot from '@data/snapshot-2011.json';
+const {
+  snapshot,
+  title,
+  description,
+  bodyClass,
+  activeNavId,
+  currentHref,
+} = Astro.props;
+
+const data = snapshot;
+const pageTitle = title ?? data.title;
+const pageDescription = description ?? data.description;
+const imageBase = '/shared-assets/2011/images';
+const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=1024" />
-    <title>{title}</title>
-    <link rel="icon" href="/shared-assets/2011/images/header.png" />
-  </head>
-  <body class={bodyClass}>
-    <a href="/2011/">
-      <div id="header" style="text-align:center">
-        <img src="/shared-assets/2011/images/header.png" alt={snapshot.edition} />
-      </div>
-    </a>
-
-    <div id="navcenter" style="text-align:left">
-      <div id="nav" class="fontface_K">
-        <ul id="nav">
-          {snapshot.nav.map((item) => (
-            <li id={item.id}>
-              <a
-                href={item.href}
-                class={activeNavId === item.id ? 'active' : ''}
-              >{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div id="nav_break_bottom"></div>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  favicon={data.header.image ? `${imageBase}/${data.header.image}` : undefined}
+  bodyClass={bodyClass}
+  year={data.year}
+  knownGaps={data.knownGaps}
+  currentHref={currentHref}
+>
+  <a href={homeHref}>
+    <div id="header" style={data.header.mascotImage ? '' : 'text-align:center'}>
+      {data.header.mascotImage && (
+        <img
+          src={`${imageBase}/${data.header.mascotImage}`}
+          id="bunny"
+          alt=""
+          style="float:left"
+        />
+      )}
+      {data.header.image && (
+        <img
+          src={`${imageBase}/${data.header.image}`}
+          id={data.header.mascotImage ? 'logo_text' : undefined}
+          alt={data.edition}
+          style={data.header.mascotImage ? 'float:right' : undefined}
+        />
+      )}
     </div>
+  </a>
 
-    <div id="main_wrap">
-      <div id="page_wrap">
-        <div class="container">
-          <slot />
-        </div>
-      </div>
-      <div id="footer_bottom"></div>
+  <div id="navcenter" style="text-align:left">
+    <div id="nav" class="fontface_K">
+      <ul id="nav">
+        {data.nav.map((item) => (
+          <li id={item.id}>
+            <a
+              href={item.href}
+              class={activeNavId && activeNavId === item.id ? 'active' : ''}
+            >{item.label}</a>
+          </li>
+        ))}
+      </ul>
     </div>
-  </body>
-</html>
+    <div id="nav_break_bottom"></div>
+  </div>
+
+  <div id="main_wrap">
+    <div id="page_wrap">
+      <div class="container">
+        <slot />
+      </div>
+    </div>
+    <div id="footer_bottom"></div>
+  </div>
+</BaseLayout>
+

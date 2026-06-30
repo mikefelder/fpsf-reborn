@@ -1,0 +1,300 @@
+body {height:100%;width:100%;margin:0px; font-family: Myriad, Verdana, Helvetica, Arial, Tahoma, sans-serif; color:#636361; font-size:62.5%;}
+
+
+#header {
+	
+    position:relative;
+	margin-right: auto;
+	margin-left: auto;
+	clear:both;
+	width:960px;
+	height:270px;
+	top:30px;
+}
+
+a img {border: none; outline:none; } 
+
+a { text-decoration:none; color:#699; outline:0; }
+a:hover { text-decoration:none; color:#699; outline:0; }
+
+div.fadehover {
+	position: relative;
+	}
+ 
+img.a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+        }
+ 
+img.b {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+
+/*NAVIGATION*/
+
+#navcenter {
+	margin:auto;
+	width:960px;
+	margin-top:-2px;
+  }
+
+    #nav {
+	margin: auto;
+	padding:0;
+	padding-top:10px;
+	position:relative;
+	z-index:11;
+	
+
+		 
+	}
+   
+   #nav a{
+   text-decoration:none;
+   font-size:18px;
+   white-space: nowrap;
+   margin-left: 0;
+padding-left: 0;
+  padding: 3px 10px 0px 10px;
+  margin: 0 0 0 0;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+	font-family:'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+   
+   }
+   
+   #nav li {
+   display:inline;
+   margin:0;
+ 
+   }
+
+ #nav li a.active{
+  background-color:#666;
+  color:#FFF;
+ 
+   }
+
+
+ #nav a:link
+{
+color: #fff;
+background-color: #000;
+text-decoration: none;
+}
+
+#nav a:visited
+{
+color:#FFF;
+   background-color:#000;
+
+}
+
+#nav a:hover
+{
+color: #9FC;
+background-color: #000;
+text-decoration: none;
+}
+
+
+
+#nav_break_bottom {
+	margin-top:-3px;
+	width:100%;
+	height:10px;
+	background-color:#000;
+	border-top:none;
+	border:#000 thin solid;
+	
+}
+
+
+
+/* column container */
+
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+	background-color:#FFF;
+	
+	}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
+	position:relative;
+	margin-top:10px;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow:hidden;
+}
+/* 3 Column settings */
+.col3 {
+	background-color:#FFF;
+		/* right column background colour */
+}
+
+.col1 {border-left:#999 thin solid;
+border-right:#999 thin solid;
+
+	
+}
+
+
+.col2{
+
+	 }
+
+.threecol .colmid {
+	right:25%;			/* width of the right column */
+			/* center column background colour */
+}
+.threecol .colleft {
+	right:52%;			/* width of the middle column */
+}
+.threecol .col1 {
+	width:53%;			/* width of center column content (column width minus padding on either side) */
+	left:100%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+	width:20%;			/* Width of left column content (column width minus padding on either side) */
+	left:25%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+	width:20%;			/* Width of right column content (column width minus padding on either side) */
+	left:82%;			/* Please make note of the brackets here:
+					(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+
+
+/*FOOTERS*/
+
+#footer1 {
+	float:left;
+	width:100%;
+	color:#000;
+}
+
+
+#footer2 {
+		float:right;
+	width:100%;
+}
+
+div.footerboxleft{
+    float: left;
+
+}
+
+.footerboxright{
+float:left;
+}
+
+
+/*ELEMENTS*/
+
+
+
+#bunny{	position:relative;
+margin-left:50px;
+z-index:-40;}
+
+
+#logo_text{
+	position:relative;
+float:right;
+
+}
+
+#stripe {width:100%; height:40px; background:url(/web/20110522075930im_/http://www.freepresssummerfest.com/css/images/dbk.gif) repeat; float:left; }
+
+
+
+#side_local
+{
+  display: block;
+  width: 188px;
+  height: 231px;
+  background: url("/web/20110522075930im_/http://www.freepresssummerfest.com/images/weezer_side.gif") no-repeat 0 0;
+
+}
+
+#side_local:hover
+{ 
+  background-position: 0 -231px;
+}
+
+#side_local span
+{
+  display: none;
+}
+
+#local_text{
+	width:188px;
+	height:90px;
+	background:#ff1011;
+	text-align:left;
+	font-size:1.6em;
+	line-height:.9em;
+	padding:10px;
+	font-family:'KlavikaRegularPlain', Helvetica, Tahoma, Geneva, sans-serif;
+
+	}
+	
+	.local_text {width:90%;}
+	
+	#local_text a{
+	color:#fff;
+	font-family:'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+
+	}
+	
+	#local_text a:hover{
+	color:#A1CDB2;
+	}
+	
+	
+
+
+/*
+     FILE ARCHIVED ON 07:59:30 May 22, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:04:48 Jun 27, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.521
+  exclusion.robots: 0.056
+  exclusion.robots.policy: 0.044
+  esindex: 0.009
+  cdx.remote: 10.894
+  LoadShardBlock: 115.282 (3)
+  PetaboxLoader3.datanode: 101.764 (4)
+  PetaboxLoader3.resolve: 49.463 (2)
+  load_resource: 59.711
+*/

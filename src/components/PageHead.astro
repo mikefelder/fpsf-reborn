@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  favicon?: string;
+  viewport?: string;
+  charset?: string;
+  xUaCompatible?: string;
+}
+
+const {
+  title,
+  description,
+  favicon,
+  viewport = 'width=device-width, initial-scale=1.0',
+  charset = 'UTF-8',
+  xUaCompatible = 'IE=edge,chrome=1',
+} = Astro.props;
+---
+<meta charset={charset} />
+<meta http-equiv="X-UA-Compatible" content={xUaCompatible} />
+<meta name="viewport" content={viewport} />
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+{favicon && <link rel="icon" href={favicon} />}
+<slot />

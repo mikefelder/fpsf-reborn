@@ -1,0 +1,69 @@
+---
+import '@styles/fpsf-2010.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import type { Snapshot } from '@/types/snapshot';
+import { canonicalHref } from '@data/show-years';
+
+export interface Props {
+  snapshot: Snapshot;
+  title?: string;
+  description?: string;
+  bodyClass?: string;
+  activeNavId?: string;
+  currentHref?: string;
+}
+
+const {
+  snapshot,
+  title,
+  description,
+  bodyClass,
+  activeNavId,
+  currentHref,
+} = Astro.props;
+
+const data = snapshot;
+const pageTitle = title ?? data.title;
+const pageDescription = description ?? data.description;
+const imageBase = '/shared-assets/2010/images';
+const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+const headerImageMissing = !data.header.image
+  || data.header.image === 'crosssite/headergif.gif';
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  bodyClass={bodyClass}
+  year={data.year}
+  knownGaps={data.knownGaps}
+  currentHref={currentHref}
+>
+  <a href={homeHref}>
+    {data.header.image && !headerImageMissing
+      ? <div id="header">
+          <img src={`${imageBase}/${data.header.image}`} alt={data.edition} />
+        </div>
+      : <div id="header" class="fpsf-2010-page-header" style="width:891px; max-width:100%; height:auto; bottom:0; padding-right:0">
+          <h1>{data.header.title ?? data.edition}</h1>
+          {data.header.byline && <div class="byline">{data.header.byline}</div>}
+        </div>}
+  </a>
+
+  <div class="wrapper">
+    <ul id="nav">
+      {data.nav.map((item, index) => (
+        <>
+          <li id={item.id}>
+            <a
+              href={item.href}
+              class={activeNavId && activeNavId === item.id ? 'active' : ''}
+            >{item.label}</a>
+          </li>
+          {index < data.nav.length - 1 && <a> | </a>}
+        </>
+      ))}
+    </ul>
+
+    <slot />
+  </div>
+</BaseLayout>

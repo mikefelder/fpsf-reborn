@@ -1,0 +1,146 @@
+.jScrollPaneContainer {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 10px;
+	background: #666;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	background: #333;
+	cursor: pointer;
+	overflow: hidden;
+	height:10px;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+a.jScrollArrowUp:hover {
+	/*background-color: #f60;*/
+}
+
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background-color: #666;*/
+	height: 9px;
+}
+a.jScrollArrowDown:hover {
+	/*background-color: #f60;*/
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	/*background-color: #f00;*/
+}
+
+
+/* Stylesheet for my demo pages for jScrollPane - these styles aren't necessary for using jScrollPane and aren't specific to any particular example */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 80%;
+}
+
+a.jScrollArrowUp {
+	background: url(/web/20110605020237im_/http://freepresssummerfest.com/images/basic_arrow_up.gif) repeat-x 0 0;
+}
+a.jScrollArrowUp:hover {
+	background-position: 0 -15px;
+}
+a.jScrollArrowDown {
+	background: url(/web/20110605020237im_/http://freepresssummerfest.com/images/basic_arrow_down.gif) repeat-x 0 0;
+}
+a.jScrollArrowDown:hover {
+	background-position: 0 -15px;
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	background-position: 0 -30px;
+}
+
+
+.orange-bar .jScrollPaneTrack {
+	background: #999;
+}
+.orange-bar .jScrollPaneDrag {
+	background: #fff;
+}
+			
+
+
+.scroll-pane {
+	width: 200px;
+	height: 300px;
+	overflow: auto;
+	padding-left:10px;
+	padding-top:10px;
+	background-color:#fff;
+	}
+
+.holder {
+	
+	margin: 10px;
+	
+}
+.wide {
+	width: 400px;
+}
+
+.super-wide {
+	width: 700px;
+}
+
+.tall {
+	height: 400px;
+}
+
+/*
+     FILE ARCHIVED ON 02:02:37 Jun 05, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:05:01 Jun 27, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.486
+  exclusion.robots: 0.056
+  exclusion.robots.policy: 0.046
+  esindex: 0.008
+  cdx.remote: 13.518
+  LoadShardBlock: 184.047 (3)
+  PetaboxLoader3.datanode: 83.842 (4)
+  PetaboxLoader3.resolve: 136.663 (3)
+  load_resource: 111.628
+*/

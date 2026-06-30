@@ -1,59 +1,87 @@
 ---
-import snapshot2011 from '@data/snapshot-2011.json';
+import { liveSnapshots } from '@data/show-years';
 
-const showYears = [
-  { year: 2009, status: 'planned', era: 'Legacy static', edition: 'Free Press Summer Fest' },
-  { year: 2010, status: 'planned', era: 'Legacy static', edition: 'Free Press Summer Fest II' },
-  { year: 2011, status: 'live', era: 'Legacy PHP', edition: snapshot2011.edition, href: '/2011/' },
-  { year: 2012, status: 'planned', era: 'Sparse transition', edition: 'Free Press Summer Fest IV' },
-  { year: 2013, status: 'planned', era: 'FPSF assets', edition: 'Free Press Summer Fest V' },
-  { year: 2014, status: 'live', era: 'FPSF assets', edition: 'Free Press Summer Festival', href: '/2014/' },
-  { year: 2015, status: 'planned', era: 'App / Foundation', edition: 'Free Press Summer Fest VII' },
-  { year: 2016, status: 'planned', era: 'WordPress / Forte', edition: 'Free Press Summer Fest VIII' },
-  { year: 2017, status: 'planned', era: 'WordPress / Forte', edition: 'Free Press Summer Fest IX' }
-];
+// Same pattern as dayfornight-reborn: pick a random live snapshot URL,
+// fetch it, and inline its HTML so visitors land on a real FPSF page
+// instead of an index. SessionStorage cooldown avoids repeat picks.
+const snapshotHrefs = liveSnapshots.map((entry) => entry.href);
+const noscriptFallback = [...liveSnapshots].reverse();
 ---
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FPSF Reborn — Free Press Summer Fest archive</title>
-    <style>
-      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-      body { margin: 0; background: #f6f5f0; color: #1a1a1a; }
-      main { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
-      h1 { font-size: 2.2em; letter-spacing: 0.04em; margin: 0 0 4px; }
-      .lede { color: #555; margin: 0 0 32px; line-height: 1.5; }
-      ul.years { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-      li.year { background: #fff; border: 1px solid #e2dfd5; border-radius: 8px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
-      .year .yr { font-weight: 700; font-size: 1.3em; min-width: 4ch; }
-      .year .meta { flex: 1; }
-      .year .edition { font-weight: 600; }
-      .year .era { color: #666; font-size: 0.92em; }
-      .year a { color: #0a6; text-decoration: none; font-weight: 600; }
-      .year .status-planned { color: #999; font-size: 0.9em; }
-    </style>
+    <title>Free Press Summer Fest — Houston, 2009&ndash;2017</title>
+    <meta name="description" content="Archive rebuild of Free Press Summer Fest (Houston, 2009-2017), reconstructed from raw Wayback captures. Each visit serves a different show-year snapshot." />
+    <link rel="canonical" href="https://fpsf.dev/" />
+    <meta property="og:title" content="Free Press Summer Fest archive" />
+    <meta property="og:description" content="Archive rebuild of Free Press Summer Fest (Houston, 2009-2017)." />
+    <meta property="og:site_name" content="Free Press Summer Fest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fpsf.dev/" />
   </head>
   <body>
-    <main>
-      <h1>FPSF Reborn</h1>
-      <p class="lede">Archive rebuild of <em>Free Press Summer Fest</em> (Houston, 2009&ndash;2017), reconstructed from raw Wayback captures in the sibling <code>fpsf-archivist</code> repository.</p>
-      <ul class="years">
-        {showYears.map((show) => (
-          <li class="year">
-            <span class="yr">{show.year}</span>
-            <span class="meta">
-              <span class="edition">{show.edition}</span>
-              <br />
-              <span class="era">{show.era}</span>
-            </span>
-            {show.status === 'live' && show.href
-              ? <a href={show.href}>Visit &rarr;</a>
-              : <span class="status-planned">Planned</span>}
-          </li>
-        ))}
-      </ul>
-    </main>
+    <noscript>
+      <nav>
+        <ul>
+          {noscriptFallback.map((entry) => (
+            <li>
+              <a href={entry.href}>
+                FPSF {entry.year} — {entry.label}
+                {entry.description ? ` (${entry.description})` : ''}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </noscript>
+
+    <script define:vars={{ snapshots: snapshotHrefs }}>
+      const storageKey = 'fpsf:snapshot-seen-at-session';
+      const cooldownMs = 20 * 60 * 1000;
+      const now = Date.now();
+
+      let seenAt = {};
+      try {
+        const parsed = JSON.parse(sessionStorage.getItem(storageKey) || '{}');
+        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+          seenAt = parsed;
+        }
+      } catch {
+        seenAt = {};
+      }
+
+      const candidates = snapshots.filter((s) => {
+        const lastSeen = Number(seenAt[s] || 0);
+        return now - lastSeen >= cooldownMs;
+      });
+
+      // If every snapshot is still in cooldown, pick the least-recently-seen.
+      const fallbackPool = [...snapshots].sort((a, b) => {
+        const aSeen = Number(seenAt[a] || 0);
+        const bSeen = Number(seenAt[b] || 0);
+        return aSeen - bSeen;
+      });
+
+      const pool = candidates.length > 0 ? candidates : fallbackPool.slice(0, 1);
+      const target = pool[Math.floor(Math.random() * pool.length)];
+
+      seenAt[target] = now;
+      sessionStorage.setItem(storageKey, JSON.stringify(seenAt));
+
+      fetch(target)
+        .then((r) => r.text())
+        .then((html) => {
+          // Inject <base> so any relative asset paths in the snapshot resolve
+          // against the snapshot's directory (most of ours are absolute, but
+          // this keeps the convention safe).
+          const baseTag = '<base href="' + target + '">';
+          html = html.replace(/<head([^>]*)>/i, '<head$1>' + baseTag);
+          document.open();
+          document.write(html);
+          document.close();
+          history.replaceState(null, '', '/');
+        });
+    </script>
   </body>
 </html>
