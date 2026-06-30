@@ -6,7 +6,7 @@
 
 	.mod-no-backgroundsize .punchlist li {
 		background-image: none;
-		list-style-image: url(/web/20130305072916im_/http://fpsf.com/assets/img/static/x-bullet-alt.png);
+		list-style-image: url(/shared-assets/2014/assets/img/static/x-bullet-alt.png);
 		list-style-position: inside;
 		padding-left: 0;
 	}

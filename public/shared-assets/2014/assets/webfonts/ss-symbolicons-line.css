@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: "SSSymbolicons";
-  src: url('/web/20130305072916im_/http://fpsf.com/assets/webfonts/ss-symbolicons-line.eot');
-  src: url('/web/20130305072916im_/http://fpsf.com/assets/webfonts/ss-symbolicons-line.eot#iefix') format('embedded-opentype'),
-       url('/web/20130305072916im_/http://fpsf.com/assets/webfonts/ss-symbolicons-line.woff') format('woff'),
-       url('/web/20130305072916im_/http://fpsf.com/assets/webfonts/ss-symbolicons-line.ttf')  format('truetype'),
-       url('/web/20130305072916im_/http://fpsf.com/assets/webfonts/ss-symbolicons-line.svg#SSSymboliconsLine') format('svg');
+  src: url('/shared-assets/2014/assets/webfonts/ss-symbolicons-line.eot');
+  src: url('/shared-assets/2014/assets/webfonts/ss-symbolicons-line.eot#iefix') format('embedded-opentype'),
+       url('/shared-assets/2014/assets/webfonts/ss-symbolicons-line.woff') format('woff'),
+       url('/shared-assets/2014/assets/webfonts/ss-symbolicons-line.ttf')  format('truetype'),
+       url('/shared-assets/2014/assets/webfonts/ss-symbolicons-line.svg#SSSymboliconsLine') format('svg');
   font-weight: 300;
   font-style: normal;
 }

@@ -1,12 +1,3 @@
-var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
-let window = _____WB$wombat$assign$function_____("window");
-let self = _____WB$wombat$assign$function_____("self");
-let document = _____WB$wombat$assign$function_____("document");
-let location = _____WB$wombat$assign$function_____("location");
-let top = _____WB$wombat$assign$function_____("top");
-let parent = _____WB$wombat$assign$function_____("parent");
-let frames = _____WB$wombat$assign$function_____("frames");
-let opener = _____WB$wombat$assign$function_____("opener");
 /* Ultimate Fade-in slideshow (v2.4)
 * Last updated: May 24th, 2010. This notice must stay intact for usage 
 * Author: Dynamic Drive at http://www.dynamicdrive.com/
@@ -269,25 +260,3 @@ fadeSlideShow.routines={
 		document.cookie = name+"=" + value + ";path=/"
 	}
 }
-}
-
-/*
-     FILE ARCHIVED ON 01:30:45 May 10, 2011 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:09:55 Jun 27, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.415
-  exclusion.robots: 0.042
-  exclusion.robots.policy: 0.034
-  esindex: 0.006
-  cdx.remote: 24.257
-  LoadShardBlock: 498.379 (3)
-  PetaboxLoader3.resolve: 471.503 (4)
-  PetaboxLoader3.datanode: 106.875 (4)
-  load_resource: 119.248
-*/

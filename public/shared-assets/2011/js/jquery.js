@@ -1,12 +1,3 @@
-var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
-let window = _____WB$wombat$assign$function_____("window");
-let self = _____WB$wombat$assign$function_____("self");
-let document = _____WB$wombat$assign$function_____("document");
-let location = _____WB$wombat$assign$function_____("location");
-let top = _____WB$wombat$assign$function_____("top");
-let parent = _____WB$wombat$assign$function_____("parent");
-let frames = _____WB$wombat$assign$function_____("frames");
-let opener = _____WB$wombat$assign$function_____("opener");
 // JavaScript Document
 /*!
  * jQuery JavaScript Library v1.4
@@ -160,25 +151,3 @@ this.offsetParent||s.body;a&&!/^body|html$/i.test(a.nodeName)&&c.css(a,"position
 c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=function(){return this[0]?c.css(this[0],d,false,"padding"):null};c.fn["outer"+b]=function(f){return this[0]?c.css(this[0],d,false,f?"margin":"border"):null};c.fn[d]=function(f){var e=this[0];if(!e)return f==null?null:this;return"scrollTo"in e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["client"+b]||e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+
 b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===w?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});A.jQuery=A.$=c})(window);
 
-}
-
-/*
-     FILE ARCHIVED ON 01:30:35 May 10, 2011 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:10:01 Jun 27, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.669
-  exclusion.robots: 0.065
-  exclusion.robots.policy: 0.053
-  esindex: 0.011
-  cdx.remote: 250.679
-  LoadShardBlock: 123.926 (3)
-  PetaboxLoader3.datanode: 156.543 (4)
-  PetaboxLoader3.resolve: 87.242 (2)
-  load_resource: 150.664
-*/

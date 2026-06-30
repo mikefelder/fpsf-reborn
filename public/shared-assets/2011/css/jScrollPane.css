@@ -73,13 +73,13 @@ body {
 }
 
 a.jScrollArrowUp {
-	background: url(/web/20110605020237im_/http://freepresssummerfest.com/images/basic_arrow_up.gif) repeat-x 0 0;
+	background: url(/shared-assets/2011/images/basic_arrow_up.gif) repeat-x 0 0;
 }
 a.jScrollArrowUp:hover {
 	background-position: 0 -15px;
 }
 a.jScrollArrowDown {
-	background: url(/web/20110605020237im_/http://freepresssummerfest.com/images/basic_arrow_down.gif) repeat-x 0 0;
+	background: url(/shared-assets/2011/images/basic_arrow_down.gif) repeat-x 0 0;
 }
 a.jScrollArrowDown:hover {
 	background-position: 0 -15px;

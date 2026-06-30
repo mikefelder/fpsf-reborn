@@ -1,12 +1,3 @@
-var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
-let window = _____WB$wombat$assign$function_____("window");
-let self = _____WB$wombat$assign$function_____("self");
-let document = _____WB$wombat$assign$function_____("document");
-let location = _____WB$wombat$assign$function_____("location");
-let top = _____WB$wombat$assign$function_____("top");
-let parent = _____WB$wombat$assign$function_____("parent");
-let frames = _____WB$wombat$assign$function_____("frames");
-let opener = _____WB$wombat$assign$function_____("opener");
 /*
 * Symbolset
 * www.symbolset.com
@@ -86,25 +77,3 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
 
 };
 
-}
-
-/*
-     FILE ARCHIVED ON 00:42:45 Apr 24, 2013 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 17:12:48 Jun 28, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.651
-  exclusion.robots: 0.071
-  exclusion.robots.policy: 0.058
-  esindex: 0.009
-  cdx.remote: 18.528
-  LoadShardBlock: 233.404 (3)
-  PetaboxLoader3.datanode: 141.322 (4)
-  PetaboxLoader3.resolve: 147.898 (3)
-  load_resource: 93.775
-*/

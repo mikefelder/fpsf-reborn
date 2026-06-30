@@ -1,12 +1,3 @@
-var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
-let window = _____WB$wombat$assign$function_____("window");
-let self = _____WB$wombat$assign$function_____("self");
-let document = _____WB$wombat$assign$function_____("document");
-let location = _____WB$wombat$assign$function_____("location");
-let top = _____WB$wombat$assign$function_____("top");
-let parent = _____WB$wombat$assign$function_____("parent");
-let frames = _____WB$wombat$assign$function_____("frames");
-let opener = _____WB$wombat$assign$function_____("opener");
 // tumblrBadge by Robert Nyman, http://www.robertnyman.com/, http://code.google.com/p/tumblrbadge/
 var tumblrBadge = function () {
 	// User settings
@@ -104,25 +95,3 @@ var tumblrBadge = function () {
 		};
 	}
 }();
-}
-
-/*
-     FILE ARCHIVED ON 01:31:37 May 10, 2011 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:04:36 Jun 27, 2026.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.506
-  exclusion.robots: 0.049
-  exclusion.robots.policy: 0.038
-  esindex: 0.01
-  cdx.remote: 16.934
-  LoadShardBlock: 177.203 (3)
-  PetaboxLoader3.datanode: 106.132 (4)
-  PetaboxLoader3.resolve: 187.441 (2)
-  load_resource: 150.252
-*/

@@ -1,11 +1,11 @@
 
 	@font-face { 
 font-family:Knockout-HTF28-JuniorFeatherwt; 
-src: url('/web/20110207140630im_/http://freepresssummerfest.com/css/fonts/Knockout-HTF28-JuniorFeatherwt.ttf'); } 
+src: url('/shared-assets/2011/css/fonts/Knockout-HTF28-JuniorFeatherwt.ttf'); } 
 
 @font-face { 
 font-family:Knockout-HTF28-JuniorFeatherwt; 
-src: url('/web/20110207140630im_/http://freepresssummerfest.com/css/fonts/Knockout-HTF28-JuniorFeatherwt.eot'); } 
+src: url('/shared-assets/2011/css/fonts/Knockout-HTF28-JuniorFeatherwt.eot'); } 
 
 .fontface_K { 
 font-family:Knockout-HTF28-JuniorFeatherwt, Helvetica, Tahoma, Geneva, sans-serif; } 
