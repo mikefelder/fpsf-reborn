@@ -101,13 +101,11 @@
   ],
   "twitterFeedUrl": "feed.php",
   "knownGaps": [
-    "Fade-frame slideshow image array is in inline JS in the canonical capture; mainslide images were not separately archived, so the slideshow renders empty until those URLs land via closest-CDX.",
-    "Custom Knockout-HTF28-JuniorFeatherwt display font used by `.fontface_K` was never successfully archived (all Wayback captures return HTTP 500); it falls back to the Helvetica stack. KlavikaBold and KlavikaRegularPlain were recovered from Wayback and are served from /shared-assets/2011/fonts/.",
-    "Facebook fan-box (fb:fan) widget in the green footer column is deprecated; replaced with a static Facebook Like-style card. StatCounter and the live Tumblr feed are similarly replaced with static links.",
-    "Vimeo 2011 lineup video (id 20397258, 'FREE PRESS SUMMERFEST 2011 LINE-UP' by Free Video Houston) is domain-restricted and player.vimeo.com returns HTTP 401; iframe embed replaced with an oEmbed poster that click-throughs to vimeo.com/20397258.",
-    "Twitter feed iframe (feed.php) is gone; the FROM TWITTER box renders a single @fpsummerfest link instead of the live tweet list.",
-    "Bunny mascot originally animated via jsAnim.positionCircle counter-clockwise; approximated with a CSS keyframe orbit so we don't ship jQuery 1.2.6 + jsAnim.",
-    "Hover-state images for pass/hotel/shirt buttons exist in shared-assets but the original rollover behavior used jsAnim; current implementation renders the static state only.",
-    "Sub-pages (pass, lineup, info, faq, sponsors, vendors, press, contact) are not yet rebuilt; nav links are stubs."
+    "Fade-frame slideshow image array is in inline JS in the canonical capture; mainslide images were not separately archived, so the slideshow renders as an empty black frame (which is also what wayback shows since the same URLs 404 there). Waiting on closest-CDX recovery of /images/headliners/*.jpg.",
+    "Custom Knockout-HTF28-JuniorFeatherwt display font used by `.fontface_K` was never successfully archived (all Wayback captures return HTTP 500); it falls back to the Helvetica stack. KlavikaBold and KlavikaRegularPlain are recovered and served locally from /shared-assets/2011/fonts/.",
+    "Third-party widgets in footer1 are all defunct and rendered as static approximations: Facebook fb:fan likebox → static Like-style card, feed.php Twitter iframe → single @fpsummerfest link, StatCounter tracking script → omitted, live Tumblr feed → static link to fpsf.tumblr.com.",
+    "Vimeo lineup video (id 20397258, 'FREE PRESS SUMMERFEST 2011 LINE-UP') is domain-restricted (player.vimeo.com returns HTTP 401 off vimeo.com); iframe embed replaced with an oEmbed poster that click-throughs to vimeo.com/20397258.",
+    "Rollover-state images for pass / hotel / shirt buttons exist in shared-assets (buypass_btn_b.jpg, hotel_button_b.gif, shirtbtn2.jpg) but the original site swapped them via jsAnim's `img.a`/`img.b` fadehover pattern; current implementation renders only the static state. Weezer sidebar sprite hover-swap IS wired up via CSS.",
+    "Sub-pages (pass, lineup, info, faq, sponsors, vendors, press, contact) are not yet rebuilt; nav links point to routes that 404."
   ]
 }
