@@ -6,6 +6,19 @@ const assetBase = '/shared-assets/2014';
 ---
 <Fpsf2014Layout snapshot={snapshot} currentHref="/2014/">
   <div class="content group">
+    {snapshot.contentBanners?.map((banner) => {
+      const external = banner.href.startsWith('http');
+      return (
+        <a
+          href={banner.href}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+        >
+          <img src={`${assetBase}/${banner.image}`} width="100%" alt={banner.alt} />
+        </a>
+      );
+    })}
+
     <section id="video_prime">
       <div class="video">
         <div class="video_hed"></div>
@@ -21,7 +34,6 @@ const assetBase = '/shared-assets/2014';
           src={`${assetBase}/${snapshot.hero.image}`}
           width="100%"
           alt={snapshot.hero.videoTitle}
-          onerror="this.style.display='none'"
         />
       </div>
     </section>

@@ -1,0 +1,15 @@
+---
+import Fpsf2014Layout from '@layouts/Fpsf2014Layout.astro';
+import snapshot from '@data/snapshot-2014-main.json';
+import pageHtml from '@data/pages/2014/join.html?raw';
+
+const pageTitle = `Join | ${snapshot.title}`;
+---
+<Fpsf2014Layout
+  snapshot={snapshot}
+  title={pageTitle}
+  bodyClass="join"
+  currentHref="/2014/join/"
+>
+  <Fragment set:html={pageHtml} />
+</Fpsf2014Layout>

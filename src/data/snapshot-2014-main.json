@@ -17,42 +17,42 @@
     {
       "label": "Learn",
       "className": "learn",
-      "href": "/2014/learn",
+      "href": "/2014/learn/",
       "subnav": [
-        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
-        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
-        { "label": "Art experiences", "href": "/2014/learn#art" },
-        { "label": "Videos from previous fests", "href": "/2014/videos" },
+        { "label": "Lineup/schedule", "href": "/2014/learn/#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn/#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn/#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos/" },
         { "label": "SHOP", "href": "http://fpsf.shop.redstarmerch.com/" }
       ]
     },
     {
       "label": "Go",
       "className": "go",
-      "href": "/2014/go",
+      "href": "/2014/go/",
       "subnav": [
-        { "label": "General Info", "href": "/2014/go#general_info" },
-        { "label": "Get passes", "href": "/2014/go#passes" },
-        { "label": "Pass FAQs", "href": "/2014/go#pass_info" },
-        { "label": "Parking & transportation", "href": "/2014/go#parking" },
-        { "label": "What to bring, not to bring", "href": "/2014/go#permitted" }
+        { "label": "General Info", "href": "/2014/go/#general_info" },
+        { "label": "Get passes", "href": "/2014/go/#passes" },
+        { "label": "Pass FAQs", "href": "/2014/go/#pass_info" },
+        { "label": "Parking & transportation", "href": "/2014/go/#parking" },
+        { "label": "What to bring, not to bring", "href": "/2014/go/#permitted" }
       ]
     },
     {
       "label": "Join",
       "className": "join",
-      "href": "/2014/join",
+      "href": "/2014/join/",
       "subnav": [
-        { "label": "Volunteer", "href": "/2014/join#volunteer" },
-        { "label": "Vendors", "href": "/2014/join#vendors" },
-        { "label": "Sponsors", "href": "/2014/join#sponsors" },
-        { "label": "Bands", "href": "/2014/join#bands" },
-        { "label": "Art submissions", "href": "/2014/join#art" }
+        { "label": "Volunteer", "href": "/2014/join/#volunteer" },
+        { "label": "Vendors", "href": "/2014/join/#vendors" },
+        { "label": "Sponsors", "href": "/2014/join/#sponsors" },
+        { "label": "Bands", "href": "/2014/join/#bands" },
+        { "label": "Art submissions", "href": "/2014/join/#art" }
       ]
     }
   ],
   "secondaryNav": [
-    { "label": "Contact", "className": "contact", "href": "/2014/contact" },
+    { "label": "Contact", "className": "contact", "href": "/2014/contact/" },
     { "label": "Main", "className": "main", "href": "/2014/" }
   ],
   "hero": {
@@ -60,6 +60,18 @@
     "videoTitle": "FPSF 2014 Lineup Release",
     "image": "assets/img/static/2014vidthumb.jpg"
   },
+  "contentBanners": [
+    {
+      "href": "/2014/learn/",
+      "image": "assets/img/static/fpsf_2014_lineup.jpg",
+      "alt": "FPSF 2014 lineup"
+    },
+    {
+      "href": "#",
+      "image": "assets/img/static/fpsfapp.jpg",
+      "alt": "Download the FPSF 2014 app"
+    }
+  ],
   "passes": [
     {
       "name": "General admission",
@@ -130,53 +142,52 @@
     {
       "heading": "Learn",
       "className": "learn",
-      "href": "/2014/learn",
+      "href": "/2014/learn/",
       "items": [
-        { "label": "Lineup/schedule", "href": "/2014/learn#lineup" },
-        { "label": "Previous lineups", "href": "/2014/learn#previous_years" },
-        { "label": "Art experiences", "href": "/2014/learn#art" },
-        { "label": "Videos from previous fests", "href": "/2014/videos" }
+        { "label": "Lineup/schedule", "href": "/2014/learn/#lineup" },
+        { "label": "Previous lineups", "href": "/2014/learn/#previous_years" },
+        { "label": "Art experiences", "href": "/2014/learn/#art" },
+        { "label": "Videos from previous fests", "href": "/2014/videos/" }
       ]
     },
     {
       "heading": "Go",
       "className": "go",
-      "href": "/2014/go",
+      "href": "/2014/go/",
       "items": [
-        { "label": "Get passes", "href": "/2014/go#passes" },
-        { "label": "Parking & transportation", "href": "/2014/go#parking" },
-        { "label": "What to bring", "href": "/2014/go#permitted" },
-        { "label": "What not to bring", "href": "/2014/go#prohibited" }
+        { "label": "Get passes", "href": "/2014/go/#passes" },
+        { "label": "Parking & transportation", "href": "/2014/go/#parking" },
+        { "label": "What to bring", "href": "/2014/go/#permitted" },
+        { "label": "What not to bring", "href": "/2014/go/#prohibited" }
       ]
     },
     {
       "heading": "Join",
       "className": "join",
-      "href": "/2014/join",
+      "href": "/2014/join/",
       "items": [
-        { "label": "Volunteer", "href": "/2014/join#volunteer" },
-        { "label": "Vendors", "href": "/2014/join#vendors" },
-        { "label": "Sponsors", "href": "/2014/join#sponsors" },
-        { "label": "Bands", "href": "/2014/join#bands" },
-        { "label": "Art submissions", "href": "/2014/join#art" }
+        { "label": "Volunteer", "href": "/2014/join/#volunteer" },
+        { "label": "Vendors", "href": "/2014/join/#vendors" },
+        { "label": "Sponsors", "href": "/2014/join/#sponsors" },
+        { "label": "Bands", "href": "/2014/join/#bands" },
+        { "label": "Art submissions", "href": "/2014/join/#art" }
       ]
     },
     {
       "heading": "Contact",
       "className": "contact",
-      "href": "/2014/contact",
+      "href": "/2014/contact/",
       "items": [
-        { "label": "FPSF contact info", "href": "/2014/contact#resources" },
-        { "label": "Media inquiries", "href": "/2014/contact#resources" }
+        { "label": "FPSF contact info", "href": "/2014/contact/#resources" },
+        { "label": "Media inquiries", "href": "/2014/contact/#resources" }
       ]
     }
   ],
   "footerLegal": "Site contents copyright © 2013 Free Press Summer Festival. All rights reserved. Sponsor logos, signage, and names may be trademarked. These materials may not be reproduced elsewhere, except by their respective copyright and trademark holders.",
   "knownGaps": [
-    "Hero image assets/img/static/2014vidthumb.jpg is not in any captured 2014 timestamp; placeholder rendering until closest-CDX recovery succeeds.",
-    "2014-versioned sponsor logos (absolut2014, barefoot2014, budweiser2014, lipton2014, monster2014, nrg2014, ps42014, tacobell2014, verizon2014) are not in canonical or sibling captures; sponsor runner renders text fallback for missing images.",
-    "Webfonts assets/webfonts/ss-social.css, ss-standard.css, ss-social.js, ss-standard.js were not in the canonical capture; only ss-symbolicons-line is present.",
-    "Typekit font kit (sir3lyk) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted.",
-    "Sub-pages (learn, go, join, contact, videos) are not yet rebuilt; nav links are stubs."
+    "DIN (DIN-Cond/DIN-Reg) and Symbolset (ss-social/ss-standard/ss-symbolicons-line) icon fonts are recovered as .woff only (no .ttf/.eot fallbacks); modern browsers render them fine.",
+    "Typekit font kit (sir3lyk — abril-text + ff-din-web) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted; the local DIN webfonts cover the DIN-Cond/DIN-Reg stack the design falls back to.",
+    "Hero 'Play' overlay links out to the YouTube lineup-release video (youtu.be/_7HmBdlIidQ) rather than opening the original fpsfMusicVid lightbox, whose JS (responsiveslides + local.js) is not wired up.",
+    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) render the archived .content HTML verbatim via ?raw imports from src/data/pages/2014/*.html; interactive JS (responsiveslides carousels, tweet aggregation, ymlp form posts) is static."
   ]
 }

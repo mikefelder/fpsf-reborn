@@ -1,0 +1,15 @@
+---
+import Fpsf2014Layout from '@layouts/Fpsf2014Layout.astro';
+import snapshot from '@data/snapshot-2014-main.json';
+import pageHtml from '@data/pages/2014/morefpsf.html?raw';
+
+const pageTitle = `More FPSF Experiences | ${snapshot.title}`;
+---
+<Fpsf2014Layout
+  snapshot={snapshot}
+  title={pageTitle}
+  bodyClass="learn"
+  currentHref="/2014/morefpsf/"
+>
+  <Fragment set:html={pageHtml} />
+</Fpsf2014Layout>
