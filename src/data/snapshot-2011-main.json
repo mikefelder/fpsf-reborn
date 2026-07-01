@@ -54,7 +54,10 @@
   },
   "vimeo": {
     "id": "20397258",
-    "title": "FPSF 2010 / Promo recap"
+    "title": "FREE PRESS SUMMERFEST 2011 LINE-UP",
+    "pageUrl": "https://vimeo.com/20397258",
+    "posterImage": "vimeo-20397258-poster.jpg",
+    "duration": "2:42"
   },
   "tumblr": {
     "blogUrl": "http://fpsf.tumblr.com/",
@@ -77,7 +80,17 @@
     { "name": "Ikea", "href": "http://Ikea.com" },
     { "name": "29-95", "href": "http://29-95.com" }
   ],
-  "sponsorBarImage": "sponsorbar.png",
+  "sponsorBarImage": "sponsorbar.jpg",
+  "sponsorBarHref": "/2011/sponsors",
+  "socialBarImage": "social_logo_link_image.jpg",
+  "socialBarMap": [
+    { "shape": "rect", "coords": "272,40,388,90", "href": "http://www.jagi.cc/", "alt": "Pegstar.net", "target": "_blank" },
+    { "shape": "rect", "coords": "144,33,260,102", "href": "http://www.FreePressHouston.com", "alt": "FreePressHouston.com", "target": "_blank" },
+    { "shape": "rect", "coords": "20,64,61,106", "href": "http://www.youtube.com/results?search_query=free+press+summer+fest", "alt": "YouTube", "target": "_blank" },
+    { "shape": "rect", "coords": "66,67,108,106", "href": "http://vimeo.com/user2385997", "alt": "Vimeo", "target": "_blank" },
+    { "shape": "rect", "coords": "68,12,112,59", "href": "http://twitter.com/fpsf", "alt": "Twitter", "target": "_blank" },
+    { "shape": "rect", "coords": "19,13,64,58", "href": "http://www.facebook.com/freepresssummerfest", "alt": "Facebook", "target": "_blank" }
+  ],
   "social": [
     { "label": "Facebook", "href": "http://www.facebook.com/freepresssummerfest" },
     { "label": "Twitter", "href": "http://twitter.com/fpsummerfest" },
@@ -89,8 +102,11 @@
   "twitterFeedUrl": "feed.php",
   "knownGaps": [
     "Fade-frame slideshow image array is in inline JS in the canonical capture; mainslide images were not separately archived, so the slideshow renders empty until those URLs land via closest-CDX.",
-    "Custom Klavika font family referenced by the original CSS is non-redistributable; layout falls back to Helvetica/Tahoma stack.",
-    "Facebook fan-box, StatCounter, and live Tumblr feed are deprecated external widgets; replaced by static links.",
+    "Custom Knockout-HTF28-JuniorFeatherwt display font used by `.fontface_K` was never successfully archived (all Wayback captures return HTTP 500); it falls back to the Helvetica stack. KlavikaBold and KlavikaRegularPlain were recovered from Wayback and are served from /shared-assets/2011/fonts/.",
+    "Facebook fan-box (fb:fan) widget in the green footer column is deprecated; replaced with a static Facebook Like-style card. StatCounter and the live Tumblr feed are similarly replaced with static links.",
+    "Vimeo 2011 lineup video (id 20397258, 'FREE PRESS SUMMERFEST 2011 LINE-UP' by Free Video Houston) is domain-restricted and player.vimeo.com returns HTTP 401; iframe embed replaced with an oEmbed poster that click-throughs to vimeo.com/20397258.",
+    "Twitter feed iframe (feed.php) is gone; the FROM TWITTER box renders a single @fpsummerfest link instead of the live tweet list.",
+    "Bunny mascot originally animated via jsAnim.positionCircle counter-clockwise; approximated with a CSS keyframe orbit so we don't ship jQuery 1.2.6 + jsAnim.",
     "Hover-state images for pass/hotel/shirt buttons exist in shared-assets but the original rollover behavior used jsAnim; current implementation renders the static state only.",
     "Sub-pages (pass, lineup, info, faq, sponsors, vendors, press, contact) are not yet rebuilt; nav links are stubs."
   ]

@@ -5,16 +5,35 @@
 
 body.state-main #header {
   width: 960px;
-  height: 270px;
+  height: auto;
   position: relative;
-  margin: 30px auto 0;
+  margin: 20px auto 0;
+  padding: 0;
   clear: both;
+  overflow: hidden;
 }
 
 body.state-main #header #bunny {
   float: left;
   border: 0;
   outline: none;
+  /* Original site animated the bunny with jsAnim's positionCircle(false),
+     a ~2.5s counter-clockwise loop that nudged the img via margin.
+     Uses the classic rotate + translate + counter-rotate trick so the
+     motion traces a smooth continuous circle (not a diamond) while
+     keeping the bunny visually upright. Negative rotation = CCW. */
+  animation: bunny-fly-ccw 2.5s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes bunny-fly-ccw {
+  from { transform: rotate(0deg)    translate(20px, 0) rotate(0deg); }
+  to   { transform: rotate(-360deg) translate(20px, 0) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.state-main #header #bunny { animation: none; }
 }
 
 body.state-main #header #logo_text {
@@ -33,19 +52,30 @@ body.state-main #subscribe {
   color: #fff;
 }
 
-/* Slideshow wrapped in a dark fade frame on main. */
+/* Slideshow wrapped in a dark fade frame on main. Archive layout was
+   #fade_frame { padding-top:5px } around a #fadeshow1 whose
+   `margin:auto + thick teal border` left ~5px of dark grey visible on
+   every side. Reproduce that 5px inset all round. */
 body.state-main #fade_frame {
   background-color: #333;
-  width: 470px;
-  height: 330px;
-  padding-top: 5px;
-  border: 5px solid #333;
+  width: 460px;
+  padding: 5px;
+  border: 0;
+  box-sizing: content-box;
+  margin: 0 auto;
 }
 
+/* `#fadeshow1` sits centered inside the dark #fade_frame with the
+   distinctive teal border from the archive (`border: thick solid #a1cdb2`
+   in the original CSS). The JS sized the inner gallery layers to 450x315
+   so we match those dimensions exactly. */
 body.state-main #fade_frame #fadeshow1 {
-  background: #111;
+  background: #000;
   width: 450px;
-  height: 300px;
+  height: 315px;
+  border: 5px solid #a1cdb2;
+  box-sizing: content-box;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
@@ -81,14 +111,32 @@ body.state-main .high-roller .cta-link {
 /* Center column — WEEZER headliner block. */
 body.state-main #side_local {
   display: block;
+  width: 188px;
+  height: 231px;
   margin: 0 0 6px;
+  position: relative;
+  /* weezer_side.gif is a 220x465 two-frame sprite (greyscale on top,
+     color on bottom). Original site swapped bg-position on hover. */
+  background: url('/shared-assets/2011/images/weezer_side.gif') no-repeat 0 0;
+  overflow: hidden;
+}
+
+body.state-main #side_local:hover {
+  background-position: 0 -231px;
 }
 
 body.state-main #side_local font {
-  font-size: 2em;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 2.4em;
   color: #ff1011;
-  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
-  font-weight: 700;
+  font-family: 'KlavikaBold', "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 body.state-main #local_text {
@@ -124,4 +172,98 @@ body.state-main .news-source {
   font-size: 1em;
   color: #666;
   margin: 4px 0 8px;
+}
+
+/* Facebook fan-box replacement — original site embedded fb:fan widget in a
+   green (#a1cdb2) column. Widget API is dead; render a static Like-style
+   card so the layout keeps the same visual mass. */
+body.state-main .fb-fan-box .fb-fan-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  height: 100%;
+  padding: 12px;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  text-decoration: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+body.state-main .fb-fan-box .fb-fan-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+body.state-main .fb-fan-box .fb-fan-sub {
+  font-size: 1.1em;
+  color: #333;
+}
+
+body.state-main .fb-fan-box .fb-fan-cta {
+  margin-top: auto;
+  align-self: center;
+  padding: 4px 14px;
+  background: #3b5998;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+/* Vimeo poster fallback — the archived iframe embed of vimeo.com/20397258
+   now returns HTTP 401 because the video is domain-restricted. Render the
+   oEmbed poster as a clickable card that opens the Vimeo page. */
+body.state-main .vimeo-poster { text-decoration: none; color: #fff; }
+
+body.state-main .vimeo-poster img {
+  transition: opacity 0.2s ease;
+}
+
+body.state-main .vimeo-poster:hover img { opacity: 0.85; }
+
+body.state-main .vimeo-poster__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 28px;
+  line-height: 72px;
+  text-align: center;
+  padding-left: 6px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+body.state-main .vimeo-poster__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  pointer-events: none;
+}
+
+body.state-main .vimeo-poster__duration {
+  font-size: 0.9em;
+  opacity: 0.85;
 }

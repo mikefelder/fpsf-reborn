@@ -1,9 +1,29 @@
 /* FPSF 2011 — preserved CSS from raw/2011/20110207140205/index.html
    Image paths rewritten from /images/<file> and images/<file> to
    /shared-assets/2011/images/<file>.
-   Custom font face declarations omitted because Knockout-HTF28-JuniorFeatherwt
-   is not redistributable and the original files are not in the archive.
+   Klavika Bold + Regular Plain font files were recovered from the Wayback
+   archive of freepresssummerfest.com/fonts/. Knockout-HTF28-JuniorFeatherwt
+   was never successfully captured (all CDX hits are 500 errors) so
+   .fontface_K falls back to the Helvetica stack.
 */
+
+@font-face {
+  font-family: 'KlavikaBold';
+  src: url('/shared-assets/2011/fonts/klavikaboldbold-webfont.woff') format('woff'),
+       url('/shared-assets/2011/fonts/klavikaboldbold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KlavikaRegularPlain';
+  src: url('/shared-assets/2011/fonts/klavikaregular-plain-webfont.woff') format('woff'),
+       url('/shared-assets/2011/fonts/klavikaregular-plain-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
   height: 100%;
@@ -37,20 +57,28 @@ body {
 }
 
 .fontface_K {
-  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
-  font-weight: 300;
+  font-family: 'KlavikaRegularPlain', "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: normal;
   letter-spacing: 0.04em;
+}
+
+.fontface_klav_pl {
+  font-family: 'KlavikaRegularPlain', Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+}
+
+.fontface_klav_b {
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0;
 }
 
 #header {
   position: relative;
   z-index: 1;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   clear: both;
-  bottom: -35px;
   width: 100%;
-  padding-top: 20px;
 }
 
 a img { border: none; }
@@ -73,17 +101,32 @@ a { text-decoration: none; color: #699; }
 
 #nav a {
   text-decoration: none;
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+  font-weight: normal;
   font-size: 18px;
-  letter-spacing: 3px;
+  letter-spacing: 0;
   white-space: nowrap;
   margin-left: 0;
-  padding: 3px 10px 0px 10px;
+  padding: 3px 10px 0 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 #nav li {
   display: inline;
+  margin: 0;
+}
+
+/* The archived HTML had literal whitespace between </li> and <li> which
+   rendered as a visible gap between the black pills. Astro/JSX collapses
+   that whitespace, so restore it with an explicit right-margin on each
+   anchor. Margin (unlike padding) does not extend the anchor's black
+   background, so the gap stays transparent. */
+#nav a { margin-right: 5px; }
+#nav li:last-child a { margin-right: 0; }
+
+#nav ul {
+  padding: 0;
   margin: 0;
 }
 
@@ -235,8 +278,9 @@ div.footerboxright {}
 .col3 { background-color: #FFF; }
 
 .col1 {
-  border-left: #666 thin solid;
-  border-right: #666 thin solid;
+  /* Archive shipped no side borders on col1; the presale-era stylesheet
+     had `border-left/right: thin solid #666` which showed up as black
+     vertical seams between the three columns. Zero them out. */
 }
 
 .threecol .colmid { right: 25%; }
@@ -264,11 +308,15 @@ div.footerboxright {}
   float: left;
 }
 
-/* Slideshow placeholder shell */
+/* Slideshow shell. Original site's fadeslideshow.js injected a
+   `.gallerylayer` child at 100% x 100% with `background: #000` on top of
+   #fadeshow1; the JS init sized the gallery to 450x315. Mirror those
+   dimensions on the container so the empty shell looks identical to the
+   archived page (mainslide images were never captured). */
 #fadeshow1 {
   width: 450px;
-  height: 300px;
-  background: #111;
+  height: 315px;
+  background: #000;
   position: relative;
   overflow: hidden;
 }
