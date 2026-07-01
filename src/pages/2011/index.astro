@@ -17,19 +17,36 @@ const assetBase = '/shared-assets/2011/images';
         <div class="col1">
           <div style="padding:0 14px">
             <div id="fade_frame">
-              <div id="fadeshow1" aria-label="FPSF 2011 hero slideshow placeholder"></div>
+              <div id="fadeshow1" aria-label="FPSF 2011 hero slideshow placeholder">
+                {/* Slideshow images (/images/mainslide/*) were never
+                    archived. Until they are recovered, fill this shell
+                    with the 2011 Vimeo lineup video so the hero area
+                    shows something rather than a blank black rectangle. */}
+                <video
+                  width="450"
+                  height="315"
+                  controls
+                  preload="metadata"
+                  poster={`${assetBase}/${snapshot.vimeo.posterImage}`}
+                  style="display:block; width:100%; height:100%; background:#000; border:0; object-fit:cover"
+                  aria-label={snapshot.vimeo.title}
+                >
+                  <source src="/shared-assets/2011/videos/fpsf2011-lineup.mp4" type="video/mp4" />
+                  <a href={snapshot.vimeo.pageUrl} target="_blank" rel="noopener noreferrer">
+                    Watch "{snapshot.vimeo.title}" on Vimeo
+                  </a>
+                </video>
+              </div>
             </div>
 
-            <div class="fontface_K" style="padding-top:20px">
-              <div style="color:#000000;font-size:2.4em;line-height:1.1;letter-spacing:-1px">
+            <div class="fontface_klav_b" style="padding-top:20px">
+              <font color="#000000" size="+3" style="letter-spacing:-2px">
                 {snapshot.intro.headline}
-              </div>
-              <div style="color:#999;font-size:1.8em;line-height:1.2">
-                {snapshot.intro.subhead}
-              </div>
-              <div style="color:#333;font-size:1.2em">
-                {snapshot.intro.tagline}
-              </div>
+              </font>
+              <br />
+              <font color="#999" size="+2">{snapshot.intro.subhead}</font>
+              <br />
+              <font color="#333" size="2">{snapshot.intro.tagline}</font>
             </div>
 
             <div id="break_small"></div>
@@ -56,7 +73,7 @@ const assetBase = '/shared-assets/2011/images';
 
         <div class="col2" style="text-align:center">
           <a id="side_local" href={snapshot.headliner.lineupHref} title="Line Up">
-            <font size="+3">{snapshot.headliner.name}</font>
+            <font size="+3" color="#ff1011" class="fontface_klav_b">{snapshot.headliner.name}</font>
           </a>
           <div id="local_text">
             <a href={snapshot.headliner.lineupHref}>{snapshot.headliner.tagline}</a>
@@ -94,9 +111,9 @@ const assetBase = '/shared-assets/2011/images';
 
           <div id="break"></div>
 
-          <div class="news-label">
+          <font class="fontface_klav_b" size="+2">
             <a href={snapshot.tumblr.blogUrl} target="_blank" rel="noopener noreferrer">NEWS</a>
-          </div>
+          </font>
           <div class="news-source">From Tumblr Feed</div>
           <p style="font-size:1.1em">
             Visit the <a href={snapshot.tumblr.blogUrl} target="_blank" rel="noopener noreferrer">FPSF Tumblr</a> for archived news posts.
@@ -111,32 +128,27 @@ const assetBase = '/shared-assets/2011/images';
           <div id="stripe" style="margin-bottom:10px"></div>
 
           {/* Column 1: Vimeo recap. Original site embedded
-              https://player.vimeo.com/video/20397258 in an iframe, but the
-              video (FREE PRESS SUMMERFEST 2011 LINE-UP by Free Video Houston)
-              is now privacy-restricted and the player URL returns HTTP 401
-              off vimeo.com. Fall back to a clickable poster linking out. */}
+              https://player.vimeo.com/video/20397258 in an iframe. That
+              player URL now 401s off vimeo.com (domain-restricted), so we
+              serve a local static MP4 rip of the video instead. Poster
+              image from the oEmbed thumbnail is used as the video's poster
+              frame, and we still link out to vimeo.com/20397258 as the
+              caption source. */}
           <div id="box" style="margin:0; padding-left:10px">
-            <a
-              href={snapshot.vimeo.pageUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="vimeo-poster"
-              aria-label={`Watch on Vimeo: ${snapshot.vimeo.title}`}
-              style="display:block; width:400px; height:310px; position:relative; overflow:hidden; background:#000"
+            <video
+              width="400"
+              height="310"
+              controls
+              preload="metadata"
+              poster={`${assetBase}/${snapshot.vimeo.posterImage}`}
+              style="display:block; background:#000; border:0"
+              aria-label={snapshot.vimeo.title}
             >
-              <img
-                src={`${assetBase}/${snapshot.vimeo.posterImage}`}
-                alt={snapshot.vimeo.title}
-                width="400"
-                height="310"
-                style="display:block; width:100%; height:100%; object-fit:cover; border:0"
-              />
-              <span class="vimeo-poster__play" aria-hidden="true">▶</span>
-              <span class="vimeo-poster__caption">
-                <span class="vimeo-poster__title">{snapshot.vimeo.title}</span>
-                <span class="vimeo-poster__duration">{snapshot.vimeo.duration}</span>
-              </span>
-            </a>
+              <source src={`/shared-assets/2011/videos/fpsf2011-lineup.mp4`} type="video/mp4" />
+              <a href={snapshot.vimeo.pageUrl} target="_blank" rel="noopener noreferrer">
+                Watch "{snapshot.vimeo.title}" on Vimeo
+              </a>
+            </video>
           </div>
 
           {/* Column 2: Facebook fan-box slot (original used FB likebox widget,

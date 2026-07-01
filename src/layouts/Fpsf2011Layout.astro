@@ -84,5 +84,70 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
     </div>
     <div id="footer_bottom"></div>
   </div>
+
+  {/* Sale countdown clock. Only runs on pages that render <span id="cntdwn">
+      (currently /2011/pass and /2011/lineup). The legacy site pointed to a
+      real festival date in 2011; we pick a random "sale go-live" date within
+      the next 30 days at 12:00 PM local time, persist it in localStorage so
+      it stays stable across reloads, and re-roll whenever the stored date
+      passes or drifts out of the 30-day window. */}
+  <script is:inline>
+    (function () {
+      var el = document.getElementById('cntdwn');
+      if (!el) return;
+
+      var KEY = 'fpsf-2011-sale-target';
+      var MAX_DAYS = 30;
+      var MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+      function rollTarget() {
+        var now = new Date();
+        // Random offset 1..MAX_DAYS days from now, at 12:00:00 local time.
+        var offsetDays = 1 + Math.floor(Math.random() * MAX_DAYS);
+        var t = new Date(now.getFullYear(), now.getMonth(), now.getDate() + offsetDays, 12, 0, 0, 0);
+        try { localStorage.setItem(KEY, String(t.getTime())); } catch (_) {}
+        return t;
+      }
+
+      function loadTarget() {
+        var raw;
+        try { raw = localStorage.getItem(KEY); } catch (_) { raw = null; }
+        var ts = raw ? parseInt(raw, 10) : NaN;
+        if (!ts || isNaN(ts)) return rollTarget();
+        var target = new Date(ts);
+        var msAway = target.getTime() - Date.now();
+        // Re-roll if stored target is in the past or more than MAX_DAYS away.
+        if (msAway <= 0 || msAway > MAX_DAYS * MS_PER_DAY) return rollTarget();
+        return target;
+      }
+
+      function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+      function render(target) {
+        var diff = target.getTime() - Date.now();
+        if (diff <= 0) {
+          el.innerHTML = 'IT IS FINALLY HERE!';
+          return false;
+        }
+        var days    = Math.floor(diff / MS_PER_DAY);
+        var hours   = Math.floor((diff % MS_PER_DAY) / (60 * 60 * 1000));
+        var minutes = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
+        var seconds = Math.floor((diff % (60 * 1000)) / 1000);
+        el.innerHTML =
+          '<b>' + pad(days) + '</b> DAYS, ' +
+          '<b>' + pad(hours) + '</b> HOURS, ' +
+          '<b>' + pad(minutes) + '</b> MINUTES, ' +
+          '<b>' + pad(seconds) + '</b> SECONDS<br>' +
+          'UNTIL FREE PRESS SUMMER FEST 2011';
+        return true;
+      }
+
+      var target = loadTarget();
+      render(target);
+      setInterval(function () {
+        if (!render(target)) target = rollTarget();
+      }, 1000);
+    })();
+  </script>
 </BaseLayout>
 

@@ -87,14 +87,13 @@ a { text-decoration: none; color: #699; }
 
 /* NAVIGATION */
 #navcenter {
-  margin: auto;
+  margin: -2px auto 0;
   width: 960px;
 }
 
 #nav {
   margin: auto;
   padding: 0;
-  padding-top: 10px;
   position: relative;
   z-index: 3;
 }
@@ -357,3 +356,168 @@ div.footerboxright {}
   padding: 2px 4px;
   border: 1px solid #000;
 }
+
+/* ==========================================================================
+   Sub-page styles (pass, lineup, sponsors, press, info, faq, vendors, contact)
+   ==========================================================================
+   These rules are lifted verbatim from the archived per-page <style> blocks
+   in each .php capture. Kept together so it's obvious which piece belongs to
+   which sub-page.
+   ========================================================================== */
+
+/* Button rollover-swap system used by pass/hotel/shirt buttons on the home
+   page + duplicated in col2/col3 sidebars of every sub-page. Original site
+   used the `img.a` on top and `img.b` beneath; a jsAnim script faded `.a`
+   out on hover to reveal `.b`. We do the same with pure CSS. */
+div.fadehover {
+  position: relative;
+}
+div.fadehover img.a,
+div.fadehover img.b {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  border: 0;
+}
+div.fadehover img.a {
+  z-index: 10;
+  transition: opacity 0.4s ease;
+}
+div.fadehover:hover img.a {
+  opacity: 0;
+}
+
+/* Weezer sidebar text overlay (sub-page col2 body copy). Different from the
+   home-page main-state override of #local_text — this is just the caption
+   inside the red text bar. */
+.local_text { width: 90%; }
+#local_text a {
+  color: #fff;
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+}
+#local_text a:hover { color: #A1CDB2; }
+
+/* /2011/pass — 4 ticket-tier boxes in the wide `#footer1`-style band and
+   the "IMPORTANT PASS INFO" sidebar card in col3. */
+#box_1,
+#box_2,
+#box_3,
+#box_4 {
+  float: left;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.6em;
+  background: #000;
+}
+#box_1 { width: 22%; padding-left: 20px; padding-bottom: 30px; }
+#box_2 { width: 22%; padding-bottom: 100px; }
+#box_3 { width: 22%; padding-bottom: 130px; }
+#box_4 { width: 23%; padding: 10px 21px 10px 10px; }
+#box_1,
+#box_2,
+#box_3 {
+  border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 0;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+}
+.pass {
+  padding: 15px;
+  font-size: 12px;
+  color: #000;
+  margin-top: 5px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 0;
+}
+#pass_right {
+  background-color: #000;
+  width: 165px;
+  line-height: 12.5px;
+  padding: 15px 10px 5px 10px;
+  color: #fff;
+}
+#pass_right a,
+#pass_right a font { color: #fff; }
+
+/* /2011/pass + /2011/lineup — countdown timer container. Original loaded
+   hashemian.com/js/countdown.js which mutates innerHTML. We keep the styling
+   but render the label as static text because the third-party script is
+   removed. */
+#countdown {
+  text-align: center;
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+  font-size: 18px;
+  color: #666;
+}
+.lcdstyle {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.3em;
+  line-height: 18px;
+  margin: 0 auto;
+  padding: 6px;
+}
+.lcdstyle2 {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* /2011/lineup — big centered artist-list block. */
+.line_up_text {
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+  padding: 20px 20px 0 0;
+  margin: 0 auto;
+  width: 90%;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+/* /2011/sponsors — two-column logo grid. */
+#sponsorbox,
+#sponsorbox2 {
+  float: left;
+  position: relative;
+  width: 220px;
+  height: 106px;
+}
+#sponsorbox2 { padding-left: 10px; }
+#sponsorbox img,
+#sponsorbox2 img { max-width: 100%; height: auto; }
+
+/* /2011/pass — "PASSES NOW ON SALE AT A LOCATION NEAR YOU" retail-outlets
+   band that sits below the pass tier boxes. Full-width black band with
+   two side-by-side columns (Houston / Austin), white body copy, teal store
+   name links. */
+#outlets {
+  width: 100%;
+  background-color: #000;
+  padding-bottom: 20px;
+  clear: both;
+}
+.locations {
+  padding: 50px 20px 30px 80px;
+  color: #FFF;
+  font-size: 18px;
+}
+.locations::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.houston,
+.austin {
+  float: left;
+  font-family: 'KlavikaBold', Helvetica, Tahoma, Geneva, sans-serif;
+}
+.houston { width: 50%; }
+.austin  { margin-left: 50px; }
+/* Override base `a { color:#699 }` inside the black outlets band. */
+.locations a,
+.locations a:link,
+.locations a:visited { color: #9FC; text-decoration: none; }
+.locations a:hover,
+.locations a:active  { color: #FFF; text-decoration: none; }
+.locations span { color: #FFF; font-weight: normal; font-size: 14px; }

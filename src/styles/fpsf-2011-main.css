@@ -5,16 +5,29 @@
 
 body.state-main #header {
   width: 960px;
-  height: auto;
+  /* Archive header is exactly 960 x 270 (fixed) with a `top: 30px` offset
+     that shifts the whole box down without adding to its content height.
+     We use `margin-top: 30px` instead of `top: 30px` so the offset also
+     reserves layout space (position:relative + top doesn't push siblings). */
+  height: 270px;
   position: relative;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   padding: 0;
   clear: both;
-  overflow: hidden;
+  /* flow-root contains the floated bunny/logo without clipping. */
+  display: flow-root;
 }
 
 body.state-main #header #bunny {
   float: left;
+  /* Original archive rule: `#bunny { position:relative; margin-left:50px; z-index:-40 }`.
+     The 50px left offset is what gave the CCW orbit room to swing left
+     without clipping outside the header's left edge. Added margin-top so
+     the orbit doesn't clip against the header's top edge either, and to
+     lower the bunny into the header a bit. */
+  position: relative;
+  margin: 0 0 0 50px;
+  z-index: 1;
   border: 0;
   outline: none;
   /* Original site animated the bunny with jsAnim's positionCircle(false),
@@ -38,6 +51,7 @@ body.state-main #header #bunny {
 
 body.state-main #header #logo_text {
   float: right;
+  margin-top: 0;
   border: 0;
   outline: none;
 }
@@ -113,7 +127,7 @@ body.state-main #side_local {
   display: block;
   width: 188px;
   height: 231px;
-  margin: 0 0 6px;
+  margin: 0;
   position: relative;
   /* weezer_side.gif is a 220x465 two-frame sprite (greyscale on top,
      color on bottom). Original site swapped bg-position on hover. */
@@ -131,22 +145,16 @@ body.state-main #side_local font {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 2.4em;
-  color: #ff1011;
-  font-family: 'KlavikaBold', "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
-  font-weight: normal;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 body.state-main #local_text {
   background: #ff1011;
   color: #fff;
   text-align: left;
-  font-size: 1.4em;
-  line-height: 1.2;
+  font-size: 1.6em;
+  line-height: 0.9em;
   padding: 10px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 body.state-main #local_text a {

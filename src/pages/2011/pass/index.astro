@@ -1,0 +1,17 @@
+---
+import '@styles/fpsf-2011-main.css';
+import Fpsf2011Layout from '@layouts/Fpsf2011Layout.astro';
+import snapshot from '@data/snapshot-2011-main.json';
+import pageHtml from '@data/pages/2011/pass.html?raw';
+
+const pageTitle = `Get a Pass :: ${snapshot.edition}`;
+---
+<Fpsf2011Layout
+  snapshot={snapshot}
+  title={pageTitle}
+  bodyClass="state-main"
+  activeNavId="nav-pass"
+  currentHref="/2011/pass/"
+>
+  <Fragment set:html={pageHtml} />
+</Fpsf2011Layout>

@@ -1,0 +1,17 @@
+---
+import '@styles/fpsf-2011-main.css';
+import Fpsf2011Layout from '@layouts/Fpsf2011Layout.astro';
+import snapshot from '@data/snapshot-2011-main.json';
+import pageHtml from '@data/pages/2011/info.html?raw';
+
+const pageTitle = `Info :: ${snapshot.edition}`;
+---
+<Fpsf2011Layout
+  snapshot={snapshot}
+  title={pageTitle}
+  bodyClass="state-main"
+  activeNavId="nav-info"
+  currentHref="/2011/info/"
+>
+  <Fragment set:html={pageHtml} />
+</Fpsf2011Layout>
