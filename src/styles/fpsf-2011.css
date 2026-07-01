@@ -357,6 +357,50 @@ div.footerboxright {}
   border: 1px solid #000;
 }
 
+/* Facebook fan-box replacement (shared across presale + main). Original
+   site embedded a live `<fb:fan>` widget; the widget API is dead so we
+   render a static Like-style card inside whatever background color the
+   host page provides on the parent `.fb-fan-box` div (green #a1cdb2 on
+   main, yellow #FF0 on presale). */
+.fb-fan-box .fb-fan-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  height: 100%;
+  padding: 12px;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
+  text-decoration: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.fb-fan-box .fb-fan-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.fb-fan-box .fb-fan-sub {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.fb-fan-box .fb-fan-cta {
+  margin-top: auto;
+  align-self: center;
+  padding: 4px 14px;
+  background: #3b5998;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
 /* ==========================================================================
    Sub-page styles (pass, lineup, sponsors, press, info, faq, vendors, contact)
    ==========================================================================

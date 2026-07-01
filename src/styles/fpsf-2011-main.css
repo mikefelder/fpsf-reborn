@@ -182,48 +182,6 @@ body.state-main .news-source {
   margin: 4px 0 8px;
 }
 
-/* Facebook fan-box replacement — original site embedded fb:fan widget in a
-   green (#a1cdb2) column. Widget API is dead; render a static Like-style
-   card so the layout keeps the same visual mass. */
-body.state-main .fb-fan-box .fb-fan-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 8px;
-  height: 100%;
-  padding: 12px;
-  color: #000;
-  font-family: "Helvetica Neue", Helvetica, Tahoma, Geneva, sans-serif;
-  text-decoration: none;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.35);
-}
-
-body.state-main .fb-fan-box .fb-fan-title {
-  font-size: 1.6em;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0;
-}
-
-body.state-main .fb-fan-box .fb-fan-sub {
-  font-size: 1.1em;
-  color: #333;
-}
-
-body.state-main .fb-fan-box .fb-fan-cta {
-  margin-top: auto;
-  align-self: center;
-  padding: 4px 14px;
-  background: #3b5998;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1em;
-  letter-spacing: 1px;
-  border-radius: 3px;
-}
-
 /* Vimeo poster fallback — the archived iframe embed of vimeo.com/20397258
    now returns HTTP 401 because the video is domain-restricted. Render the
    oEmbed poster as a clickable card that opens the Vimeo page. */

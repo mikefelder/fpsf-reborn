@@ -86,10 +86,14 @@ const totalDurationMs = slideDelayMs * slideCount;
     </div>
 
     <div id="footer1" class="fontface_K">
-      <div id="box" style="margin:0">
-        <div id="box" style="background:url('/shared-assets/2011/images/greybg.png') repeat; margin: 0 10px; padding-left:0px">
+      <div id="box" style="margin:0 10px; width:100%">
+        <div id="box" style="background:url('/shared-assets/2011/images/greybg.png') repeat; margin:0 auto; width:920px; padding-left:0px">
           <div id="stripe" style="margin-bottom:10px"></div>
 
+          {/* Column 1: Vimeo recap (FPSF 2010 recap on the presale page).
+              Original iframe still works for some ids but many Vimeo videos
+              now block cross-domain embedding, so this may render blank.
+              TODO: replace with local MP4 rip if the iframe stops working. */}
           <div id="box" style="margin:0; padding-left:10px">
             <iframe
               src={`https://player.vimeo.com/video/${snapshot.vimeo.id}?title=0&byline=0&portrait=0`}
@@ -101,34 +105,46 @@ const totalDurationMs = slideDelayMs * slideCount;
             ></iframe>
           </div>
 
-          <div id="box" style="padding:10px; padding-bottom:5px; background-color:#FF0; margin:0; margin-left:10px; height:295px; width:240px">
-            <h3 class="fontface_K" style="margin:0; letter-spacing:2px; font-size:1.6em">FOLLOW THE FEST</h3>
-            <ul style="list-style:none; padding:0; margin-top:10px; font-size:1.3em; line-height:1.7">
-              {snapshot.social.map((link) => (
-                <li>
-                  <a href={link.href} target="_blank" rel="noopener noreferrer" style="color:#000">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Column 2: Facebook fan-box slot. Presale used a YELLOW (#FF0)
+              background where main used green (#a1cdb2). Widget is dead;
+              render a static Like-style card so the visual mass matches. */}
+          <div id="box" class="fb-fan-box fb-fan-box--presale" style="padding:10px; padding-bottom:5px; background-color:#FF0; margin:0; margin-left:10px; height:295px; width:200px">
+            <a
+              href={snapshot.social.find((link) => link.label === 'Facebook')?.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="fb-fan-link"
+            >
+              <div class="fb-fan-title">Free Press Summer Fest</div>
+              <div class="fb-fan-sub">on Facebook</div>
+              <div class="fb-fan-cta">Like</div>
+            </a>
           </div>
 
+          {/* Column 3: Twitter box. Archive presale order was
+              vimeo → FB → twitter → subscribe (twitter above subscribe),
+              which differs from the main-state order. */}
           <div id="box" style="margin:0; margin-left:10px">
             <div id="twitter_box">
-              <br />
-              <div style="font-size:18px; color:#000; padding:5px; margin-left: 8px">FROM TWITTER</div>
+              <div class="fontface_klav_b" style="font-size:18px; color:#000; padding:5px; margin-left:8px">FROM TWITTER</div>
               <p style="padding:8px 12px; font-size:1.1em; line-height:1.4; margin:0">
-                <a href={snapshot.social.find((link) => link.label === 'Twitter')?.href} target="_blank" rel="noopener noreferrer" style="color:#000">@fpsummerfest</a>
+                <a
+                  href={snapshot.social.find((link) => link.label === 'Twitter')?.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color:#000"
+                >@fpsummerfest</a>
               </p>
             </div>
           </div>
 
-          <div id="box">
+          {/* Column 4: Newsletter subscribe form (teal on presale). Wraps
+              to a second row via margin-top:10px, matching the archive. */}
+          <div id="box" style="margin:0; margin-top:10px; margin-left:10px">
             <div id="subscribe_box">
-              <div id="subscribe" class="fontface_K">
-                <div style="letter-spacing:2px; padding-left:5px">SIGN UP FOR THE LATEST FEST INFO</div>
-                <div style="padding-left:10px; font-size:0.9em">*Required</div>
+              <div id="subscribe" class="fontface_klav_b">
+                <div style="letter-spacing:1px; padding-left:5px; font-size:.9em">SIGN UP FOR THE LATEST FEST INFO</div>
+                <div style="padding-left:10px; font-size:.75em">*Required</div>
 
                 <form
                   method="post"
@@ -139,7 +155,7 @@ const totalDurationMs = slideDelayMs * slideCount;
                   <table border="0" align="left" cellspacing="0" cellpadding="4">
                     {snapshot.subscribe.fields.map((field) => (
                       <tr>
-                        <td style="vertical-align:top; font-size:1.2em; letter-spacing:2px">
+                        <td style="vertical-align:top; font-size:.85em; letter-spacing:1px">
                           {field.label}:
                         </td>
                         <td style="vertical-align:top">
@@ -167,7 +183,7 @@ const totalDurationMs = slideDelayMs * slideCount;
             </div>
           </div>
 
-          <div id="stripe"></div>
+          <div id="stripe" style="margin-top:10px"></div>
         </div>
       </div>
     </div>
@@ -175,20 +191,35 @@ const totalDurationMs = slideDelayMs * slideCount;
     <div id="footer2">
       <div id="box" style="width:100%; padding:0 10px 10px 0; margin-top:0">
         <div class="footerboxleft">
+          <a href={snapshot.sponsorBarHref}>
+            <img
+              src={`/shared-assets/2011/images/${snapshot.sponsorBarImage}`}
+              alt="FPSF 2011 sponsors"
+              height="118"
+              style="display:block; border:0"
+            />
+          </a>
+        </div>
+        <div class="footerboxright">
           <img
-            src={`/shared-assets/2011/images/${snapshot.sponsorBarImage}`}
-            alt="FPSF 2011 sponsors"
-            style="display:block"
+            src={`/shared-assets/2011/images/${snapshot.socialBarImage}`}
+            alt="FPSF 2011 social links (FPH / Pegstar / Facebook / Twitter / YouTube / Vimeo)"
+            height="118"
+            style="display:block; border:0"
+            usemap="#socialbar-map"
           />
-          <ul style="display:flex; gap:14px; list-style:none; padding:6px 0 0; margin:0; font-size:1.1em">
-            {snapshot.sponsors.map((sponsor) => (
-              <li>
-                <a href={sponsor.href} target="_blank" rel="noopener noreferrer" style="color:#333">
-                  {sponsor.label}
-                </a>
-              </li>
+          <map name="socialbar-map" id="socialbar-map">
+            {snapshot.socialBarMap.map((area) => (
+              <area
+                shape={area.shape}
+                coords={area.coords}
+                href={area.href}
+                alt={area.alt}
+                target={area.target}
+                rel={area.target === '_blank' ? 'noopener noreferrer' : undefined}
+              />
             ))}
-          </ul>
+          </map>
         </div>
       </div>
     </div>

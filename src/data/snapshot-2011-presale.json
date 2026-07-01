@@ -60,7 +60,9 @@
   },
   "vimeo": {
     "id": "14790218",
-    "title": "FPSF 2010 recap"
+    "title": "FPSF 2010 recap",
+    "pageUrl": "https://vimeo.com/14790218",
+    "duration": ""
   },
   "subscribe": {
     "actionUrl": "http://ymlp.com/subscribe.php?id=geqhemugmgh",
@@ -72,13 +74,23 @@
     "submitImage": "done.png"
   },
   "sponsors": [
-    { "label": "Dos Equis", "href": "http://www.dosequis.com" },
-    { "label": "Urban Outfitters", "href": "http://urbanoutfitters.com" },
-    { "label": "Red Bull", "href": "http://RedBull.com" },
-    { "label": "Ikea", "href": "http://Ikea.com" },
-    { "label": "29-95", "href": "http://29-95.com" }
+    { "name": "Dos Equis", "href": "http://www.dosequis.com" },
+    { "name": "Urban Outfitters", "href": "http://urbanoutfitters.com" },
+    { "name": "Red Bull", "href": "http://RedBull.com" },
+    { "name": "Ikea", "href": "http://Ikea.com" },
+    { "name": "29-95", "href": "http://29-95.com" }
   ],
-  "sponsorBarImage": "sponsorbar.png",
+  "sponsorBarImage": "sponsorbar.jpg",
+  "sponsorBarHref": "/2011/sponsors/",
+  "socialBarImage": "social_logo_link_image.jpg",
+  "socialBarMap": [
+    { "shape": "rect", "coords": "272,40,388,90", "href": "http://www.jagi.cc/", "alt": "Pegstar.net", "target": "_blank" },
+    { "shape": "rect", "coords": "144,33,260,102", "href": "http://www.FreePressHouston.com", "alt": "FreePressHouston.com", "target": "_blank" },
+    { "shape": "rect", "coords": "20,64,61,106", "href": "http://www.youtube.com/results?search_query=free+press+summer+fest", "alt": "YouTube", "target": "_blank" },
+    { "shape": "rect", "coords": "66,67,108,106", "href": "http://vimeo.com/user2385997", "alt": "Vimeo", "target": "_blank" },
+    { "shape": "rect", "coords": "68,12,112,59", "href": "http://twitter.com/fpsf", "alt": "Twitter", "target": "_blank" },
+    { "shape": "rect", "coords": "19,13,64,58", "href": "http://www.facebook.com/freepresssummerfest", "alt": "Facebook", "target": "_blank" }
+  ],
   "social": [
     { "label": "Facebook", "href": "http://www.facebook.com/freepresssummerfest" },
     { "label": "Twitter", "href": "http://twitter.com/fpsummerfest" },
