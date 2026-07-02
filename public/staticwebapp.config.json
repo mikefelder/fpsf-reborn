@@ -1,0 +1,22 @@
+{
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube.com https://player.vimeo.com; frame-ancestors 'none'"
+  },
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": ["/shared-assets/*", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.webp", "*.svg", "*.mp4", "*.woff", "*.woff2", "*.eot", "*.ttf", "*.css", "*.js", "*.ico", "*.pdf"]
+  },
+  "mimeTypes": {
+    ".ico": "image/x-icon",
+    ".svg": "image/svg+xml",
+    ".woff": "font/woff",
+    ".woff2": "font/woff2",
+    ".eot": "application/vnd.ms-fontobject",
+    ".ttf": "font/ttf",
+    ".pdf": "application/pdf"
+  }
+}

@@ -3,6 +3,14 @@ node_modules/
 dist/
 .astro/
 
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+tfplan
+crash.log
+
 # OS
 .DS_Store
 Thumbs.db
