@@ -50,25 +50,25 @@ resource "azurerm_storage_account_static_website" "assets" {
 }
 
 # --- Custom domains ---
-# fpsf.dev is the canonical domain (apex + www) — exactly 2 domains, which fits
-# the SWA Free tier. These are commented out for the INITIAL apply because
-# Azure validates the records when the resource is created:
-#   * cname-delegation (www) requires the CNAME to already exist -> 400 until DNS.
-#   * dns-txt-token (apex) needs the TXT token + A/ALIAS to actually validate.
-# Bring-up order: (1) apply base infra to create swa-fpsf, (2) in Cloudflare add
-# CNAME www.fpsf.dev -> <swa default hostname> and the apex A/ALIAS + the TXT
-# validation token Azure shows for fpsf.dev, (3) uncomment below and re-apply.
-# freepresssummerfest.dev is NOT bound here — it 301-redirects to fpsf.dev in
-# Cloudflare.
-#
-# resource "azurerm_static_web_app_custom_domain" "apex" {
-#   static_web_app_id = azurerm_static_web_app.site.id
-#   domain_name       = var.primary_domain
-#   validation_type   = "dns-txt-token"
-# }
-#
-# resource "azurerm_static_web_app_custom_domain" "www" {
-#   static_web_app_id = azurerm_static_web_app.site.id
-#   domain_name       = "www.${var.primary_domain}"
-#   validation_type   = "cname-delegation"
-# }
+# fpsf.dev (apex) was already validated and bound to the SWA outside Terraform
+# (CNAME in Cloudflare, domain bound via portal — Status: Ready). Import it into
+# TF state so Terraform manages it going forward.
+# www.fpsf.dev CNAME is live in Cloudflare, so cname-delegation validates on apply.
+# freepresssummerfest.dev is NOT bound here — it 301-redirects to fpsf.dev in Cloudflare.
+
+import {
+  to = azurerm_static_web_app_custom_domain.apex
+  id = "/subscriptions/1784740a-1cf6-416b-b3db-bda6985970aa/resourceGroups/rg-fpsf/providers/Microsoft.Web/staticSites/swa-fpsf/customDomains/fpsf.dev"
+}
+
+resource "azurerm_static_web_app_custom_domain" "apex" {
+  static_web_app_id = azurerm_static_web_app.site.id
+  domain_name       = var.primary_domain
+  validation_type   = "dns-txt-token"
+}
+
+resource "azurerm_static_web_app_custom_domain" "www" {
+  static_web_app_id = azurerm_static_web_app.site.id
+  domain_name       = "www.${var.primary_domain}"
+  validation_type   = "cname-delegation"
+}

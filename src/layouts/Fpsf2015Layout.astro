@@ -39,19 +39,15 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
   <Fragment slot="head">
     <link rel="stylesheet" href={`${assetBase}/css/app.css`} />
     <style is:global>
-      /* Sponsor sprite cells: each <li> is a block-grid column; shrink the
-         logo to 75% of the column width by constraining the <img> element
-         (which carries the sprite background) and centering it. */
-      .sponsors-wrap ul li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      /* Sponsor sprite: keep width 100% so percentage background-position
+         values in app.css stay accurate. Reduce visual size by using more
+         block-grid columns (6 instead of 4) in the markup — each logo is
+         naturally ~67% of the 4-col size without any sprite math breaking. */
       .sponsors-wrap ul li img {
         display: block;
-        width: 75%;
+        width: 100%;
         height: 0;
-        padding-bottom: calc(53.76% * 0.75);
+        padding-bottom: 53.76%;
         background-repeat: no-repeat;
       }
 
@@ -450,7 +446,7 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
     <div class="row sponsors-wrap ip-main">
       <div class="large-12 columns">
         <h2 class="title">Sponsors</h2>
-        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4 text-center no-bullets">
+        <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-6 text-center no-bullets">
           {data.sponsors.map((sponsor) => (
             <li>
               {sponsor.href
