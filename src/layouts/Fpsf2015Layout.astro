@@ -316,19 +316,38 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
               action={data.newsletter.actionUrl}
               target="vr_optin_popup"
             >
-              <input type="email" name="email" placeholder="Email" required />
-              <button type="submit">Sign up</button>
+              <input name="email_address" placeholder="EMAIL" aria-label="Email address" /><br />
+              <button type="submit" class="button secondary form_submit uppercase">Submit</button>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
 
-          {data.appLinks && (
-            <p style="margin-top:24px; font-size:14px; color:#b6b3a3">
-              {data.appLinks.prompt} {' '}
-              <a href={data.appLinks.appStoreUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">iOS</a>
-              {' · '}
-              <a href={data.appLinks.googlePlayUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">Android</a>
-            </p>
-          )}
+    <div class="bm-footer clearfix">
+      <div class="row">
+        <div class="large-8 medium-8 columns">
+          <div class="row">
+            <div class="large-8 columns">
+              <ul class="ft-nav inline-list">
+                <li><a href="mailto:vendors@fpsf.com?Subject=Vendors" target="_top">vendors</a></li>
+                <li><a href="mailto:media@fpsf.com?Subject=Media" target="_top">media</a></li>
+                <li><a href="mailto:sponsors@fpsf.com?Subject=Sponsors" target="_top">sponsors</a></li>
+                <li><a href="mailto:info@fpsf.com?Subject=General Information" target="_top">general info</a></li>
+                <li><a href="https://fpsf.frontgatetickets.com/label/contact" target="_blank" rel="noopener noreferrer">ticketing FAQs</a></li>
+              </ul>
+              <p class="copyright">Site contents copyright &copy; 2015 FPSF 2015. All rights reserved. Sponsor logos, signage, and names may be trademarked. These materials may not be reproduced elsewhere, except by their respective copyright and trademark holders.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="large-4 medium-4 columns tw-wrap">
+          <p class="title uppercase">Live Feed</p>
+          <div class="tw-feed">
+            <p class="status">Peep the 2015 <a href="https://twitter.com/search?q=%23FPSF" target="_blank" rel="noopener noreferrer">#FPSF</a> Video re-cap now at <a href="https://t.co/DCWpxJK1PI" target="_blank" rel="noopener noreferrer">http://t.co/DCWpxJK1PI</a></p>
+            <p class="info">1 day, 23 hours ago<br /><a href="https://twitter.com/fpsf" target="_blank" rel="noopener noreferrer" class="uppercase">Details</a></p>
+          </div>
+          <p class="credits">website by: <a href="https://www.baalspots.com/" target="_blank" rel="noopener noreferrer">Baal &amp; Spots</a></p>
         </div>
       </div>
     </div>
