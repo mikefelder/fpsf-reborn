@@ -39,16 +39,19 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
   <Fragment slot="head">
     <link rel="stylesheet" href={`${assetBase}/css/app.css`} />
     <style is:global>
-      /* The sponsor sprite (sprite-sponsors.jpg, 372x3200, 16 stacked logos)
-         is positioned per-sponsor via percentage background-position in
-         app.css. Those percentages assume each cell element has the sprite
-         cell's aspect ratio (372:200 -> 53.76% padding). The placeholder
-         <img> has no intrinsic height, so pin the ratio here. */
+      /* Sponsor sprite cells: each <li> is a block-grid column; shrink the
+         logo to 75% of the column width by constraining the <img> element
+         (which carries the sprite background) and centering it. */
+      .sponsors-wrap ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .sponsors-wrap ul li img {
         display: block;
-        width: 100%;
+        width: 75%;
         height: 0;
-        padding-bottom: 53.76%;
+        padding-bottom: calc(53.76% * 0.75);
         background-repeat: no-repeat;
       }
 
