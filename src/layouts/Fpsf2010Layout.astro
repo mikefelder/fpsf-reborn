@@ -1,6 +1,7 @@
 ---
 import '@styles/fpsf-2010.css';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import EventJsonLd from '@components/EventJsonLd.astro';
 import type { Snapshot } from '@/types/snapshot';
 import { canonicalHref } from '@data/show-years';
 
@@ -29,15 +30,30 @@ const imageBase = '/shared-assets/2010/images';
 const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
 const headerImageMissing = !data.header.image
   || data.header.image === 'crosssite/headergif.gif';
+const ogImage = data.header.image && !headerImageMissing
+  ? `${imageBase}/${data.header.image}`
+  : undefined;
 ---
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  ogImage={ogImage}
   bodyClass={bodyClass}
   year={data.year}
   knownGaps={data.knownGaps}
   currentHref={currentHref}
 >
+  <Fragment slot="head">
+    <EventJsonLd
+      name={data.edition}
+      url={homeHref}
+      description={data.description}
+      location={data.location}
+      image={ogImage}
+      startDate={data.startDate}
+      endDate={data.endDate}
+    />
+  </Fragment>
   <a href={homeHref}>
     {data.header.image && !headerImageMissing
       ? <div id="header">

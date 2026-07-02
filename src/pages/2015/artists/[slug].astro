@@ -17,12 +17,22 @@ export function getStaticPaths() {
 const { artist, prev, next } = Astro.props;
 const assetBase = '/shared-assets/2015';
 const pageTitle = `${artist.name} | ${snapshot.title}`;
-const pageDescription = artist.bio ? artist.bio.slice(0, 160) : undefined;
+
+function truncate(text: string, max = 160): string {
+  if (text.length <= max) return text;
+  const clipped = text.slice(0, max);
+  const lastSpace = clipped.lastIndexOf(' ');
+  return `${clipped.slice(0, lastSpace > 0 ? lastSpace : max).trimEnd()}\u2026`;
+}
+
+const pageDescription = artist.bio ? truncate(artist.bio) : undefined;
+const ogImage = artist.image ? `${assetBase}/${artist.image}` : undefined;
 ---
 <Fpsf2015Layout
   snapshot={snapshot}
   title={pageTitle}
   description={pageDescription}
+  ogImage={ogImage}
   bodyClass="sub artist"
   currentHref="/2015/"
 >

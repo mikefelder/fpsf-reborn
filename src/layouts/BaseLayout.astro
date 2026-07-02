@@ -10,6 +10,12 @@ export interface Props {
   htmlLang?: string;
   htmlClass?: string;
   bodyClass?: string;
+  // Social / canonical metadata forwarded to PageHead.
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
   // Year of this page; controls the known-gaps banner.
   year?: number;
   knownGaps?: string[];
@@ -28,6 +34,11 @@ const {
   htmlLang = 'en',
   htmlClass,
   bodyClass,
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType,
   year,
   knownGaps = [],
   currentHref,
@@ -37,7 +48,16 @@ const {
 <!DOCTYPE html>
 <html lang={htmlLang} class={htmlClass}>
   <head>
-    <PageHead title={title} description={description} favicon={favicon}>
+    <PageHead
+      title={title}
+      description={description}
+      favicon={favicon}
+      canonical={canonical}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+      ogImage={ogImage}
+      ogType={ogType}
+    >
       <slot name="head" />
     </PageHead>
   </head>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import EventJsonLd from '@components/EventJsonLd.astro';
 import type { Snapshot } from '@/types/snapshot';
 import { canonicalHref } from '@data/show-years';
 
@@ -26,10 +27,12 @@ const pageTitle = title ?? data.title;
 const pageDescription = description ?? data.description;
 const assetBase = '/shared-assets/2014';
 const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+const ogImage = data.header.image ? `${assetBase}/${data.header.image}` : undefined;
 ---
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  ogImage={ogImage}
   htmlClass="no-js"
   bodyClass={bodyClass}
   year={data.year}
@@ -37,6 +40,15 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
   currentHref={currentHref}
 >
   <Fragment slot="head">
+    <EventJsonLd
+      name={data.edition}
+      url={homeHref}
+      description={data.description}
+      location={data.location}
+      image={ogImage}
+      startDate={data.startDate}
+      endDate={data.endDate}
+    />
     <link rel="stylesheet" href={`${assetBase}/video/css/fpsfMusicVid.css`} type="text/css" media="screen" />
     <link rel="stylesheet" href={`${assetBase}/assets/css/reset.css`} />
     <link rel="stylesheet" href={`${assetBase}/assets/css/ie.css`} />

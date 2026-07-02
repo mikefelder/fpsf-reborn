@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import EventJsonLd from '@components/EventJsonLd.astro';
 import type { Snapshot } from '@/types/snapshot';
 import { canonicalHref } from '@data/show-years';
 
@@ -7,6 +8,7 @@ export interface Props {
   snapshot: Snapshot;
   title?: string;
   description?: string;
+  ogImage?: string;
   bodyId?: string;
   bodyClass?: string;
   currentHref?: string;
@@ -16,6 +18,7 @@ const {
   snapshot,
   title,
   description,
+  ogImage,
   bodyId = 'index',
   bodyClass = 'sub index parent-id-0',
   currentHref,
@@ -26,10 +29,15 @@ const pageTitle = title ?? data.title;
 const pageDescription = description ?? data.description;
 const assetBase = '/shared-assets/2015';
 const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+const posterPath = data.lineup?.posterFull ?? data.banner?.posterFull;
+const posterOgImage = posterPath ? `${assetBase}/${posterPath}` : undefined;
+const resolvedOgImage = ogImage ?? posterOgImage;
+const performers = (data.lineup?.headliners ?? []).map((a) => a.name);
 ---
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  ogImage={resolvedOgImage}
   bodyClass={bodyClass}
   year={data.year}
   knownGaps={data.knownGaps}
@@ -37,6 +45,16 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
   favicon={`${assetBase}/images/site/fav-ico.png`}
 >
   <Fragment slot="head">
+    <EventJsonLd
+      name={data.edition}
+      url={homeHref}
+      description={data.description}
+      location={data.location}
+      image={posterOgImage}
+      startDate={data.startDate}
+      endDate={data.endDate}
+      performers={performers}
+    />
     <link rel="stylesheet" href={`${assetBase}/css/app.css`} />
     <style is:global>
       /* Sponsor sprite: keep width 100% so percentage background-position

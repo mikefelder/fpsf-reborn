@@ -1,6 +1,7 @@
 ---
 import '@styles/fpsf-2011.css';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import EventJsonLd from '@components/EventJsonLd.astro';
 import type { Snapshot } from '@/types/snapshot';
 import { canonicalHref } from '@data/show-years';
 
@@ -29,16 +30,29 @@ const pageTitle = title ?? data.title;
 const pageDescription = description ?? data.description;
 const imageBase = '/shared-assets/2011/images';
 const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+const ogImage = data.header.image ? `${imageBase}/${data.header.image}` : undefined;
 ---
 <BaseLayout
   title={pageTitle}
   description={pageDescription}
+  ogImage={ogImage}
   favicon={data.header.image ? `${imageBase}/${data.header.image}` : undefined}
   bodyClass={bodyClass}
   year={data.year}
   knownGaps={data.knownGaps}
   currentHref={currentHref}
 >
+  <Fragment slot="head">
+    <EventJsonLd
+      name={data.edition}
+      url={homeHref}
+      description={data.description}
+      location={data.location}
+      image={ogImage}
+      startDate={data.startDate}
+      endDate={data.endDate}
+    />
+  </Fragment>
   <a href={homeHref}>
     <div id="header" style={data.header.mascotImage ? '' : 'text-align:center'}>
       {data.header.mascotImage && (

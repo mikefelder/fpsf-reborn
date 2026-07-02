@@ -5,7 +5,16 @@ export interface Props {
   favicon?: string;
   viewport?: string;
   charset?: string;
-  xUaCompatible?: string;
+  /** Absolute canonical URL. Defaults to site + current pathname. */
+  canonical?: string;
+  /** Open Graph / Twitter title. Falls back to `title`. */
+  ogTitle?: string;
+  /** Open Graph / Twitter description. Falls back to `description`. */
+  ogDescription?: string;
+  /** Share image. Root-relative paths are resolved against `site`. */
+  ogImage?: string;
+  ogType?: string;
+  siteName?: string;
 }
 
 const {
@@ -14,13 +23,43 @@ const {
   favicon,
   viewport = 'width=device-width, initial-scale=1.0',
   charset = 'UTF-8',
-  xUaCompatible = 'IE=edge,chrome=1',
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType = 'website',
+  siteName = 'Free Press Summer Fest',
 } = Astro.props;
+
+const site = Astro.site;
+const toAbsolute = (path?: string): string | undefined => {
+  if (!path) return undefined;
+  if (/^https?:\/\//.test(path)) return path;
+  return site ? new URL(path, site).href : path;
+};
+
+const canonicalUrl = canonical ?? toAbsolute(Astro.url.pathname) ?? Astro.url.pathname;
+const ogImageUrl = toAbsolute(ogImage);
+const metaOgTitle = ogTitle ?? title;
+const metaOgDescription = ogDescription ?? description;
 ---
 <meta charset={charset} />
-<meta http-equiv="X-UA-Compatible" content={xUaCompatible} />
 <meta name="viewport" content={viewport} />
 <title>{title}</title>
 {description && <meta name="description" content={description} />}
+<link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={metaOgTitle} />
+{metaOgDescription && <meta property="og:description" content={metaOgDescription} />}
+<meta property="og:url" content={canonicalUrl} />
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+<meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={metaOgTitle} />
+{metaOgDescription && <meta name="twitter:description" content={metaOgDescription} />}
+{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
 {favicon && <link rel="icon" href={favicon} />}
 <slot />

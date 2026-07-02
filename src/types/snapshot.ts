@@ -75,6 +75,10 @@ export interface BaseSnapshot {
   year: number;
   edition: string;
   dates: string;
+  /** ISO date (YYYY-MM-DD) of the first festival day, for structured data. */
+  startDate?: string;
+  /** ISO date (YYYY-MM-DD) of the last festival day, for structured data. */
+  endDate?: string;
   location: string;
   sourceSnapshot: string;
   sourceDomain: string;
@@ -137,7 +141,33 @@ export interface HeroExt {
   }>;
 }
 
-export type Snapshot = BaseSnapshot & Partial<PresaleExt & HeroExt>;
+export interface LineupArtist {
+  name: string;
+  image?: string | null;
+  slug?: string;
+  bio?: string;
+  url?: string;
+  cropPosition?: string;
+}
+
+// Fields present on canonical "main" event-state snapshots (lineup released).
+export interface MainExt {
+  eventDate?: { headline?: string; city?: string };
+  banner?: {
+    posterFull?: string;
+    posterThumb?: string;
+    videoUrl?: string;
+    [key: string]: unknown;
+  };
+  lineup?: {
+    note?: string;
+    posterFull?: string;
+    headliners?: LineupArtist[];
+    undercard?: LineupArtist[];
+  };
+}
+
+export type Snapshot = BaseSnapshot & Partial<PresaleExt & HeroExt & MainExt>;
 
 // Show-year directory: source of truth for the year picker and year pill.
 // `routes` lists the rebuilt URLs for that year (canonical landing,

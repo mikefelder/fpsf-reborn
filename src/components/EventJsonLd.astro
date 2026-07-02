@@ -1,0 +1,74 @@
+---
+// Emits schema.org/MusicEvent structured data for a show-year page.
+// Driven entirely by snapshot data so each year stays self-describing.
+export interface Props {
+  name: string;
+  /** Canonical page path or absolute URL for the event. */
+  url: string;
+  description?: string;
+  /** Venue name, e.g. "Eleanor Tinsley Park, Houston, TX". */
+  location?: string;
+  /** Representative image (poster/logo). Root-relative paths resolved to absolute. */
+  image?: string;
+  /** ISO date (YYYY-MM-DD) of the first festival day. */
+  startDate?: string;
+  /** ISO date (YYYY-MM-DD) of the last festival day. */
+  endDate?: string;
+  /** Performer names. */
+  performers?: string[];
+}
+
+const {
+  name,
+  url,
+  description,
+  location,
+  image,
+  startDate,
+  endDate,
+  performers = [],
+} = Astro.props;
+
+const site = Astro.site;
+const toAbsolute = (path?: string): string | undefined => {
+  if (!path) return undefined;
+  if (/^https?:\/\//.test(path)) return path;
+  return site ? new URL(path, site).href : path;
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicEvent',
+  name,
+  url: toAbsolute(url),
+  ...(description && { description }),
+  ...(startDate && { startDate }),
+  ...(endDate && { endDate }),
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  ...(toAbsolute(image) && { image: toAbsolute(image) }),
+  ...(location && {
+    location: {
+      '@type': 'Place',
+      name: location,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Houston',
+        addressRegion: 'TX',
+        addressCountry: 'US',
+      },
+    },
+  }),
+  ...(performers.length > 0 && {
+    performer: performers.map((performer) => ({
+      '@type': 'MusicGroup',
+      name: performer,
+    })),
+  }),
+  organizer: {
+    '@type': 'Organization',
+    name: 'Free Press Houston',
+  },
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
