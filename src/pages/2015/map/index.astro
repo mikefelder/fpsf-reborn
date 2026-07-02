@@ -1,0 +1,10 @@
+---
+import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
+import snapshot from '@data/snapshot-2015-main.json';
+import pageHtml from '@data/pages/2015/map.html?raw';
+
+const pageTitle = `Map | ${snapshot.title}`;
+---
+<Fpsf2015Layout snapshot={snapshot} title={pageTitle} bodyClass="sub map" currentHref="/2015/map/">
+  <Fragment set:html={pageHtml} />
+</Fpsf2015Layout>

@@ -1,56 +1,8 @@
 ---
 import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
 import snapshot from '@data/snapshot-2015-main.json';
-
-const assetBase = '/shared-assets/2015';
 ---
 <Fpsf2015Layout snapshot={snapshot} currentHref="/2015/">
-  <section>
-    <div class="hm-caption-wrap row">
-      <div class="banner">
-        <div class="banner-overlay video-overlay gradient-bg"></div>
-
-        <div class="large-6 caption-l columns">
-          <a
-            href={snapshot.banner.videoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="play-btn"
-            title={snapshot.banner.videoTitle}
-          ><i data-icon="r" class="icon" aria-hidden="true"></i></a>
-          <p class="title">
-            {snapshot.banner.title.map((line, i) => (
-              <>
-                {line}
-                {i < snapshot.banner.title.length - 1 && <br />}
-              </>
-            ))}
-          </p>
-        </div>
-
-        <div class="large-6 caption-r columns">
-          <a
-            href={`${assetBase}/${snapshot.banner.posterFull}`}
-            class="poster-btn right"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="View FPSF 2015 poster"
-          >
-            <img src={`${assetBase}/${snapshot.banner.posterThumb}`} alt="FPSF 2015 poster" />
-          </a>
-          <div class="button-wrap">
-            <a
-              href={snapshot.banner.passesUrl}
-              class="button secondary large"
-              target="_blank"
-              rel="noopener noreferrer"
-            >{snapshot.banner.passesLabel}</a><i class="icon icon-2015" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section>
     <div class="event-date">
       <div class="row">
@@ -82,50 +34,4 @@ const assetBase = '/shared-assets/2015';
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="row sponsors-wrap ip-main">
-      <div class="large-12 columns">
-        <h2 class="title">Sponsors</h2>
-        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4 text-center no-bullets">
-          {snapshot.sponsors.map((sponsor) => (
-            <li>
-              {sponsor.href
-                ? <a href={sponsor.href} target="_blank" rel="noopener noreferrer"><img class={sponsor.className} alt={sponsor.name} src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></a>
-                : <img class={sponsor.className} alt={sponsor.name} src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="newsletter-wrap clearfix">
-      <div class="row">
-        <div class="large-5 medium-6 large-centered medium-centered columns text-center">
-          <div id="signup" class="signup">
-            <h4 class="uppercase">Sign up for our newsletter</h4>
-            <form
-              method="post"
-              action={snapshot.newsletter.actionUrl}
-              target="vr_optin_popup"
-            >
-              <input type="email" name="email" placeholder="Email" required />
-              <button type="submit">Sign up</button>
-            </form>
-          </div>
-
-          {snapshot.appLinks && (
-            <p style="margin-top:24px; font-size:14px; color:#b6b3a3">
-              {snapshot.appLinks.prompt} {' '}
-              <a href={snapshot.appLinks.appStoreUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">iOS</a>
-              {' · '}
-              <a href={snapshot.appLinks.googlePlayUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">Android</a>
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
-  </footer>
 </Fpsf2015Layout>

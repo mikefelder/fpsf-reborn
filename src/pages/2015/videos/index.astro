@@ -1,0 +1,10 @@
+---
+import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
+import snapshot from '@data/snapshot-2015-main.json';
+import pageHtml from '@data/pages/2015/videos.html?raw';
+
+const pageTitle = `Videos | ${snapshot.title}`;
+---
+<Fpsf2015Layout snapshot={snapshot} title={pageTitle} bodyClass="sub videos" currentHref="/2015/videos/">
+  <Fragment set:html={pageHtml} />
+</Fpsf2015Layout>

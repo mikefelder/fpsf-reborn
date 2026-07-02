@@ -34,6 +34,7 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
   year={data.year}
   knownGaps={data.knownGaps}
   currentHref={currentHref}
+  favicon={`${assetBase}/images/site/fav-ico.png`}
 >
   <Fragment slot="head">
     <link rel="stylesheet" href={`${assetBase}/css/app.css`} />
@@ -122,6 +123,80 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
          desktop nav left of the badge so the social icons aren't covered. */
       @media only screen and (min-width: 62.125rem) {
         .cd-header .cd-secondary-nav { right: 15rem; }
+        /* Desktop uses .cd-secondary-nav; hide the mobile hamburger + menu. */
+        .cd-primary-nav-trigger { display: none; }
+        .cd-primary-nav { display: none; }
+      }
+
+      /* Mobile nav: the desktop .cd-secondary-nav is display:none below 994px,
+         so port the CodyHouse hamburger (.cd-primary-nav-trigger) + full-screen
+         menu (.cd-primary-nav). We don't load CodyHouse main.js, so a small
+         inline script toggles .is-visible / .is-clicked. Fixed top-LEFT to
+         avoid the top-right archive badge. */
+      @media only screen and (max-width: 62.06rem) {
+        .cd-primary-nav-trigger {
+          visibility: visible;
+          display: block;
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          width: 48px;
+          height: 48px;
+          padding: 0;
+          background: rgba(0, 0, 0, 0.45);
+          border-radius: 4px;
+          z-index: 1002;
+        }
+        .cd-primary-nav-trigger .cd-menu-text { display: none; }
+        .cd-primary-nav-trigger .cd-menu-icon {
+          left: 50%;
+          right: auto;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      /* Lightweight reveal-modal replacement (no Foundation JS): used by the
+         banner play/poster buttons and the flood-relief "view message" link. */
+      .reveal-lite-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        z-index: 1004;
+        display: none;
+      }
+      .reveal-lite-backdrop.is-open { display: block; }
+      .reveal-modal.reveal-open {
+        display: block !important;
+        visibility: visible !important;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 86vh;
+        overflow: auto;
+        z-index: 1005;
+        opacity: 1;
+      }
+      /* Cosmetic dark treatment only for the video/poster modals; the
+         flood-relief modal keeps its own white styling from app.css. */
+      .reveal-modal.reveal-lite.reveal-open {
+        width: min(760px, 92vw);
+        background: #101010;
+        color: #f4f2e9;
+        padding: 2.25rem 1.75rem 1.75rem;
+        border-radius: 3px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+      }
+      .reveal-modal.reveal-open img { max-width: 100%; height: auto; }
+      .reveal-modal.reveal-lite.reveal-open .close-reveal-modal {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        font-size: 28px;
+        line-height: 1;
+        color: #f4f2e9;
+        cursor: pointer;
+        text-decoration: none;
       }
     </style>
   </Fragment>
@@ -149,14 +224,222 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         ))}
         {data.social && data.social.map((link) => (
           <li>
-            <a href={link.href} target="_blank" rel="noopener noreferrer" title={link.label}>
+            <a href={link.href} title={link.label} {...link.href && link.href !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
               <i class={`icon icon-${link.className}`} aria-hidden="true"></i>
             </a>
           </li>
         ))}
       </ul>
     </nav>
+
+    <a class="cd-primary-nav-trigger" href="#" aria-label="Toggle menu">
+      <span class="cd-menu-text">Menu</span>
+      <span class="cd-menu-icon" aria-hidden="true"></span>
+    </a>
   </div>
 
+  <nav>
+    <ul class="cd-primary-nav">
+      {data.nav.map((item) => (
+        <li class={currentHref && item.href === currentHref ? 'active' : undefined}>
+          <a href={item.href} title={item.label} {...item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <section>
+    <div class="hm-caption-wrap row">
+      <div class="banner">
+        <div class="banner-overlay video-overlay gradient-bg"></div>
+
+        <div class="large-6 caption-l columns">
+          <a href="#" data-reveal-id="videoModal" class="play-btn" title={data.banner.videoTitle}>
+            <i data-icon="r" class="icon" aria-hidden="true"></i>
+          </a>
+          <p class="title">
+            {data.banner.title.map((line, i) => (
+              <>
+                {line}
+                {i < data.banner.title.length - 1 && <br />}
+              </>
+            ))}
+          </p>
+        </div>
+
+        <div class="large-6 caption-r columns">
+          <a href="#" data-reveal-id="imgModal" class="poster-btn right" title="View FPSF 2015 poster">
+            <img src={`${assetBase}/${data.banner.posterThumb}`} alt="FPSF 2015 poster" />
+          </a>
+          <div class="button-wrap">
+            <a
+              href={data.banner.passesUrl}
+              class="button secondary large"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{data.banner.passesLabel}</a><i class="icon icon-2015" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <slot />
+
+  <section>
+    <div class="row sponsors-wrap ip-main">
+      <div class="large-12 columns">
+        <h2 class="title">Sponsors</h2>
+        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4 text-center no-bullets">
+          {data.sponsors.map((sponsor) => (
+            <li>
+              {sponsor.href
+                ? <a href={sponsor.href} target="_blank" rel="noopener noreferrer"><img class={sponsor.className} alt={sponsor.name} src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></a>
+                : <img class={sponsor.className} alt={sponsor.name} src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="newsletter-wrap clearfix">
+      <div class="row">
+        <div class="large-5 medium-6 large-centered medium-centered columns text-center">
+          <div id="signup" class="signup">
+            <h4 class="uppercase">Sign up for our newsletter</h4>
+            <form
+              method="post"
+              action={data.newsletter.actionUrl}
+              target="vr_optin_popup"
+            >
+              <input type="email" name="email" placeholder="Email" required />
+              <button type="submit">Sign up</button>
+            </form>
+          </div>
+
+          {data.appLinks && (
+            <p style="margin-top:24px; font-size:14px; color:#b6b3a3">
+              {data.appLinks.prompt} {' '}
+              <a href={data.appLinks.appStoreUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">iOS</a>
+              {' · '}
+              <a href={data.appLinks.googlePlayUrl} target="_blank" rel="noopener noreferrer" style="color:#f7c948">Android</a>
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="videoModal" class="reveal-modal reveal-lite" hidden>
+    <div class="flex-video widescreen">
+      <iframe data-src={data.banner.videoUrl} frameborder="0" allowfullscreen title={data.banner.videoTitle}></iframe>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <div id="imgModal" class="reveal-modal reveal-lite" hidden>
+    <div class="text-center">
+      <img src={`${assetBase}/${data.banner.posterFull}`} alt="FPSF 2015 lineup-release poster" />
+      <br />
+      <a href={`${assetBase}/${data.banner.posterFull}`} target="_blank" rel="noopener noreferrer" class="button secondary large">Open full poster</a>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var backdrop;
+      function openModal(id) {
+        var m = document.getElementById(id);
+        if (!m) return;
+        var f = m.querySelector('iframe[data-src]');
+        if (f && !f.getAttribute('src')) f.setAttribute('src', f.getAttribute('data-src'));
+        if (!backdrop) {
+          backdrop = document.createElement('div');
+          backdrop.className = 'reveal-lite-backdrop';
+          backdrop.addEventListener('click', closeModals);
+          document.body.appendChild(backdrop);
+        }
+        backdrop.classList.add('is-open');
+        m.hidden = false;
+        m.classList.add('reveal-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModals() {
+        document.querySelectorAll('.reveal-lite.reveal-open').forEach(function (m) {
+          m.classList.remove('reveal-open');
+          m.hidden = true;
+          var f = m.querySelector('iframe[data-src]');
+          if (f) f.removeAttribute('src');
+        });
+        if (backdrop) backdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('click', function (e) {
+        var opener = e.target.closest('[data-reveal-id]');
+        if (opener) { e.preventDefault(); openModal(opener.getAttribute('data-reveal-id')); return; }
+        if (e.target.closest('.close-reveal-modal')) { e.preventDefault(); closeModals(); }
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModals(); });
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      var trigger = document.querySelector('.cd-primary-nav-trigger');
+      var nav = document.querySelector('.cd-primary-nav');
+      var header = document.querySelector('.cd-header');
+      if (!trigger || !nav) return;
+      var icon = trigger.querySelector('.cd-menu-icon');
+      function close() {
+        nav.classList.remove('is-visible');
+        if (icon) icon.classList.remove('is-clicked');
+        if (header) header.classList.remove('menu-is-open');
+      }
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        nav.classList.toggle('is-visible');
+        if (icon) icon.classList.toggle('is-clicked');
+        if (header) header.classList.toggle('menu-is-open');
+      });
+      nav.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
+  <script is:inline>
+    (function () {
+      // Foundation tabs (e.g. Learn page "previous lineups") need JS to switch
+      // panels; we don't load Foundation, so re-implement the .active toggle.
+      document.querySelectorAll('.tabs[data-tab]').forEach(function (tabs) {
+        tabs.addEventListener('click', function (e) {
+          var link = e.target.closest('.tab-title a');
+          if (!link) return;
+          var target = document.querySelector(link.getAttribute('href'));
+          if (!target) return;
+          e.preventDefault();
+          tabs.querySelectorAll('.tab-title').forEach(function (t) {
+            t.classList.remove('active');
+            var a = t.querySelector('a');
+            if (a) a.setAttribute('aria-selected', 'false');
+          });
+          var li = link.closest('.tab-title');
+          li.classList.add('active');
+          link.setAttribute('aria-selected', 'true');
+          var content = target.parentElement;
+          content.querySelectorAll('.content').forEach(function (p) {
+            p.classList.remove('active');
+            p.setAttribute('aria-hidden', 'true');
+          });
+          target.classList.add('active');
+          target.setAttribute('aria-hidden', 'false');
+        });
+      });
+    })();
+  </script>
 </BaseLayout>
+
