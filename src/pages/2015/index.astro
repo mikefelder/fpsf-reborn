@@ -1,8 +1,7 @@
 ---
 import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
+import ArtistCard2015 from '@components/ArtistCard2015.astro';
 import snapshot from '@data/snapshot-2015-main.json';
-
-const assetBase = '/shared-assets/2015';
 ---
 <Fpsf2015Layout snapshot={snapshot} currentHref="/2015/">
   <section>
@@ -19,27 +18,28 @@ const assetBase = '/shared-assets/2015';
         <div class="row">
           <div class="lineup-block">
             <h2 class="title uppercase">Lineup</h2>
-            <div class="lineup-headliners">
-              {snapshot.lineup.headliners.map((h) => (
-                h.slug ? (
-                  <a class="hl-card" href={`/2015/artists/${h.slug}/`}>
-                    <img class="hl-card-img" src={`${assetBase}/${h.image}`} alt={h.name} loading="lazy" />
-                    <span class="hl-card-name">{h.name}</span>
-                  </a>
-                ) : (
-                  <div class={`hl-card${h.image ? '' : ' hl-card--noimg'}`}>
-                    {h.image && (
-                      <img class="hl-card-img" src={`${assetBase}/${h.image}`} alt={h.name} loading="lazy" />
-                    )}
-                    <span class="hl-card-name">{h.name}</span>
-                  </div>
-                )
+
+            <div class="hl-grid hl-grid--top">
+              {snapshot.lineup.headliners.slice(0, 3).map((a) => (
+                <ArtistCard2015 artist={a} />
+              ))}
+            </div>
+
+            <div class="hl-grid hl-grid--main">
+              {snapshot.lineup.headliners.slice(3).map((a) => (
+                <ArtistCard2015 artist={a} />
+              ))}
+            </div>
+
+            <div class="hl-grid hl-grid--under">
+              {snapshot.lineup.undercard.filter((a) => a.image).map((a) => (
+                <ArtistCard2015 artist={a} />
               ))}
             </div>
 
             <ul class="lineup-undercard no-bullets">
-              {snapshot.lineup.undercard.map((name) => (
-                <li>{name}</li>
+              {snapshot.lineup.undercard.filter((a) => !a.image).map((a) => (
+                <li>{a.name}</li>
               ))}
             </ul>
           </div>

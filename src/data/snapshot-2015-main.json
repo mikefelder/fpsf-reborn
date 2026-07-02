@@ -262,71 +262,280 @@
       }
     ],
     "undercard": [
-      "Gary Clark Jr.",
-      "RL Grime",
-      "Tove Lo",
-      "Tycho",
-      "Peaches",
-      "Benjamin Booker",
-      "Robert Ellis",
-      "Houndmouth",
-      "Ben Kweller",
-      "The Suffers",
-      "Goatwhore",
-      "DPAT",
-      "Seratones",
-      "Pope",
-      "Deep Cuts",
-      "Moji",
-      "Flogging Molly",
-      "Brandi Carlile",
-      "Rocket From the Crypt",
-      "GTA",
-      "Pallbearer",
-      "Riverboat Gamblers",
-      "Moon Taxi",
-      "The Band of Heathens",
-      "Freeman",
-      "Tunji Ige",
-      "Buxton",
-      "Scale the Summit",
-      "DJ Fredster",
-      "Night Drive",
-      "George West",
-      "Catch Fever",
-      "Sturgill Simpson",
-      "Odesza",
-      "Lecrae",
-      "The Sword",
-      "iLoveMakonnen",
-      "Yung Lean & Sad Boys",
-      "The Mountain Goats",
-      "Grizfolk",
-      "Sarah Jaffe",
-      "Con Brio",
-      "Futurebirds",
-      "Slaptop",
-      "Hiram",
-      "Gio Chamba",
-      "We Were Wolves",
-      "Guilla",
-      "G-Eazy",
-      "Future Islands",
-      "Portugal. The Man",
-      "Glass Animals",
-      "Charles Bradley & His Extraordinaires",
-      "The Bright Light Social Hour",
-      "Diarrhea Planet",
-      "Iceage",
-      "Twin Peaks",
-      "The Tontons",
-      "TheLastPlaceYouLook",
-      "Boan",
-      "The Vanity",
-      "Kult Dizney",
-      "Prismo",
-      "Second Lovers",
-      "R. Kelly"
+      {
+        "name": "Gary Clark Jr.",
+        "image": "images/artists/gary-clark-jr.jpg",
+        "slug": "gary-clark-jr",
+        "bio": "Gary Lee Clark Jr. is an American guitarist and singer who fuses blues, rock and soul music with elements of hip hop. In 2011, Clark signed with Warner Bros. Records and released The Bright Lights EP. It was followed by the albums Blak and Blu (2012) and The Story of Sonny Boy Slim (2015). Throughout his career, Clark has been a prolific live performer, documented by Gary Clark Jr. Live (2014) and Gary Clark Jr Live/North America (2017).",
+        "url": "https://en.wikipedia.org/wiki/Gary_Clark_Jr."
+      },
+      {
+        "name": "RL Grime"
+      },
+      {
+        "name": "Tove Lo",
+        "image": "images/artists/tove-lo.jpg",
+        "slug": "tove-lo",
+        "bio": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\".",
+        "url": "https://en.wikipedia.org/wiki/Tove_Lo"
+      },
+      {
+        "name": "Tycho",
+        "image": "images/artists/tycho.jpg"
+      },
+      {
+        "name": "Peaches",
+        "image": "images/artists/peaches.jpg",
+        "slug": "peaches",
+        "bio": "The peach is a deciduous tree that bears edible juicy fruits with various characteristics. Most are simply called peaches, while the glossy-skinned, non-fuzzy varieties are called nectarines. Though from the same species, they are regarded commercially as different fruits.",
+        "url": "https://en.wikipedia.org/wiki/Peach"
+      },
+      {
+        "name": "Benjamin Booker",
+        "image": "images/artists/benjamin-booker.jpg",
+        "slug": "benjamin-booker",
+        "bio": "Benjamin Booker is an American musician, singer, songwriter and guitarist. He cites the Gun Club, Blind Willie Johnson and T. Rex as influences. His music was described by the Chicago Tribune as \"a raw brand of blues/boogie/soul\", by The Independent as \"frenzied guitar-strumming and raw, soulful vocals that are hair-raising in intensity\", and by Spin as \"bright, furious, explosive garage rock.\"",
+        "url": "https://en.wikipedia.org/wiki/Benjamin_Booker"
+      },
+      {
+        "name": "Robert Ellis",
+        "image": "images/artists/robert-ellis.jpg"
+      },
+      {
+        "name": "Houndmouth",
+        "image": "images/artists/houndmouth.jpg",
+        "slug": "houndmouth",
+        "bio": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman and Zac Anderson.",
+        "url": "https://en.wikipedia.org/wiki/Houndmouth"
+      },
+      {
+        "name": "Ben Kweller",
+        "image": "images/artists/ben-kweller.jpg",
+        "slug": "ben-kweller",
+        "bio": "Benjamin Lev Kweller is an American singer, songwriter, and multi-instrumentalist.",
+        "url": "https://en.wikipedia.org/wiki/Ben_Kweller"
+      },
+      {
+        "name": "The Suffers",
+        "image": "images/artists/the-suffers.jpg",
+        "slug": "the-suffers",
+        "bio": "The Suffers are an American soul, funk, and R&B group from Houston, Texas. The band consists of Kam Franklin, Juliet Terrill, Kevin Bernier (guitar), Jon Durbin (trumpet), Michael Razo (trombone), Jose Luna (percussion), and Nick Zamora (drums). They were formed in 2011.",
+        "url": "https://en.wikipedia.org/wiki/The_Suffers"
+      },
+      {
+        "name": "Goatwhore",
+        "image": "images/artists/goatwhore.jpg",
+        "slug": "goatwhore",
+        "bio": "Goatwhore is an American blackened death metal band formed in New Orleans, Louisiana, in 1997, known for their songs' lyrical themes of Satanism. Their sound is said to be \"distinctly southern\".",
+        "url": "https://en.wikipedia.org/wiki/Goatwhore"
+      },
+      {
+        "name": "DPAT"
+      },
+      {
+        "name": "Seratones",
+        "image": "images/artists/seratones.jpg",
+        "slug": "seratones",
+        "bio": "Seratones are an American soul rock band formed in Shreveport, Louisiana in 2013. The group's original line-up consisted of AJ Haynes, Connor Davis (guitar), Adam Davis, and Jesse Gabriel (drums). Initially, a favorite of the Louisiana club circuit, the band rose to national recognition after signing with Fat Possum Records in 2015 and releasing their debut album, Get Gone, in 2016.",
+        "url": "https://en.wikipedia.org/wiki/Seratones"
+      },
+      {
+        "name": "Pope"
+      },
+      {
+        "name": "Deep Cuts"
+      },
+      {
+        "name": "Moji"
+      },
+      {
+        "name": "Flogging Molly",
+        "image": "images/artists/flogging-molly.jpg",
+        "slug": "flogging-molly",
+        "bio": "Flogging Molly is an Irish-American seven-piece Celtic punk band formed in Los Angeles in 1997, led by Irish vocalist Dave King, formerly of the hard rock band Fastway. They are signed to their own record label, Borstal Beat Records.",
+        "url": "https://en.wikipedia.org/wiki/Flogging_Molly"
+      },
+      {
+        "name": "Brandi Carlile",
+        "image": "images/artists/brandi-carlile.jpg",
+        "slug": "brandi-carlile",
+        "bio": "Brandi Marie Carlile is an American singer-songwriter and producer. Her music spans multiple genres, including folk rock, alternative country, Americana, and classic rock. During her career, she has received eleven Grammy Awards and two Emmy Awards, in addition to being nominated for an Academy Award. In 2026, she was named one of Time's Women of the Year.",
+        "url": "https://en.wikipedia.org/wiki/Brandi_Carlile"
+      },
+      {
+        "name": "Rocket From the Crypt",
+        "image": "images/artists/rocket-from-the-crypt.jpg",
+        "slug": "rocket-from-the-crypt",
+        "bio": "Rocket from the Crypt is an American punk rock band from San Diego, California, formed by John Reis concurrently with his other Math rock band, Drive Like Jehu. originally active from 1990 to 2005, then active during 2011 and again from 2013 to the present.",
+        "url": "https://en.wikipedia.org/wiki/Rocket_from_the_Crypt"
+      },
+      {
+        "name": "GTA",
+        "image": "images/artists/gta.jpg"
+      },
+      {
+        "name": "Pallbearer",
+        "image": "images/artists/pallbearer.jpg"
+      },
+      {
+        "name": "Riverboat Gamblers"
+      },
+      {
+        "name": "Moon Taxi",
+        "image": "images/artists/moon-taxi.jpg"
+      },
+      {
+        "name": "The Band of Heathens",
+        "image": "images/artists/the-band-of-heathens.jpg"
+      },
+      {
+        "name": "Freeman",
+        "image": "images/artists/freeman.jpg"
+      },
+      {
+        "name": "Tunji Ige"
+      },
+      {
+        "name": "Buxton",
+        "image": "images/artists/buxton.jpg"
+      },
+      {
+        "name": "Scale the Summit",
+        "image": "images/artists/scale-the-summit.jpg"
+      },
+      {
+        "name": "DJ Fredster"
+      },
+      {
+        "name": "Night Drive",
+        "image": "images/artists/night-drive.jpg"
+      },
+      {
+        "name": "George West"
+      },
+      {
+        "name": "Catch Fever"
+      },
+      {
+        "name": "Sturgill Simpson",
+        "image": "images/artists/sturgill-simpson.jpg"
+      },
+      {
+        "name": "Odesza",
+        "image": "images/artists/odesza.jpg",
+        "slug": "odesza",
+        "bio": "Odesza is an American electronic music duo originating from Bellingham, Washington. It consists of Harrison Mills and Clayton Knight, known individually as Catacombkid and BeachesBeaches. They formed in 2012, shortly before Mills and Knight graduated from Western Washington University.",
+        "url": "https://en.wikipedia.org/wiki/Odesza"
+      },
+      {
+        "name": "Lecrae",
+        "image": "images/artists/lecrae.jpg"
+      },
+      {
+        "name": "The Sword",
+        "image": "images/artists/the-sword.jpg"
+      },
+      {
+        "name": "iLoveMakonnen",
+        "image": "images/artists/ilovemakonnen.jpg"
+      },
+      {
+        "name": "Yung Lean & Sad Boys"
+      },
+      {
+        "name": "The Mountain Goats",
+        "image": "images/artists/the-mountain-goats.jpg"
+      },
+      {
+        "name": "Grizfolk",
+        "image": "images/artists/grizfolk.jpg"
+      },
+      {
+        "name": "Sarah Jaffe",
+        "image": "images/artists/sarah-jaffe.jpg"
+      },
+      {
+        "name": "Con Brio"
+      },
+      {
+        "name": "Futurebirds",
+        "image": "images/artists/futurebirds.jpg"
+      },
+      {
+        "name": "Slaptop"
+      },
+      {
+        "name": "Hiram"
+      },
+      {
+        "name": "Gio Chamba"
+      },
+      {
+        "name": "We Were Wolves"
+      },
+      {
+        "name": "Guilla"
+      },
+      {
+        "name": "G-Eazy",
+        "image": "images/artists/g-eazy.jpg"
+      },
+      {
+        "name": "Future Islands",
+        "image": "images/artists/future-islands.jpg"
+      },
+      {
+        "name": "Portugal. The Man",
+        "image": "images/artists/portugal-the-man.jpg"
+      },
+      {
+        "name": "Glass Animals",
+        "image": "images/artists/glass-animals.jpg"
+      },
+      {
+        "name": "Charles Bradley & His Extraordinaires"
+      },
+      {
+        "name": "The Bright Light Social Hour",
+        "image": "images/artists/the-bright-light-social-hour.jpg"
+      },
+      {
+        "name": "Diarrhea Planet",
+        "image": "images/artists/diarrhea-planet.jpg"
+      },
+      {
+        "name": "Iceage",
+        "image": "images/artists/iceage.jpg"
+      },
+      {
+        "name": "Twin Peaks",
+        "image": "images/artists/twin-peaks.jpg"
+      },
+      {
+        "name": "The Tontons"
+      },
+      {
+        "name": "TheLastPlaceYouLook"
+      },
+      {
+        "name": "Boan"
+      },
+      {
+        "name": "The Vanity"
+      },
+      {
+        "name": "Kult Dizney"
+      },
+      {
+        "name": "Prismo",
+        "image": "images/artists/prismo.jpg"
+      },
+      {
+        "name": "Second Lovers"
+      },
+      {
+        "name": "R. Kelly"
+      }
     ]
   }
 }

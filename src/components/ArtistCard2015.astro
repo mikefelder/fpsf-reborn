@@ -1,0 +1,27 @@
+---
+export interface Artist {
+  name: string;
+  image?: string | null;
+  slug?: string;
+}
+interface Props {
+  artist: Artist;
+}
+const { artist } = Astro.props;
+const assetBase = '/shared-assets/2015';
+---
+{artist.slug ? (
+  <a class="hl-card" href={`/2015/artists/${artist.slug}/`}>
+    <img class="hl-card-img" src={`${assetBase}/${artist.image}`} alt={artist.name} loading="lazy" />
+    <span class="hl-card-name">{artist.name}</span>
+  </a>
+) : artist.image ? (
+  <div class="hl-card hl-card--static">
+    <img class="hl-card-img" src={`${assetBase}/${artist.image}`} alt={artist.name} loading="lazy" />
+    <span class="hl-card-name">{artist.name}</span>
+  </div>
+) : (
+  <div class="hl-card hl-card--noimg">
+    <span class="hl-card-name">{artist.name}</span>
+  </div>
+)}

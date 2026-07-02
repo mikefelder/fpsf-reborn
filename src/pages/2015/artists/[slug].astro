@@ -3,7 +3,7 @@ import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
 import snapshot from '@data/snapshot-2015-main.json';
 
 export function getStaticPaths() {
-  const artists = snapshot.lineup.headliners.filter((h) => h.slug);
+  const artists = [...snapshot.lineup.headliners, ...snapshot.lineup.undercard].filter((h) => h.slug);
   return artists.map((artist, i) => ({
     params: { slug: artist.slug },
     props: {

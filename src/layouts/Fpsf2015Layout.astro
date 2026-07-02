@@ -80,12 +80,26 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         margin: 0 0 1.5rem;
         padding-bottom: 0.4rem;
       }
-      .lineup-headliners {
+      /* Tiered lineup grids (festival-poster hierarchy) */
+      .hl-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
         gap: 16px;
         max-width: 1060px;
-        margin: 0 auto 40px;
+        margin: 0 auto;
+      }
+      .hl-grid--top {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+      .hl-grid--main {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        margin-bottom: 36px;
+      }
+      .hl-grid--under {
+        grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+        gap: 12px;
+        margin-bottom: 26px;
       }
       .hl-card {
         position: relative;
@@ -93,6 +107,14 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         background: #0d0d0d;
         overflow: hidden;
       }
+      .hl-grid--under .hl-card { aspect-ratio: 1 / 1; }
+      .hl-grid--top .hl-card-name { font-size: 19px; }
+      .hl-grid--under .hl-card-name {
+        font-size: 12px;
+        padding: 26px 10px 10px;
+        letter-spacing: 0.02em;
+      }
+      .hl-card--static { cursor: default; }
       .hl-card-img {
         display: block;
         width: 100%;
@@ -106,8 +128,8 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         filter: grayscale(0%);
         transform: scale(1.05);
       }
-      /* accent bar grows on hover as a clickable cue */
-      .hl-card::before {
+      /* accent bar grows on hover as a clickable cue (links only) */
+      a.hl-card::before {
         content: '';
         position: absolute;
         left: 0;
@@ -120,7 +142,7 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         transition: transform 0.35s ease;
         z-index: 2;
       }
-      .hl-card:hover::before { transform: scaleX(1); }
+      a.hl-card:hover::before { transform: scaleX(1); }
       .hl-card-name {
         position: absolute;
         left: 0;
@@ -241,8 +263,12 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
       }
       @media only screen and (max-width: 40em) {
         .lineup-undercard { column-count: 2; }
-        .lineup-headliners { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .hl-grid--top { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .hl-grid--main { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .hl-grid--under { grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .hl-card-name { font-size: 13px; }
+        .hl-grid--top .hl-card-name { font-size: 14px; }
+        .hl-grid--under .hl-card-name { font-size: 11px; }
       }
 
       /* The fixed archive/known-gaps badge lives top-right (position:fixed,
