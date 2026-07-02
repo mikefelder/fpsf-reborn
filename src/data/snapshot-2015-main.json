@@ -169,21 +169,66 @@
     "note": "Reconstructed from the official FPSF 2015 lineup-release poster (the on-page GoEvent artist widget is no longer live).",
     "posterFull": "images/2015-Lineup-Release-Poster-18x24-may2015-v2.jpg",
     "headliners": [
-      "Skrillex",
-      "R. Kelly",
-      "Weezer",
-      "Steve Angello",
-      "Major Lazer",
-      "Ben Harper & The Innocent Criminals",
-      "St. Vincent",
-      "Flume",
-      "The Decemberists",
-      "Belle and Sebastian",
-      "Mastodon",
-      "Chance the Rapper",
-      "Tears for Fears",
-      "Band of Horses",
-      "Welcome to Houston"
+      {
+        "name": "Skrillex",
+        "image": "images/artists/skrillex.jpg"
+      },
+      {
+        "name": "R. Kelly",
+        "image": "images/artists/r-kelly.png"
+      },
+      {
+        "name": "Weezer",
+        "image": "images/artists/weezer.jpg"
+      },
+      {
+        "name": "Steve Angello",
+        "image": "images/artists/steve-angello.jpg"
+      },
+      {
+        "name": "Major Lazer",
+        "image": "images/artists/major-lazer.jpg"
+      },
+      {
+        "name": "Ben Harper & The Innocent Criminals",
+        "image": "images/artists/ben-harper-the-innocent-criminals.jpg"
+      },
+      {
+        "name": "St. Vincent",
+        "image": "images/artists/st-vincent.jpg"
+      },
+      {
+        "name": "Flume",
+        "image": "images/artists/flume.jpg"
+      },
+      {
+        "name": "The Decemberists",
+        "image": "images/artists/the-decemberists.jpg"
+      },
+      {
+        "name": "Belle and Sebastian",
+        "image": "images/artists/belle-and-sebastian.jpg"
+      },
+      {
+        "name": "Mastodon",
+        "image": "images/artists/mastodon.jpg"
+      },
+      {
+        "name": "Chance the Rapper",
+        "image": "images/artists/chance-the-rapper.jpg"
+      },
+      {
+        "name": "Tears for Fears",
+        "image": "images/artists/tears-for-fears.jpg"
+      },
+      {
+        "name": "Band of Horses",
+        "image": "images/artists/band-of-horses.jpg"
+      },
+      {
+        "name": "Welcome to Houston",
+        "image": null
+      }
     ],
     "undercard": [
       "Gary Clark Jr.",

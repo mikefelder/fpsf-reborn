@@ -1,6 +1,8 @@
 ---
 import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
 import snapshot from '@data/snapshot-2015-main.json';
+
+const assetBase = '/shared-assets/2015';
 ---
 <Fpsf2015Layout snapshot={snapshot} currentHref="/2015/">
   <section>
@@ -17,8 +19,13 @@ import snapshot from '@data/snapshot-2015-main.json';
         <div class="row">
           <div class="lineup-block">
             <div class="lineup-headliners">
-              {snapshot.lineup.headliners.map((name) => (
-                <span class="lineup-headliner">{name}</span>
+              {snapshot.lineup.headliners.map((h) => (
+                <div class={`hl-card${h.image ? '' : ' hl-card--noimg'}`}>
+                  {h.image && (
+                    <img class="hl-card-img" src={`${assetBase}/${h.image}`} alt={h.name} loading="lazy" />
+                  )}
+                  <span class="hl-card-name">{h.name}</span>
+                </div>
               ))}
             </div>
 
