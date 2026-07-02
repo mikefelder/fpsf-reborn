@@ -452,7 +452,8 @@
       },
       {
         "name": "Sarah Jaffe",
-        "image": "images/artists/sarah-jaffe.jpg"
+        "image": "images/artists/sarah-jaffe.jpg",
+        "cropPosition": "center 62%"
       },
       {
         "name": "Con Brio"
