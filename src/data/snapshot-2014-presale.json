@@ -152,6 +152,6 @@
     "Presale-era (Jan 2014) capture of the FPSF header image assets/img/static/hed-index.png was never archived; the shared May-2014 header ('MAY 31 & JUNE 1') is used instead.",
     "DIN and Symbolset (ss-social/ss-standard/ss-symbolicons) icon fonts are recovered as .woff only (no .ttf/.eot fallbacks); modern browsers render them fine.",
     "Typekit font kit (sir3lyk, abril-text + ff-din-web) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted; DIN-Cond/DIN-Reg local webfonts cover the headings.",
-    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) are shared with the main 2014 state and render archived .content HTML verbatim; interactive JS is static."
+    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) are shared with the main 2014 state; .rslides galleries animate via a vanilla crossfader and the footer newsletter form is a graceful client-side stub. Tweet-aggregation blocks remain static."
   ]
 }

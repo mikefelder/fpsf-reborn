@@ -78,15 +78,25 @@ export const showYears: ShowYearSummary[] = [
       sourceSnapshot: '20150703195456',
     },
   ] },
-  { year: 2016, edition: 'Free Press Summer Fest VIII', routes: [] },
-  { year: 2017, edition: 'Free Press Summer Fest IX', routes: [] },
+  { year: 2016, edition: 'Free Press Summer Festival 2016', routes: [] },
+  { year: 2017, edition: 'Free Press Summer Festival 2017', routes: [] },
+  { year: 2018, edition: 'Free Press Summer Festival 2018', routes: [] },
 ];
 
-export const liveShowYears = showYears.filter((show) => show.routes.length > 0);
+// Years at or after this are the contiguous "hosted" rotation. 2009-2013
+// (and the already-built 2010 + 2011) remain directly reachable by URL and
+// listed in the dev index, but are intentionally excluded from the public
+// year-picker, random-snapshot landing, and year-pill prev/next so there
+// are no 2012-2013 time jumps in the tour. FPSF ran through 2018.
+export const HOSTED_FROM_YEAR = 2014;
 
-// Flat, ordered list of every live (year, route) for rotation, year-pill
-// prev/next, and the root landing index.
-export const liveSnapshots: SnapshotLink[] = showYears.flatMap((show) =>
+export const liveShowYears = showYears.filter(
+  (show) => show.routes.length > 0 && show.year >= HOSTED_FROM_YEAR,
+);
+
+// Flat, ordered list of every hosted (year, route) for rotation, year-pill
+// prev/next, and the root landing index — contiguous from HOSTED_FROM_YEAR.
+export const liveSnapshots: SnapshotLink[] = liveShowYears.flatMap((show) =>
   show.routes.map((route) => ({
     year: show.year,
     edition: show.edition,

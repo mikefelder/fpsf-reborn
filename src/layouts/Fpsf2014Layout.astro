@@ -155,6 +155,32 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
                 </li>
               ))}
             </ul>
+
+            {/* Newsletter signup. The original posted to ymlp.com
+                (long dead), so this is an archival stub: JS intercepts the
+                submit and shows a friendly message instead of a broken POST. */}
+            <div id="signup" class="go_signup">
+              <div>Sign up for our newsletters</div>
+              <form class="newsletter_stub" method="post" action="#" novalidate>
+                <fieldset class="subscribe">
+                  <div id="newsletter_go" class="info_group">
+                    <input
+                      class="email_add"
+                      type="email"
+                      name="YMP0"
+                      size="20"
+                      placeholder="you@example.com"
+                      aria-label="Email address"
+                      style="background-color:#646464"
+                    />
+                  </div>
+                  <div class="info_group">
+                    <button class="form_submit" type="submit">Submit</button>
+                  </div>
+                </fieldset>
+                <p class="newsletter_stub_msg" role="status" hidden></p>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -162,4 +188,155 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
       </div>
     </footer>
   </div>
+
+  <script is:inline>
+    (function () {
+      var form = document.querySelector('form.newsletter_stub');
+      if (!form) return;
+      var msg = form.querySelector('.newsletter_stub_msg');
+      var fieldset = form.querySelector('fieldset');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.querySelector('input[name="YMP0"]');
+        var val = email && email.value.trim();
+        var ok = val && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val);
+        if (msg) {
+          msg.hidden = false;
+          msg.textContent = ok
+            ? 'Thanks! This is an archived copy of the FPSF 2014 site, so no email was actually sent.'
+            : 'Please enter a valid email address.';
+        }
+        if (ok && fieldset) fieldset.style.display = 'none';
+      });
+    })();
+  </script>
+
+  {/* Lightweight replacement for the responsiveSlides jQuery plugin the
+      original site used (it depended on jQuery from a now-dead Google CDN).
+      The .rslides CSS leaves every <li> position:absolute/display:none, so
+      without JS the galleries are invisible. This crossfades the slides,
+      keeping the active one in normal flow so the container holds height. */}
+  <script is:inline>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('ul.rslides').forEach(function (ul) {
+        var slides = Array.prototype.filter.call(ul.children, function (n) { return n.tagName === 'LI'; });
+        if (!slides.length) return;
+        slides.forEach(function (li, i) {
+          li.style.display = 'block';
+          li.style.width = '100%';
+          li.style.margin = '0';
+          li.style.transition = 'opacity 0.6s ease-in-out';
+          if (i === 0) {
+            li.style.position = 'relative';
+            li.style.opacity = '1';
+            li.style.zIndex = '2';
+          } else {
+            li.style.position = 'absolute';
+            li.style.top = '0';
+            li.style.left = '0';
+            li.style.opacity = '0';
+            li.style.zIndex = '1';
+          }
+        });
+        if (slides.length < 2 || reduce) return;
+        var idx = 0;
+        setInterval(function () {
+          var cur = slides[idx];
+          var nextIdx = (idx + 1) % slides.length;
+          var nxt = slides[nextIdx];
+          nxt.style.position = 'absolute';
+          nxt.style.top = '0';
+          nxt.style.left = '0';
+          nxt.style.zIndex = '3';
+          nxt.style.opacity = '1';
+          cur.style.zIndex = '1';
+          setTimeout(function () {
+            nxt.style.position = 'relative';
+            nxt.style.zIndex = '2';
+            cur.style.position = 'absolute';
+            cur.style.top = '0';
+            cur.style.left = '0';
+            cur.style.opacity = '0';
+            idx = nextIdx;
+          }, 650);
+        }, 4500);
+      });
+    })();
+  </script>
+
+  {/* Nav dropdown click-toggle. The original relied on CSS :hover (desktop)
+      + a jQuery .nav_toggle slideToggle (touch) — the jQuery is gone and the
+      hover-only dropdown vanishes on tap/trackpad before you can pick an
+      item. This makes the first click on a top-level nav item open (and keep
+      open) its submenu; a second click follows the link. Click-away or
+      picking a sub-item closes it. Desktop :hover still works alongside. */}
+  <script is:inline>
+    (function () {
+      var items = Array.prototype.slice.call(
+        document.querySelectorAll('#navigation .nav.main > li')
+      ).filter(function (li) { return li.querySelector('ul.subnav'); });
+      if (!items.length) return;
+
+      function closeAll(except) {
+        items.forEach(function (li) {
+          if (li !== except) {
+            li.classList.remove('open');
+            var s = li.querySelector('ul.subnav');
+            if (s) { s.style.display = ''; s.style.opacity = ''; }
+          }
+        });
+      }
+
+      items.forEach(function (li) {
+        var link = li.querySelector(':scope > a');
+        var sub = li.querySelector('ul.subnav');
+        if (!link || !sub) return;
+        link.addEventListener('click', function (e) {
+          if (!li.classList.contains('open')) {
+            e.preventDefault();
+            closeAll(li);
+            li.classList.add('open');
+            sub.style.display = 'block';
+            sub.style.opacity = '1';
+          }
+          // already open → let the click navigate to the section page
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('#navigation .nav.main')) closeAll(null);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAll(null);
+      });
+    })();
+  </script>
+
+  {/* Previous-lineups reveal (learn page). The archive kept #pastYears
+      hidden (.hidePast) and a jQuery handler removed that class when any
+      year link was clicked. Reproduce with vanilla JS. */}
+  <script is:inline>
+    (function () {
+      var links = document.querySelectorAll('.prevShow');
+      var past = document.getElementById('pastYears');
+      if (!links.length || !past) return;
+      links.forEach(function (a) {
+        a.addEventListener('click', function () {
+          past.classList.remove('hidePast');
+          past.style.display = 'block';
+        });
+      });
+    })();
+  </script>
 </BaseLayout>
+
+<style>
+  .newsletter_stub_msg {
+    margin: 0.6em 0 0;
+    padding: 0;
+    font-size: 0.85em;
+    line-height: 1.35;
+    color: #f6f5f1;
+  }
+</style>

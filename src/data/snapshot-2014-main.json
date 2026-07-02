@@ -65,11 +65,6 @@
       "href": "/2014/learn/",
       "image": "assets/img/static/fpsf_2014_lineup.jpg",
       "alt": "FPSF 2014 lineup"
-    },
-    {
-      "href": "#",
-      "image": "assets/img/static/fpsfapp.jpg",
-      "alt": "Download the FPSF 2014 app"
     }
   ],
   "passes": [
@@ -187,7 +182,7 @@
   "knownGaps": [
     "DIN (DIN-Cond/DIN-Reg) and Symbolset (ss-social/ss-standard/ss-symbolicons-line) icon fonts are recovered as .woff only (no .ttf/.eot fallbacks); modern browsers render them fine.",
     "Typekit font kit (sir3lyk — abril-text + ff-din-web) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted; the local DIN webfonts cover the DIN-Cond/DIN-Reg stack the design falls back to.",
-    "Hero 'Play' overlay links out to the YouTube lineup-release video (youtu.be/_7HmBdlIidQ) rather than opening the original fpsfMusicVid lightbox, whose JS (responsiveslides + local.js) is not wired up.",
-    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) render the archived .content HTML verbatim via ?raw imports from src/data/pages/2014/*.html; interactive JS (responsiveslides carousels, tweet aggregation, ymlp form posts) is static."
+    "Hero 'Play' overlay links out to the YouTube lineup-release video (youtu.be/_7HmBdlIidQ) rather than opening the original fpsfMusicVid lightbox.",
+    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) render the archived .content HTML verbatim via ?raw imports from src/data/pages/2014/*.html. The .rslides galleries are animated by a lightweight vanilla crossfader (replacing the jQuery responsiveSlides plugin) and the footer newsletter form is a graceful client-side stub (no dead ymlp.com POST); tweet-aggregation blocks remain static."
   ]
 }

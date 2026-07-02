@@ -2,25 +2,47 @@
   "year": 2015,
   "edition": "Free Press Summer Festival 2015",
   "dates": "June 6 + June 7, 2015",
-  "location": "NRG Park — Yellow Lot, Houston, TX",
+  "location": "NRG Park \u2014 Yellow Lot, Houston, TX",
   "sourceSnapshot": "20150703195456",
   "sourceDomain": "www.fpsf.com",
   "phase": "main",
   "title": "FPSF 2015 - Home",
-  "description": "Free Press Summer Festival 2015 — June 6+7 at NRG Park (Yellow Lot), Houston, TX. Lineup-released main page, Foundation-era responsive design.",
+  "description": "Free Press Summer Festival 2015 \u2014 June 6+7 at NRG Park (Yellow Lot), Houston, TX. The festival relocated here from its longtime Eleanor Tinsley Park home after the catastrophic Memorial Day 2015 Houston floods left Buffalo Bayou Park unusable; this captured main page reflects the post-relocation state. Foundation-era responsive design.",
   "header": {
     "title": "Free Press Summer Festival",
-    "byline": "FPSF 2015 — Home"
+    "byline": "FPSF 2015 \u2014 Home"
   },
-  "logoAriaTitle": "FP — Free Press Summer Festival",
+  "logoAriaTitle": "FP \u2014 Free Press Summer Festival",
   "nav": [
-    { "label": "Home", "href": "/2015/" },
-    { "label": "Passes", "href": "/2015/passes" },
-    { "label": "Learn", "href": "/2015/learn" },
-    { "label": "Videos", "href": "/2015/videos" },
-    { "label": "Info", "href": "/2015/info" },
-    { "label": "Map", "href": "/2015/map" },
-    { "label": "Shop", "href": "http://fpsf.shop.redstarmerch.com/", "external": true }
+    {
+      "label": "Home",
+      "href": "/2015/"
+    },
+    {
+      "label": "Passes",
+      "href": "/2015/passes"
+    },
+    {
+      "label": "Learn",
+      "href": "/2015/learn"
+    },
+    {
+      "label": "Videos",
+      "href": "/2015/videos"
+    },
+    {
+      "label": "Info",
+      "href": "/2015/info"
+    },
+    {
+      "label": "Map",
+      "href": "/2015/map"
+    },
+    {
+      "label": "Shop",
+      "href": "http://fpsf.shop.redstarmerch.com/",
+      "external": true
+    }
   ],
   "appLinks": {
     "prompt": "Hey! Did you know that we have a mobile app?",
@@ -29,16 +51,41 @@
     "learnMoreHref": "/2015/app"
   },
   "social": [
-    { "label": "Instagram", "className": "instagram", "href": "https://instagram.com/fpsf" },
-    { "label": "Twitter", "className": "twitter", "href": "https://twitter.com/fpsf" },
-    { "label": "Facebook", "className": "facebook", "href": "https://www.facebook.com/FPSFHOUSTON" },
-    { "label": "YouTube", "className": "youtube", "href": "http://www.youtube.com/watch?v=JfFaSedd2vw" },
-    { "label": "Rdio", "className": "rdio", "href": "http://on.rdio.com/1HHmdFF" }
+    {
+      "label": "Instagram",
+      "className": "instagram",
+      "href": "https://instagram.com/fpsf"
+    },
+    {
+      "label": "Twitter",
+      "className": "twitter",
+      "href": "https://twitter.com/fpsf"
+    },
+    {
+      "label": "Facebook",
+      "className": "facebook",
+      "href": "https://www.facebook.com/FPSFHOUSTON"
+    },
+    {
+      "label": "YouTube",
+      "className": "youtube",
+      "href": "http://www.youtube.com/watch?v=JfFaSedd2vw"
+    },
+    {
+      "label": "Rdio",
+      "className": "rdio",
+      "href": "http://on.rdio.com/1HHmdFF"
+    }
   ],
   "banner": {
     "videoUrl": "https://www.youtube.com/embed/QZ7FL7HduvU?modestbranding=0&autohide=1&showinfo=0&controls=0&rel=0",
     "videoTitle": "FPSF 2015 lineup release",
-    "title": ["FREE", "PRESS", "SUMMER", "FESTIVAL"],
+    "title": [
+      "FREE",
+      "PRESS",
+      "SUMMER",
+      "FESTIVAL"
+    ],
     "posterThumb": "images/poster-th.png",
     "posterFull": "images/2015-Lineup-Release-Poster-18x24-may2015-v2.jpg",
     "passesUrl": "https://fpsf.frontgatetickets.com/",
@@ -56,21 +103,69 @@
     "presentingSponsorAlt": "Budweiser"
   },
   "sponsors": [
-    { "name": "Budweiser", "className": "budweiser" },
-    { "name": "Taco Bell", "className": "tacobell" },
-    { "name": "NRG", "className": "nrg" },
-    { "name": "Deep Eddy", "className": "deep-eddy" },
-    { "name": "Verizon", "className": "verison" },
-    { "name": "Monster Energy", "className": "monster" },
-    { "name": "Flipflop Wines", "className": "flipflop", "href": "http://www.flipflopwines.com" },
-    { "name": "PlayStation 4", "className": "ps4" },
-    { "name": "Xfinity", "className": "xfinity" },
-    { "name": "Ford", "className": "ford", "href": "http://www.fordentertowin.com/fpsummer" },
-    { "name": "University of Houston-Downtown", "className": "uhd" },
-    { "name": "Rdio", "className": "rdio", "href": "http://on.rdio.com/1BcZmzC" },
-    { "name": "Kroger", "className": "kroger" },
-    { "name": "Chaco", "className": "chaco" },
-    { "name": "Uber", "className": "uber" }
+    {
+      "name": "Budweiser",
+      "className": "budweiser"
+    },
+    {
+      "name": "Taco Bell",
+      "className": "tacobell"
+    },
+    {
+      "name": "NRG",
+      "className": "nrg"
+    },
+    {
+      "name": "Deep Eddy",
+      "className": "deep-eddy"
+    },
+    {
+      "name": "Verizon",
+      "className": "verison"
+    },
+    {
+      "name": "Monster Energy",
+      "className": "monster"
+    },
+    {
+      "name": "Flipflop Wines",
+      "className": "flipflop",
+      "href": "http://www.flipflopwines.com"
+    },
+    {
+      "name": "PlayStation 4",
+      "className": "ps4"
+    },
+    {
+      "name": "Xfinity",
+      "className": "xfinity"
+    },
+    {
+      "name": "Ford",
+      "className": "ford",
+      "href": "http://www.fordentertowin.com/fpsummer"
+    },
+    {
+      "name": "University of Houston-Downtown",
+      "className": "uhd"
+    },
+    {
+      "name": "Rdio",
+      "className": "rdio",
+      "href": "http://on.rdio.com/1BcZmzC"
+    },
+    {
+      "name": "Kroger",
+      "className": "kroger"
+    },
+    {
+      "name": "Chaco",
+      "className": "chaco"
+    },
+    {
+      "name": "Uber",
+      "className": "uber"
+    }
   ],
   "newsletter": {
     "actionUrl": "http://oi.vresp.com?fid=3b167e5cc2",
@@ -83,12 +178,98 @@
     "programWidgetId": "!programmation"
   },
   "knownGaps": [
-    "Responsive banner images (images/banner/br-home-sm.jpg, br-home-md.jpg, br-home-lg.jpg) are not in any 2015 capture; banner falls back to a gradient overlay.",
-    "Sponsor logos referenced by CSS classes (budweiser, tacobell, nrg, deep-eddy, verison, monster, flipflop, ps4, xfinity, ford, uhd, rdio, kroger, chaco, uber) load via background-image rules in app.css; those image files were not archived.",
-    "Presenting sponsor image (/images/site/Budweiser-cl.png) is not archived.",
-    "GoEvent ticketing widget loads from s3.amazonaws.com/goevent-web-freepresssummerfestival-2015/ which is offline; widget container renders empty.",
-    "VerticalResponse newsletter handler is defunct; form preserved for layout fidelity but does not submit.",
-    "Sub-pages (passes, learn, videos, info, map, app) are not yet rebuilt; nav links are stubs.",
-    "Foundation framework JS (foundation.min.js + libs.min.js + app.min.js) is loaded and may execute, but its behavior depends on full asset availability."
-  ]
+    "Responsive hero banner images (images/banner/br-home-sm/md/lg.jpg) were never archived at any timestamp; the banner area renders with app.css's dark background only.",
+    "Sponsor logos render from the recovered sprite (images/site/sprite-sponsors.jpg) via app.css background-position; vertical cell alignment is slightly imprecise (percentage-background precision vs Foundation block-grid sizing) and could use refinement.",
+    "GoEvent lineup/ticketing widget (s3.amazonaws.com/goevent-web-freepresssummerfestival-2015/) is offline and its artist data was never archived (only the loader JS survives). The lineup in its place is a faithful reconstruction transcribed from the official FPSF 2015 lineup-release poster (shown alongside the text); artist order within the undercard columns reflows and is not pixel-matched to the poster.",
+    "VerticalResponse newsletter handler is defunct; the footer form is preserved for layout fidelity (graceful stub, no live submit).",
+    "Sub-pages (passes, learn, videos, info, map) are not yet rebuilt; nav links are stubs.",
+    "A few decorative CodyHouse template images (img/browser.png, img/cd-background-img.jpg, img/cd-socials.svg) were not archived; non-critical."
+  ],
+  "lineup": {
+    "note": "Reconstructed from the official FPSF 2015 lineup-release poster (the on-page GoEvent artist widget is no longer live).",
+    "posterFull": "images/2015-Lineup-Release-Poster-18x24-may2015-v2.jpg",
+    "headliners": [
+      "Skrillex",
+      "R. Kelly",
+      "Weezer",
+      "Steve Angello",
+      "Major Lazer",
+      "Ben Harper & The Innocent Criminals",
+      "St. Vincent",
+      "Flume",
+      "The Decemberists",
+      "Belle and Sebastian",
+      "Mastodon",
+      "Chance the Rapper",
+      "Tears for Fears",
+      "Band of Horses",
+      "Welcome to Houston"
+    ],
+    "undercard": [
+      "Gary Clark Jr.",
+      "RL Grime",
+      "Tove Lo",
+      "Tycho",
+      "Peaches",
+      "Benjamin Booker",
+      "Robert Ellis",
+      "Houndmouth",
+      "Ben Kweller",
+      "The Suffers",
+      "Goatwhore",
+      "DPAT",
+      "Seratones",
+      "Pope",
+      "Deep Cuts",
+      "Moji",
+      "Flogging Molly",
+      "Brandi Carlile",
+      "Rocket From the Crypt",
+      "GTA",
+      "Pallbearer",
+      "Riverboat Gamblers",
+      "Moon Taxi",
+      "The Band of Heathens",
+      "Freeman",
+      "Tunji Ige",
+      "Buxton",
+      "Scale the Summit",
+      "DJ Fredster",
+      "Night Drive",
+      "George West",
+      "Catch Fever",
+      "Sturgill Simpson",
+      "Odesza",
+      "Lecrae",
+      "The Sword",
+      "iLoveMakonnen",
+      "Yung Lean & Sad Boys",
+      "The Mountain Goats",
+      "Grizfolk",
+      "Sarah Jaffe",
+      "Con Brio",
+      "Futurebirds",
+      "Slaptop",
+      "Hiram",
+      "Gio Chamba",
+      "We Were Wolves",
+      "Guilla",
+      "G-Eazy",
+      "Future Islands",
+      "Portugal. The Man",
+      "Glass Animals",
+      "Charles Bradley & His Extraordinaires",
+      "The Bright Light Social Hour",
+      "Diarrhea Planet",
+      "Iceage",
+      "Twin Peaks",
+      "The Tontons",
+      "TheLastPlaceYouLook",
+      "Boan",
+      "The Vanity",
+      "Kult Dizney",
+      "Prismo",
+      "Second Lovers"
+    ]
+  }
 }
