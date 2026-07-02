@@ -50,20 +50,25 @@ resource "azurerm_storage_account_static_website" "assets" {
 }
 
 # --- Custom domains ---
-# fpsf.dev is the canonical domain (apex + www), which is exactly 2 custom
-# domains and fits the SWA Free tier. The second domain,
-# var.secondary_domain (freepresssummerfest.dev), is NOT bound here — it is
-# 301-redirected to fpsf.dev at the registrar / DNS provider (URL forwarding),
-# so it never needs to hit this Static Web App.
-
-resource "azurerm_static_web_app_custom_domain" "apex" {
-  static_web_app_id = azurerm_static_web_app.site.id
-  domain_name       = var.primary_domain
-  validation_type   = "dns-txt-token"
-}
-
-resource "azurerm_static_web_app_custom_domain" "www" {
-  static_web_app_id = azurerm_static_web_app.site.id
-  domain_name       = "www.${var.primary_domain}"
-  validation_type   = "cname-delegation"
-}
+# fpsf.dev is the canonical domain (apex + www) — exactly 2 domains, which fits
+# the SWA Free tier. These are commented out for the INITIAL apply because
+# Azure validates the records when the resource is created:
+#   * cname-delegation (www) requires the CNAME to already exist -> 400 until DNS.
+#   * dns-txt-token (apex) needs the TXT token + A/ALIAS to actually validate.
+# Bring-up order: (1) apply base infra to create swa-fpsf, (2) in Cloudflare add
+# CNAME www.fpsf.dev -> <swa default hostname> and the apex A/ALIAS + the TXT
+# validation token Azure shows for fpsf.dev, (3) uncomment below and re-apply.
+# freepresssummerfest.dev is NOT bound here — it 301-redirects to fpsf.dev in
+# Cloudflare.
+#
+# resource "azurerm_static_web_app_custom_domain" "apex" {
+#   static_web_app_id = azurerm_static_web_app.site.id
+#   domain_name       = var.primary_domain
+#   validation_type   = "dns-txt-token"
+# }
+#
+# resource "azurerm_static_web_app_custom_domain" "www" {
+#   static_web_app_id = azurerm_static_web_app.site.id
+#   domain_name       = "www.${var.primary_domain}"
+#   validation_type   = "cname-delegation"
+# }
