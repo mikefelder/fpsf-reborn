@@ -127,6 +127,76 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         text-align: center;
         background: none;
       }
+      a.hl-card { display: block; text-decoration: none; color: inherit; }
+
+      /* Artist detail page */
+      .artist-detail { max-width: 760px; margin: 0 auto; }
+      .artist-detail .artist-hero {
+        background: #101010;
+        margin-bottom: 1.25rem;
+      }
+      .artist-detail .artist-hero img {
+        display: block;
+        width: 100%;
+        max-height: 60vh;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .artist-detail h1.uppercase {
+        font-family: 'flamamedium', 'Helvetica Neue', Arial, sans-serif;
+        margin: 0 0 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 5px solid #000000;
+      }
+      .artist-detail .artist-bio {
+        font-family: 'flamabook', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.7;
+        color: #33322e;
+      }
+      .artist-detail .artist-link { margin-top: 1rem; }
+      .artist-detail .artist-link a {
+        font-family: 'flamamedium', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+      }
+      .artist-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        max-width: 760px;
+        margin: 2.5rem auto 0;
+        padding-top: 1.25rem;
+        border-top: 1px solid #d8d6cc;
+      }
+      .artist-nav a { text-decoration: none; color: #1c1b18; }
+      .artist-nav .artist-nav-dir {
+        display: block;
+        font-family: 'flamamedium', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+        color: #9a978c;
+      }
+      .artist-nav .artist-nav-name {
+        display: block;
+        font-family: 'flamamedium', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+      }
+      .artist-nav .artist-nav-next { text-align: right; }
+      .artist-nav .artist-nav-all {
+        font-family: 'flamamedium', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        color: #9a978c;
+      }
+      @media only screen and (max-width: 40em) {
+        .artist-nav .artist-nav-all { display: none; }
+      }
       .lineup-undercard {
         column-count: 4;
         column-gap: 28px;

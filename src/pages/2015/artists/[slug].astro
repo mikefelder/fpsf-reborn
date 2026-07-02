@@ -1,0 +1,64 @@
+---
+import Fpsf2015Layout from '@layouts/Fpsf2015Layout.astro';
+import snapshot from '@data/snapshot-2015-main.json';
+
+export function getStaticPaths() {
+  const artists = snapshot.lineup.headliners.filter((h) => h.slug);
+  return artists.map((artist, i) => ({
+    params: { slug: artist.slug },
+    props: {
+      artist,
+      prev: artists[(i - 1 + artists.length) % artists.length],
+      next: artists[(i + 1) % artists.length],
+    },
+  }));
+}
+
+const { artist, prev, next } = Astro.props;
+const assetBase = '/shared-assets/2015';
+const pageTitle = `${artist.name} | ${snapshot.title}`;
+const pageDescription = artist.bio ? artist.bio.slice(0, 160) : undefined;
+---
+<Fpsf2015Layout
+  snapshot={snapshot}
+  title={pageTitle}
+  description={pageDescription}
+  bodyClass="sub artist"
+  currentHref="/2015/"
+>
+  <section>
+    <div class="row ip-main">
+      <div class="large-12 columns">
+        <article class="artist-detail">
+          {artist.image && (
+            <div class="artist-hero">
+              <img src={`${assetBase}/${artist.image}`} alt={artist.name} />
+            </div>
+          )}
+
+          <h1 class="uppercase">{artist.name}</h1>
+
+          {artist.bio && <p class="artist-bio">{artist.bio}</p>}
+
+          {artist.url && (
+            <p class="artist-link">
+              <a href={artist.url} target="_blank" rel="noopener noreferrer">Read more on Wikipedia</a>
+            </p>
+          )}
+        </article>
+
+        <nav class="artist-nav clearfix">
+          <a class="artist-nav-prev" href={`/2015/artists/${prev.slug}/`}>
+            <span class="artist-nav-dir">&larr; Prev</span>
+            <span class="artist-nav-name">{prev.name}</span>
+          </a>
+          <a class="artist-nav-all" href="/2015/">Full lineup</a>
+          <a class="artist-nav-next" href={`/2015/artists/${next.slug}/`}>
+            <span class="artist-nav-dir">Next &rarr;</span>
+            <span class="artist-nav-name">{next.name}</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </section>
+</Fpsf2015Layout>

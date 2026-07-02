@@ -171,59 +171,94 @@
     "headliners": [
       {
         "name": "Skrillex",
-        "image": "images/artists/skrillex.jpg"
-      },
-      {
-        "name": "R. Kelly",
-        "image": "images/artists/r-kelly.png"
+        "image": "images/artists/skrillex.jpg",
+        "slug": "skrillex",
+        "bio": "Sonny John Moore, known professionally as Skrillex, is an American DJ, record producer, singer, and musician. Raised in Northeast Los Angeles and Northern California, he began his career in 2004 as the lead vocalist of the post-hardcore band From First to Last. He recorded their first two studio albums with the band, Dear Diary, My Teen Angst Has a Bodycount (2004) and Heroine (2006), before leaving to pursue a solo career in 2007. He began his first tour as a solo artist in late 2007. After recruiting a new band lineup, Moore joined the Alternative Press Tour to support bands such as All Time Low and the Rocket Summer, and appeared on the cover of Alternative Press's annual \"100 Bands You Need to Know\" issue.",
+        "url": "https://en.wikipedia.org/wiki/Skrillex"
       },
       {
         "name": "Weezer",
-        "image": "images/artists/weezer.jpg"
+        "image": "images/artists/weezer.jpg",
+        "slug": "weezer",
+        "bio": "Weezer is an American rock band formed in Los Angeles, California, in 1992. Since 2001, the band has consisted of Rivers Cuomo, Patrick Wilson (drums), Brian Bell, and Scott Shriner. They have sold 10 million albums in the United States and over 35 million worldwide.",
+        "url": "https://en.wikipedia.org/wiki/Weezer"
       },
       {
         "name": "Steve Angello",
-        "image": "images/artists/steve-angello.jpg"
+        "image": "images/artists/steve-angello.jpg",
+        "slug": "steve-angello",
+        "bio": "Steve Patrik Angello Josefsson Fragogiannis, known professionally as Steve Angello, is a Greek\u2013Swedish DJ, record producer, remixer and record label owner. He is a member of Swedish House Mafia, together with Axwell and Sebastian Ingrosso.",
+        "url": "https://en.wikipedia.org/wiki/Steve_Angello"
       },
       {
         "name": "Major Lazer",
-        "image": "images/artists/major-lazer.jpg"
+        "image": "images/artists/major-lazer.jpg",
+        "slug": "major-lazer",
+        "bio": "Major Lazer is an American electronic dance music and DJ group, which includes record producer Diplo, and DJs Walshy Fire, Ape Drums and vocalist America Foster. They were founded in 2008 by Diplo and Switch, with Switch leaving after three years in 2011. He was then replaced by both Jillionaire and Walshy Fire. In June 2019, Jillionaire left the group and was replaced by Ape Drums. In 2025, British-Jamaican artist and Internet personality America Foster joined the group. Their music spans numerous genres, mixing reggae with dancehall, ReggaeEDM, reggaeton, soca, house and moombahton.",
+        "url": "https://en.wikipedia.org/wiki/Major_Lazer"
       },
       {
         "name": "Ben Harper & The Innocent Criminals",
-        "image": "images/artists/ben-harper-the-innocent-criminals.jpg"
+        "image": "images/artists/ben-harper-the-innocent-criminals.jpg",
+        "slug": "ben-harper-the-innocent-criminals",
+        "bio": "Benjamin Charles Harper is an American singer-songwriter and multi-instrumentalist. Harper plays an eclectic mix of blues, folk, soul, reggae, and rock music, and he is known for his guitar-playing skills, vocals, live performances, and activism. He has released twelve studio albums, mostly through Virgin Records, and has toured internationally.",
+        "url": "https://en.wikipedia.org/wiki/Ben_Harper"
       },
       {
         "name": "St. Vincent",
-        "image": "images/artists/st-vincent.jpg"
+        "image": "images/artists/st-vincent.jpg",
+        "slug": "st-vincent",
+        "bio": "Anne Erin Clark, known professionally as St. Vincent, is an American musician, singer and songwriter. Her guitar-playing has been praised for its melodic style and use of distortion, and she has been listed among the best guitarists of the 21st century by publications. Rolling Stone named Clark the 26th-greatest guitarist of all time in 2023.",
+        "url": "https://en.wikipedia.org/wiki/St._Vincent_(musician)"
       },
       {
         "name": "Flume",
-        "image": "images/artists/flume.jpg"
+        "image": "images/artists/flume.jpg",
+        "slug": "flume",
+        "bio": "Harley Edward Streten, known professionally as Flume, is an Australian musician, DJ, and record producer. He is regarded as a pioneer of future bass who helped popularise the genre. His self-titled debut studio album, Flume, was released in 2012 to positive reviews, topping the ARIA Albums Chart and reaching double-platinum accreditation in Australia.",
+        "url": "https://en.wikipedia.org/wiki/Flume_(musician)"
       },
       {
         "name": "The Decemberists",
-        "image": "images/artists/the-decemberists.jpg"
+        "image": "images/artists/the-decemberists.jpg",
+        "slug": "the-decemberists",
+        "bio": "The Decemberists are an American indie rock band from Portland, Oregon, formed in 2000. The band consists of Colin Meloy, Chris Funk, Jenny Conlee, Nate Query (bass), and John Moen (drums).",
+        "url": "https://en.wikipedia.org/wiki/The_Decemberists"
       },
       {
         "name": "Belle and Sebastian",
-        "image": "images/artists/belle-and-sebastian.jpg"
+        "image": "images/artists/belle-and-sebastian.jpg",
+        "slug": "belle-and-sebastian",
+        "bio": "Belle and Sebastian are a Scottish indie pop band formed in Glasgow in 1996. Led by Stuart Murdoch, Belle and Sebastian have released twelve studio albums. The band are often compared with acts such as the Smiths and Nick Drake. Belle and Sebastian took their name from a short story Murdoch had written about a boy and girl, whose title was a play on the 1965 television series Belle and Sebastian.",
+        "url": "https://en.wikipedia.org/wiki/Belle_and_Sebastian"
       },
       {
         "name": "Mastodon",
-        "image": "images/artists/mastodon.jpg"
+        "image": "images/artists/mastodon.jpg",
+        "slug": "mastodon",
+        "bio": "Mastodon is an American heavy metal band from Atlanta, Georgia. Formed in 2000, the band's lineup of Troy Sanders (bass/vocals), Brent Hinds, Bill Kelliher, and Brann Dailor (drums/vocals) remained unchanged for 24 years. Hinds departed Mastodon in March 2025, and died five months later in a motorcycle accident in Atlanta, Georgia.",
+        "url": "https://en.wikipedia.org/wiki/Mastodon_(band)"
       },
       {
         "name": "Chance the Rapper",
-        "image": "images/artists/chance-the-rapper.jpg"
+        "image": "images/artists/chance-the-rapper.jpg",
+        "slug": "chance-the-rapper",
+        "bio": "Chancelor Johnathan Bennett, known professionally as Chance the Rapper, is an American rapper. He gained widespread recognition with his second mixtape, Acid Rap (2013), which helped establish him as a leading figure in Chicago hip-hop and among independent artists.",
+        "url": "https://en.wikipedia.org/wiki/Chance_the_Rapper"
       },
       {
         "name": "Tears for Fears",
-        "image": "images/artists/tears-for-fears.jpg"
+        "image": "images/artists/tears-for-fears.jpg",
+        "slug": "tears-for-fears",
+        "bio": "Tears for Fears are an English pop rock band formed in Bath in 1981 by Curt Smith and Roland Orzabal. Founded after the dissolution of their first band, the mod-influenced Graduate, Tears for Fears were associated with the synth-pop bands of the 1980s, and attained international chart success as part of the Second British Invasion.",
+        "url": "https://en.wikipedia.org/wiki/Tears_for_Fears"
       },
       {
         "name": "Band of Horses",
-        "image": "images/artists/band-of-horses.jpg"
+        "image": "images/artists/band-of-horses.jpg",
+        "slug": "band-of-horses",
+        "bio": "Band of Horses is an American rock band formed in 2004 in Seattle, Washington. Led by singer-songwriter Ben Bridwell, who has been the band's sole constant member throughout numerous line-up changes, the band's current line-up also includes longtime member Creighton Barrett (drums) alongside Matt Gentling, Brett Nash, and Joel Graves.",
+        "url": "https://en.wikipedia.org/wiki/Band_of_Horses"
       },
       {
         "name": "Welcome to Houston",
@@ -294,7 +329,8 @@
       "The Vanity",
       "Kult Dizney",
       "Prismo",
-      "Second Lovers"
+      "Second Lovers",
+      "R. Kelly"
     ]
   }
 }

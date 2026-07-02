@@ -20,12 +20,19 @@ const assetBase = '/shared-assets/2015';
           <div class="lineup-block">
             <div class="lineup-headliners">
               {snapshot.lineup.headliners.map((h) => (
-                <div class={`hl-card${h.image ? '' : ' hl-card--noimg'}`}>
-                  {h.image && (
+                h.slug ? (
+                  <a class="hl-card" href={`/2015/artists/${h.slug}/`}>
                     <img class="hl-card-img" src={`${assetBase}/${h.image}`} alt={h.name} loading="lazy" />
-                  )}
-                  <span class="hl-card-name">{h.name}</span>
-                </div>
+                    <span class="hl-card-name">{h.name}</span>
+                  </a>
+                ) : (
+                  <div class={`hl-card${h.image ? '' : ' hl-card--noimg'}`}>
+                    {h.image && (
+                      <img class="hl-card-img" src={`${assetBase}/${h.image}`} alt={h.name} loading="lazy" />
+                    )}
+                    <span class="hl-card-name">{h.name}</span>
+                  </div>
+                )
               ))}
             </div>
 
