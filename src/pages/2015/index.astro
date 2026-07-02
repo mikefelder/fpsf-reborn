@@ -17,7 +17,7 @@ const assetBase = '/shared-assets/2015';
             rel="noopener noreferrer"
             class="play-btn"
             title={snapshot.banner.videoTitle}
-          >▶ Watch lineup release</a>
+          ><i data-icon="r" class="icon" aria-hidden="true"></i></a>
           <p class="title">
             {snapshot.banner.title.map((line, i) => (
               <>
@@ -44,7 +44,7 @@ const assetBase = '/shared-assets/2015';
               class="button secondary large"
               target="_blank"
               rel="noopener noreferrer"
-            >{snapshot.banner.passesLabel}</a>
+            >{snapshot.banner.passesLabel}</a><i class="icon icon-2015" aria-hidden="true"></i>
           </div>
         </div>
       </div>
@@ -64,16 +64,6 @@ const assetBase = '/shared-assets/2015';
       <div class="large-12 columns">
         <div class="row">
           <div class="lineup-block">
-            <a
-              href={`${assetBase}/${snapshot.lineup.posterFull}`}
-              class="lineup-poster"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View the full FPSF 2015 lineup-release poster"
-            >
-              <img src={`${assetBase}/${snapshot.lineup.posterFull}`} alt="FPSF 2015 lineup-release poster" loading="lazy" />
-            </a>
-
             <div class="lineup-headliners">
               {snapshot.lineup.headliners.map((name) => (
                 <span class="lineup-headliner">{name}</span>

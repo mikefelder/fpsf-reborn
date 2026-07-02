@@ -85,8 +85,8 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         font-family: 'flamamedium', 'Helvetica Neue', Arial, sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        font-size: 19px;
-        line-height: 1.3;
+        font-size: 24px;
+        line-height: 1.35;
         color: #1c1b18;
       }
       .lineup-undercard {
@@ -102,8 +102,8 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         font-family: 'flamacondensedbook', 'flamabook', 'Helvetica Neue', Arial, sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.03em;
-        font-size: 13px;
-        line-height: 1.9;
+        font-size: 15px;
+        line-height: 1.95;
         color: #55534b;
         break-inside: avoid;
       }
@@ -114,7 +114,14 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
       }
       @media only screen and (max-width: 40em) {
         .lineup-undercard { column-count: 2; }
-        .lineup-headliners .lineup-headliner { font-size: 16px; }
+        .lineup-headliners .lineup-headliner { font-size: 19px; }
+      }
+
+      /* The fixed archive/known-gaps badge lives top-right (position:fixed,
+         right:14px). This era's nav also anchors top-right, so shift the
+         desktop nav left of the badge so the social icons aren't covered. */
+      @media only screen and (min-width: 62.125rem) {
+        .cd-header .cd-secondary-nav { right: 15rem; }
       }
     </style>
   </Fragment>
@@ -143,7 +150,7 @@ const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
         {data.social && data.social.map((link) => (
           <li>
             <a href={link.href} target="_blank" rel="noopener noreferrer" title={link.label}>
-              {link.label}
+              <i class={`icon icon-${link.className}`} aria-hidden="true"></i>
             </a>
           </li>
         ))}
