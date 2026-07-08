@@ -94,6 +94,12 @@ export const showYears: ShowYearSummary[] = [
         description: 'March 2016 home page — lineup just announced, tickets on sale, e-list push',
         sourceSnapshot: '20160313220803',
       },
+      {
+        label: 'Post-Festival',
+        href: '/2016/recap/',
+        description: 'January 2017 post-festival home — "Thanks Houston! See you in June", e-list push for 2017',
+        sourceSnapshot: '20170128184915',
+      },
     ],
   },
   { year: 2017, edition: 'Free Press Summer Festival 2017', routes: [] },

@@ -15,6 +15,11 @@ export interface Props {
   activeNav?: string;
   /** Show the big gradient1 branding hero on desktop (home page). */
   heroBranding?: boolean;
+  /**
+   * Replace the branding details (byline · dates · venue) with a single line,
+   * e.g. the post-festival home which shows only "Houston, TX".
+   */
+  heroDetails?: string;
 }
 
 const {
@@ -26,6 +31,7 @@ const {
   currentHref,
   activeNav = 'Lineup',
   heroBranding = false,
+  heroDetails,
 } = Astro.props;
 
 const data = snapshot;
@@ -34,6 +40,9 @@ const pageDescription = description ?? data.description;
 const assetBase = '/shared-assets/2016';
 const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
 const logo = `${assetBase}/${data.header.image}`;
+// Authentic Forte-child theme favicon (forte-child/img/favicon.png), shared by
+// every 2016 page in the archive — not the nav logo.
+const favicon = `${assetBase}/img/favicon.png`;
 const posterPath = data.lineup?.posterFull;
 const posterOg = posterPath ? `${assetBase}/${posterPath}` : undefined;
 const resolvedOgImage = ogImage ?? posterOg;
@@ -54,7 +63,7 @@ const faIcon: Record<string, string> = {
   year={data.year}
   knownGaps={data.knownGaps}
   currentHref={currentHref}
-  favicon={logo}
+  favicon={favicon}
 >
   <Fragment slot="head">
     <EventJsonLd
@@ -187,12 +196,16 @@ const faIcon: Record<string, string> = {
             <a href={homeHref} rel="home" class="o-logo">{data.header.title}</a>
           </h1>
           <p class="o-branding__details">
-            {data.header.byline}
-            <span class="o-text-divider"></span>{data.dates}
-            {heroVenue && (
+            {heroDetails ? heroDetails : (
               <>
-                <span class="o-text-divider palm-is-hidden"></span>
-                <br class="desk-is-hidden" />{heroVenue.toUpperCase()}
+                {data.header.byline}
+                <span class="o-text-divider"></span>{data.dates}
+                {heroVenue && (
+                  <>
+                    <span class="o-text-divider palm-is-hidden"></span>
+                    <br class="desk-is-hidden" />{heroVenue.toUpperCase()}
+                  </>
+                )}
               </>
             )}
           </p>

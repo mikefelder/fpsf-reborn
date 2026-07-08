@@ -26,7 +26,7 @@ Astro static rebuild of Free Press Summer Fest show-year sites, reconstructed fr
 | 2013 | Planned | — | `20130302063004` candidate; needs Phase 2.1 sub-page discovery |
 | 2014 | **Live** | `/2014/`, `/2014/presale/` | `20140517104510` (main, lineup released), `20140116065620` (blind presale) |
 | 2015 | **Live** | `/2015/` | `20150703195456` (main, Foundation-era, NRG Park) |
-| 2016 | Planned | — | Phase 2.1 + 2.2 complete in archivist; ready to port (all 16 Wayback HTML paths on disk) |
+| 2016 | **Live** | `/2016/`, `/2016/announce/`, `/2016/recap/` + sub-pages (`/2016/lineup/`, `/2016/tickets/`, `/2016/experience/`, `/2016/information/`, `/2016/sponsors/`, `/2016/connect/`, `/2016/news/`, `/2016/press/`, `/2016/privacy/`, `/2016/terms-conditions/`) | `20160414202513` (main, April home), `20160313220803` (announce, March home), `20170128184915` (recap, Jan 2017 post-festival) — WordPress/Forte-child era |
 | 2017 | Planned | — | Phase 2.1 + 2.2 complete in archivist; ready to port (all 16 Wayback HTML paths + 64 Flickr photos on disk) |
 
 The root `/` is a **random snapshot landing**: on visit, JS picks a live snapshot URL (with 20-minute sessionStorage cooldown), fetches its HTML, injects `<base href>`, and inlines the result so visitors land on a real FPSF page. Matches `dayfornight-reborn`. Falls back to a `<noscript>` nav listing every live route.
@@ -61,6 +61,11 @@ Examples:
 | 2014 | main | `20140517104510` | 10 |
 | 2014 | blind-presale | `20140116065620` | 7 |
 | 2015 | main | `20150703195456` | 11 |
+| 2016 | main | `20160414202513` | — |
+| 2016 | announce | `20160313220803` | — |
+| 2016 | recap | `20170128184915` | — |
+
+The three 2016 states share one visual family (WordPress/Forte-child theme), so they share a single `Fpsf2016Layout` and one `public/shared-assets/2016/` asset tree rather than per-state CSS. The layout's `heroDetails` prop lets the recap state show a simplified branding line (`Houston, TX` only, no dates/venue). All 2016 pages use the authentic Forte theme favicon (`img/favicon.png`), not the nav logo.
 
 ## Year-pill navigation
 
@@ -78,7 +83,7 @@ Each rendered page exposes its capture gaps via `KnownGapsBanner` (dev-only). Th
 
 ## Pending work
 
-- **Port 2016 and 2017 Astro routes** — archivist now has all HTML + assets. Rewrite Flickr `<img src>` URLs at template-build time from `https://farmN.staticflickr.com/<path>` to `/shared-assets/2017/flickr/farmN/<path>`.
+- **Port 2017 Astro routes** — archivist now has all HTML + assets. Rewrite Flickr `<img src>` URLs at template-build time from `https://farmN.staticflickr.com/<path>` to `/shared-assets/2017/flickr/farmN/<path>`.
 - Port 2013 (FPSF-assets era, sibling to 2014).
 - Port 2009, 2012 (sparse legacy/transition years).
 - Add served-link audit script (`scripts/audit-served-links.mjs`) that walks `dist/` after build.

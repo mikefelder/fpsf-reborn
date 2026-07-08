@@ -1,0 +1,30 @@
+{
+  "title": "Free Press Summer Festival 2016 — Thanks Houston | Post-Festival",
+  "description": "Thanks Houston! Free Press Summer Festival 2016 has wrapped — see you in June. Relive the weekend and join the e-list for 2017 news.",
+  "sourceSnapshot": "20170128184915",
+  "heroDetails": "Houston, TX",
+  "billboards": [
+    {
+      "type": "imagecopy",
+      "size": "100x2",
+      "image": "uploads/2016/06/FPSF16-Billboards-Full-Width-Rainbow.jpg",
+      "imageMobile": "uploads/2016/06/FPSF16-Full-Billboard-Mobile-Rainbow.jpg",
+      "title": "THANKS HOUSTON!",
+      "subtitle": "SEE YOU IN JUNE"
+    },
+    {
+      "type": "imagecopy",
+      "size": "50x2",
+      "image": "uploads/2016/06/FPSF16-Billboards-Half-Width-OhSees.jpg",
+      "title": "NEVER BEEN TO THE FEST?",
+      "cta": "LEARN MORE",
+      "href": "/2016/experience/"
+    },
+    {
+      "type": "elist",
+      "size": "50x2",
+      "image": "uploads/2016/06/FPSF16-Half-Billboard-TwoGirls.jpg",
+      "title": "JOIN THE E-LIST"
+    }
+  ]
+}
