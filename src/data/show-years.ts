@@ -85,8 +85,14 @@ export const showYears: ShowYearSummary[] = [
       {
         label: 'Main',
         href: '/2016/',
-        description: 'June 2016 lineup page (WordPress/Forte-child era, NRG Park)',
-        sourceSnapshot: '20160712153331',
+        description: 'Spring 2016 home page (WordPress/Forte-child era, Eleanor Tinsley Park)',
+        sourceSnapshot: '20160414202513',
+      },
+      {
+        label: 'Lineup Announced',
+        href: '/2016/announce/',
+        description: 'March 2016 home page — lineup just announced, tickets on sale, e-list push',
+        sourceSnapshot: '20160313220803',
       },
     ],
   },

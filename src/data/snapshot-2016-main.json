@@ -4,12 +4,12 @@
   "dates": "June 4-5, 2016",
   "startDate": "2016-06-04",
   "endDate": "2016-06-05",
-  "location": "NRG Park, Houston, TX",
-  "sourceSnapshot": "20160712153331",
+  "location": "Eleanor Tinsley Park, Houston, TX",
+  "sourceSnapshot": "20160414202513",
   "sourceDomain": "www.fpsf.com",
-  "phase": "lineup",
-  "title": "2016 Lineup — Free Press Summer Festival | Houston",
-  "description": "Free Press Summer Festival 2016 — June 4-5 at NRG Park, Houston, TX. Deadmau5, The National, Lil Wayne & 2 Chainz, and more.",
+  "phase": "event",
+  "title": "Free Press Summer Festival 2016 — June 4-5 | Houston",
+  "description": "Free Press Summer Festival 2016 — June 4-5 at Eleanor Tinsley Park, Houston, TX. Deadmau5, The National, Lil Wayne & 2 Chainz, Modest Mouse, and more.",
   "header": {
     "title": "Free Press Summer Festival",
     "byline": "Houston, TX",
@@ -22,15 +22,15 @@
     },
     {
       "label": "Lineup",
-      "href": "/2016/",
+      "href": "/2016/lineup/",
       "subnav": [
         {
           "label": "2016 Schedule",
-          "href": "/2016/#schedule"
+          "href": "/2016/lineup/#schedule"
         },
         {
           "label": "2016 Fancy Pants Tent",
-          "href": "/2016/"
+          "href": "/2016/lineup/"
         },
         {
           "label": "Past Lineups",
@@ -59,16 +59,11 @@
   ],
   "secondaryNav": [
     {
-      "label": "MERCH",
-      "href": "http://fpsf.shop.redstarmerch.com/",
-      "external": true
-    },
-    {
-      "label": "NEWS",
+      "label": "News",
       "href": "/2016/news/"
     },
     {
-      "label": "CONNECT",
+      "label": "Connect",
       "href": "/2016/connect/"
     }
   ],
@@ -180,11 +175,46 @@
   "knownGaps": [
     "The 2016 site ran on WordPress (Forte-child theme); this is a static Astro rebuild of the recovered theme CSS — MyFest login, live search, and e-list signup are non-functional stubs.",
     "Sponsor and some social-icon logos are recovered where the Wayback Machine archived them; a few festival press images were never captured.",
-    "Interactive-lineup artist detail pages, videos, and schedule reflect the archived July 2016 (post-festival) capture."
+    "Interactive-lineup artist photos are sourced from TheAudioDB, Wikipedia, Deezer, and the iTunes Search API — the original festival thumbnails were not archived. 63 of 64 artists have a photo; only the local act PRIVATE EXCITEMENT (no streaming-platform presence) shows as a name-only card. Schedule times and video links reflect the archived July 2016 (post-festival) capture.",
+    "Venue is presented as Eleanor Tinsley Park, matching the archived spring 2016 site (and the reborn 2015 presentation). The archived July 2016 lineup poster shows the later NRG Park (Yellow Lot) relocation — that original poster image is preserved on the Lineup page."
   ],
   "eventDate": {
     "headline": "June 4-5, 2016",
-    "city": "NRG Park · Houston, TX"
+    "city": "Eleanor Tinsley Park · Houston, TX"
+  },
+  "home": {
+    "heroVenue": "Eleanor Tinsley Park",
+    "billboards": [
+      {
+        "type": "lineup",
+        "image": "uploads/2016/04/FPSF16-Homepage-480x650-LineupByDay47v2.png",
+        "href": "/2016/lineup/",
+        "alt": "2016 Lineup by day"
+      },
+      {
+        "type": "imagecopy",
+        "image": "uploads/2016/04/ESMZBillboard.jpg",
+        "title": "Edward Sharpe and the Magnetic Zeros Giveaway",
+        "subtitle": "ENTER TO WIN A MEET AND GREET + TICKETS",
+        "cta": "ENTER",
+        "href": "/2016/news/"
+      },
+      {
+        "type": "imagecopy",
+        "image": "uploads/2016/03/FPSF16-Billboards-Half-Width-Hands1.jpg",
+        "title": "1-DAY TICKETS ON SALE NOW",
+        "subtitle": "CAN'T GO THE FULL WEEKEND? SATURDAY AND SUNDAY TICKETS NOW AVAILABLE",
+        "cta": "BUY TICKETS",
+        "href": "/2016/tickets/"
+      }
+    ],
+    "news": {
+      "title": "New Artists Added To Lineup!",
+      "date": "As of: 3/24/2016",
+      "excerpt": "ColleGrove (Lil Wayne & 2 Chainz), Father John Misty, and more added to lineup!",
+      "image": "uploads/2016/03/FPSF2016_news-post_new-artist-announce.jpg",
+      "href": "/2016/news/"
+    }
   },
   "lineup": {
     "note": "Below is the 2016 Lineup.",

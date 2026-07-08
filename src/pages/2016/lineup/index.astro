@@ -1,0 +1,179 @@
+---
+import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
+import snapshot from '@data/snapshot-2016-main.json';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+const assetBase = '/shared-assets/2016';
+const artists = data.lineup?.artists ?? [];
+const poster = data.lineup?.posterFull ? `${assetBase}/${data.lineup.posterFull}` : undefined;
+---
+<Fpsf2016Layout snapshot={data} title="2016 Lineup — Free Press Summer Festival | Houston" currentHref="/2016/lineup/" activeNav="Lineup">
+  <div id="primary" class="o-wrapper--full">
+    <main id="main" class="o-main" role="main">
+      <ul class="o-navbar js-sub-nav layout layout--flush">
+        <li class="o-navbar__item o-navbar__item--active layout__item u-1-of-2" data-tab="poster">
+          <a data-bypass href="#poster">Lineup Poster</a>
+          <div class="o-navbar__triangle"></div>
+        </li>
+        <li class="o-navbar__item layout__item u-1-of-2" data-tab="interactive">
+          <a data-bypass href="#interactive">Interactive Lineup</a>
+          <div class="o-navbar__triangle"></div>
+        </li>
+      </ul>
+
+      <div data-id="poster" class="o-navbar__content o-navbar__content--active">
+        <div class="o-wrapper">
+          <article class="page">
+            <header class="o-entry__header">
+              <h1 class="o-entry__title">Lineup Poster</h1>
+            </header>
+            <div class="o-entry__content">
+              <center><h4>{data.lineup?.note ?? 'Below is the 2016 Lineup.'}</h4></center>
+              <p class="c-2016-poster-sub">
+                Free Press Summer Festival returned to <strong>NRG Park</strong> on
+                <strong>June 4&ndash;5, 2016</strong>.
+              </p>
+              {poster && (
+                <div class="c-2016-poster">
+                  <img src={poster} alt="FPSF 2016 lineup poster" width="819" height="1024" loading="lazy" />
+                </div>
+              )}
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div data-id="interactive" class="o-navbar__content">
+        <div class="o-wrapper">
+          <header class="o-entry__header">
+            <h1 class="o-entry__title" id="schedule">Interactive Lineup</h1>
+          </header>
+          <div class="c-2016-grid">
+            {artists.map((artist) => (
+              <div class="c-2016-artist" data-days={(artist.day ?? '') + ''}>
+                <div
+                  class="c-2016-artist__img"
+                  style={artist.image ? `background-image:url(${assetBase}/uploads/${artist.image})` : undefined}
+                >
+                  {artist.video && (
+                    <a
+                      class="c-2016-artist__play"
+                      href={`https://www.youtube.com/watch?v=${artist.video}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Watch ${artist.name}`}
+                    >
+                      <i class="fa fa-play"></i>
+                    </a>
+                  )}
+                </div>
+                <div class="c-2016-artist__body">
+                  <p class="c-2016-artist__name">{artist.name}</p>
+                  {(artist.day || artist.time || artist.stage) && (
+                    <p class="c-2016-artist__meta">
+                      {[artist.day, artist.time, artist.stage].filter(Boolean).join(' · ')}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style is:global>
+    .c-2016-poster-sub {
+      text-align: center;
+      margin: 0 auto 1.5rem;
+      max-width: 40rem;
+    }
+    .c-2016-poster {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+    .c-2016-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.35);
+    }
+    .c-2016-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 4px;
+      margin: 1.5rem 0 3rem;
+    }
+    .c-2016-artist {
+      position: relative;
+      background: #101010;
+      overflow: hidden;
+    }
+    .c-2016-artist__img {
+      position: relative;
+      width: 100%;
+      padding-bottom: 66%;
+      background-size: cover;
+      background-position: center center;
+      background-color: #181818;
+    }
+    .c-2016-artist__play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.75rem;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.35);
+      transition: opacity 0.2s ease;
+    }
+    .c-2016-artist:hover .c-2016-artist__play {
+      opacity: 1;
+    }
+    .c-2016-artist__body {
+      padding: 0.6rem 0.75rem 0.85rem;
+    }
+    .c-2016-artist__name {
+      margin: 0;
+      font-family: flamamedium, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      line-height: 1.15;
+      color: #fff;
+    }
+    .c-2016-artist__meta {
+      margin: 0.3rem 0 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      color: #9a9a9a;
+    }
+    /* Sub-nav tab switching */
+    .o-navbar__content { display: none; }
+    .o-navbar__content--active { display: block; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var tabs = document.querySelectorAll('.js-sub-nav .o-navbar__item');
+      var panels = document.querySelectorAll('.o-navbar__content');
+      function activate(id) {
+        tabs.forEach(function (t) {
+          t.classList.toggle('o-navbar__item--active', t.getAttribute('data-tab') === id);
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('o-navbar__content--active', p.getAttribute('data-id') === id);
+        });
+      }
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function (e) {
+          e.preventDefault();
+          activate(t.getAttribute('data-tab'));
+        });
+      });
+    })();
+  </script>
+</Fpsf2016Layout>

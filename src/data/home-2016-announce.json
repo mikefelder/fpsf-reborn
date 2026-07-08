@@ -1,0 +1,33 @@
+{
+  "title": "Free Press Summer Festival 2016 — Lineup Announced | Houston",
+  "description": "Free Press Summer Festival 2016 lineup announced — Deadmau5, The National, Modest Mouse & more. June 4-5 at Eleanor Tinsley Park, Houston, TX. Tickets on sale now.",
+  "sourceSnapshot": "20160313220803",
+  "billboards": [
+    {
+      "type": "lineup",
+      "image": "uploads/2016/03/FPSF16_480x650_Lineup.png",
+      "href": "/2016/lineup/",
+      "alt": "2016 lineup"
+    },
+    {
+      "type": "imagecopy",
+      "image": "uploads/2016/02/billboardhalfwidth1.jpg",
+      "title": "TICKETS ON SALE NOW",
+      "subtitle": "GA, FANCY PANTS, SILK PAJAMAS TICKETS AVAILABLE",
+      "cta": "BUY TICKETS",
+      "href": "/2016/tickets/"
+    },
+    {
+      "type": "elist",
+      "image": "uploads/2016/02/FPSF16-Billboards-Half-Width-Lasers.jpg",
+      "title": "JOIN THE E-LIST!"
+    }
+  ],
+  "news": {
+    "title": "2016 Lineup Announced!",
+    "date": "As of: 3/1/2016",
+    "excerpt": "Tickets on sale now! We\u2019re stoked to be back in Eleanor Tinsley Park and can\u2019t wait to bring along deadmau5, The National, Modest Mouse, and more for the ride.",
+    "image": null,
+    "href": "/2016/news/"
+  }
+}

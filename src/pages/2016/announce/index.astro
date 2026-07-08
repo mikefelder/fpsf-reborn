@@ -1,33 +1,30 @@
 ---
 import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
 import snapshot from '@data/snapshot-2016-main.json';
+import announce from '@data/home-2016-announce.json';
 import type { Snapshot } from '@/types/snapshot';
 
 const data = snapshot as unknown as Snapshot;
 const assetBase = '/shared-assets/2016';
-const home = (data as unknown as {
-  home?: {
-    billboards?: Array<{
-      type: string;
-      image: string;
-      href: string;
-      alt?: string;
-      title?: string;
-      subtitle?: string;
-      cta?: string;
-    }>;
-    news?: { title: string; date: string; excerpt: string; image: string; href: string };
-  };
-}).home;
-const billboards = home?.billboards ?? [];
+const billboards = announce.billboards as Array<{
+  type: string;
+  image: string;
+  href?: string;
+  alt?: string;
+  title?: string;
+  subtitle?: string;
+  cta?: string;
+}>;
 const lineupPanel = billboards.find((b) => b.type === 'lineup');
-const imageCopyPanels = billboards.filter((b) => b.type === 'imagecopy');
-const news = home?.news;
+const otherPanels = billboards.filter((b) => b.type !== 'lineup');
+const news = announce.news;
 ---
 <Fpsf2016Layout
   snapshot={data}
+  title={announce.title}
+  description={announce.description}
   bodyClass="home page page-template-default"
-  currentHref="/2016/"
+  currentHref="/2016/announce/"
   activeNav=""
   heroBranding={true}
 >
@@ -60,21 +57,41 @@ const news = home?.news;
         </div>
       </div>
     )}
-    {imageCopyPanels.map((panel) => (
-      <div class="c-billboard__panel layout__item u-1-of-2-desk desk-one-half c-billboard__panel--imagecopy" data-panel-size="50x2">
-        <div
-          class="c-billboard__img"
-          style={`background-image: url(${assetBase}/${panel.image}); background-position: center center`}
-        >
-          <div class="c-billboard__copy" style="vertical-align: middle; text-align: center;">
-            <h1 class="u-mt0" style="color: #FFFFFF">{panel.title}</h1>
-            {panel.subtitle && <h4 class="u-mt0" style="color: #FFFFFF">{panel.subtitle}</h4>}
-            {panel.cta && (
-              <a href={panel.href} class="btn btn--large btn--ghost" style="border: 3px solid; color: #FFFFFF;">{panel.cta}</a>
-            )}
+    {otherPanels.map((panel) => (
+      panel.type === 'elist' ? (
+        <div class="c-billboard__panel layout__item u-1-of-2-desk desk-one-half c-billboard__panel--elist" data-panel-size="50x2">
+          <div
+            class="c-billboard__img"
+            style={`background-image: url(${assetBase}/${panel.image}); background-position: center center`}
+          >
+            <div class="c-billboard__elist" style="vertical-align: middle; text-align: center;">
+              <h1 class="u-mt0" style="color: #FFFFFF">{panel.title}</h1>
+              <div class="c-billboard__elist-form">
+                <form class="o-elist js-elist-form" action="#" method="post">
+                  <input class="o-elist__input" type="email" name="email" placeholder="jdoe@example.com" />
+                  <input type="submit" class="o-elist__submit" value="Join" />
+                </form>
+                <div class="o-elist-response js-elist-response" data-success="You've subscribed. Stay tuned for more information."></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div class="c-billboard__panel layout__item u-1-of-2-desk desk-one-half c-billboard__panel--imagecopy" data-panel-size="50x2">
+          <div
+            class="c-billboard__img"
+            style={`background-image: url(${assetBase}/${panel.image}); background-position: center center`}
+          >
+            <div class="c-billboard__copy" style="vertical-align: middle; text-align: center;">
+              <h1 class="u-mt0" style="color: #FFFFFF">{panel.title}</h1>
+              {panel.subtitle && <h4 class="u-mt0" style="color: #FFFFFF">{panel.subtitle}</h4>}
+              {panel.cta && (
+                <a href={panel.href} class="btn btn--large btn--ghost" style="border: 3px solid; color: #FFFFFF;">{panel.cta}</a>
+              )}
+            </div>
+          </div>
+        </div>
+      )
     ))}
   </div>
 
@@ -93,15 +110,6 @@ const news = home?.news;
                     <div class="layout__item">
                       <div class="c-update c-update--single">
                         <div class="media">
-                          <a class="media__img" href={news.href}>
-                            <img
-                              width="368"
-                              height="368"
-                              src={`${assetBase}/${news.image}`}
-                              class="c-update__featured-img"
-                              alt={news.title}
-                            />
-                          </a>
                           <div class="media__body">
                             <a class="c-update__title" href={news.href}>{news.title}</a>
                             <p class="c-update__date">{news.date}</p>
