@@ -1,0 +1,224 @@
+---
+import Fpsf2017Layout from '@layouts/Fpsf2017Layout.astro';
+import snapshot from '@data/snapshot-2017-presale.json';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+const assetBase = '/shared-assets/2017';
+const home = (data as unknown as {
+  home?: {
+    billboards?: Array<{
+      type: string;
+      image: string;
+      href?: string;
+      alt?: string;
+      title?: string;
+      subtitle?: string;
+      cta?: string;
+    }>;
+  };
+}).home;
+const billboards = home?.billboards ?? [];
+const lineupPanel = billboards.find((b) => b.type === 'lineup');
+const ticketsPanel = billboards.find((b) => b.type === 'imagecopy');
+const elistPanel = billboards.find((b) => b.type === 'elist');
+const vipPanel = billboards.find((b) => b.type === 'imagecopy-full');
+---
+<Fpsf2017Layout
+  snapshot={data}
+  title="Free Press Summer Festival 2017 — June 3-4 | Houston"
+  currentHref="/2017/"
+  activeNav=""
+  heroBranding={true}
+>
+  <div class="c-2017-home">
+    {lineupPanel && (
+      <div class="c-2017-home__panel c-2017-home__lineup">
+        <ul class="c-2017-home__share">
+          <li>
+            <a href={`${assetBase}/${lineupPanel.image}`} target="_blank" rel="noopener noreferrer" title="Download lineup"><i class="fa fa-download"></i></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffpsf.dev%2F2017%2Flineup%2F" target="_blank" rel="noopener noreferrer" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ffpsf.dev%2F2017%2Flineup%2F" target="_blank" rel="noopener noreferrer" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+        <a class="c-2017-home__poster" href={lineupPanel.href ?? '/2017/lineup/'}>
+          <img src={`${assetBase}/${lineupPanel.image}`} alt={lineupPanel.alt ?? '2017 lineup poster'} />
+        </a>
+      </div>
+    )}
+
+    <div class="c-2017-home__col">
+      {ticketsPanel && (
+        <div
+          class="c-2017-home__panel c-2017-home__copy"
+          style={`background-image:url(${assetBase}/${ticketsPanel.image})`}
+        >
+          <div class="c-2017-home__copy-inner">
+            <h1>{ticketsPanel.title}</h1>
+            {ticketsPanel.subtitle && <h4>{ticketsPanel.subtitle}</h4>}
+            {ticketsPanel.cta && (
+              <a href={ticketsPanel.href ?? '/2017/lineup/#tickets'} class="btn btn--large btn--ghost">{ticketsPanel.cta}</a>
+            )}
+          </div>
+        </div>
+      )}
+
+      {elistPanel && (
+        <div
+          class="c-2017-home__panel c-2017-home__copy"
+          style={`background-image:url(${assetBase}/${elistPanel.image})`}
+        >
+          <div class="c-2017-home__copy-inner">
+            <h1>{elistPanel.title}</h1>
+            {elistPanel.subtitle && <h4>{elistPanel.subtitle}</h4>}
+            <div class="c-billboard__elist-form">
+              <form class="o-elist js-elist-form" action="#" method="post">
+                <input class="o-elist__input" type="email" name="email" placeholder="jdoe@example.com" />
+                <input type="submit" class="o-elist__submit" value="Join" />
+              </form>
+              <div class="o-elist-response js-elist-response" data-success="You've subscribed. Stay tuned for more information."></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+
+  {vipPanel && (
+    <div
+      class="c-2017-home__panel c-2017-home__copy c-2017-home__full"
+      style={`background-image:url(${assetBase}/${vipPanel.image})`}
+    >
+      <div class="c-2017-home__copy-inner">
+        <h1>{vipPanel.title}</h1>
+        {vipPanel.subtitle && <h4>{vipPanel.subtitle}</h4>}
+        {vipPanel.cta && (
+          <a href={vipPanel.href ?? '/2017/lineup/#tickets'} class="btn btn--large btn--ghost">{vipPanel.cta}</a>
+        )}
+      </div>
+    </div>
+  )}
+
+  <style is:global>
+    .c-2017-home {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .c-2017-home__panel {
+      position: relative;
+      min-height: 340px;
+      outline: 3px solid #fff;
+    }
+    .c-2017-home__lineup {
+      flex: 1 1 50%;
+      display: flex;
+      background: #4a0a86;
+      padding: 1.5rem;
+    }
+    .c-2017-home__col {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+    }
+    .c-2017-home__col .c-2017-home__panel {
+      flex: 1;
+    }
+    .c-2017-home__share {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .c-2017-home__share a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      color: #4a0a86;
+      font-size: 1.25rem;
+    }
+    .c-2017-home__poster {
+      flex: 1;
+      position: relative;
+      align-self: stretch;
+      min-height: 480px;
+      overflow: hidden;
+    }
+    .c-2017-home__poster img {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 92%;
+      max-height: 92%;
+      width: auto;
+      height: auto;
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.4);
+    }
+    .c-2017-home__copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center center;
+      color: #fff;
+      padding: 2rem 1.5rem;
+    }
+    .c-2017-home__copy-inner {
+      max-width: 34rem;
+    }
+    .c-2017-home__full {
+      min-height: 360px;
+    }
+    .c-2017-home__copy h1 {
+      margin: 0 0 0.75rem;
+      color: #fff;
+      font-family: flamablack, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 3rem;
+      line-height: 1;
+    }
+    .c-2017-home__copy h4 {
+      margin: 0 0 1.1rem;
+      color: #fff;
+      font-family: flamacondensed, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .btn--ghost {
+      display: inline-block;
+      border: 3px solid #fff;
+      color: #fff;
+      padding: 0.6rem 1.6rem;
+      text-decoration: none;
+      font-family: flamamedium, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn--ghost:hover {
+      background: #fff;
+      color: #000;
+    }
+    .c-billboard__elist-form {
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+    @media (max-width: 767px) {
+      .c-2017-home__lineup,
+      .c-2017-home__col {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</Fpsf2017Layout>

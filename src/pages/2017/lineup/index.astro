@@ -1,0 +1,227 @@
+---
+import Fpsf2017Layout from '@layouts/Fpsf2017Layout.astro';
+import snapshot from '@data/snapshot-2017-presale.json';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+const assetBase = '/shared-assets/2017';
+const artists = data.lineup?.artists ?? [];
+const posterThumb = `${assetBase}/uploads/2017/02/fpsf17-website-lineup-788x1024.jpg`;
+const tickets = data.tickets ?? [];
+---
+<Fpsf2017Layout
+  snapshot={data}
+  title="2017 Lineup — Free Press Summer Festival | Houston"
+  currentHref="/2017/lineup/"
+  activeNav="Lineup"
+>
+  <div id="primary" class="o-wrapper--full">
+    <main id="main" class="o-main" role="main">
+      <ul class="o-navbar js-sub-nav layout layout--flush">
+        <li class="o-navbar__item o-navbar__item--active layout__item u-1-of-3" data-tab="poster">
+          <a data-bypass href="#poster">Lineup Poster</a>
+          <div class="o-navbar__triangle"></div>
+        </li>
+        <li class="o-navbar__item layout__item u-1-of-3" data-tab="interactive">
+          <a data-bypass href="#interactive">Interactive Lineup</a>
+          <div class="o-navbar__triangle"></div>
+        </li>
+        <li class="o-navbar__item layout__item u-1-of-3" data-tab="tickets">
+          <a data-bypass href="#tickets">Tickets</a>
+          <div class="o-navbar__triangle"></div>
+        </li>
+      </ul>
+
+      <div data-id="poster" class="o-navbar__content o-navbar__content--active">
+        <div class="o-wrapper">
+          <article class="page">
+            <header class="o-entry__header">
+              <h1 class="o-entry__title">Lineup Poster</h1>
+            </header>
+            <div class="o-entry__content">
+              <center><h4>{data.lineup?.note ?? 'Below is the 2017 Lineup.'}</h4></center>
+              <p class="c-2017-poster-sub">
+                Free Press Summer Festival returns to <strong>Eleanor Tinsley Park</strong> on
+                <strong>June 3&ndash;4, 2017</strong>. Tickets on sale now.
+              </p>
+              <div class="c-2017-poster">
+                <img src={posterThumb} alt="FPSF 2017 lineup poster" width="788" height="1024" loading="lazy" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div data-id="interactive" class="o-navbar__content">
+        <div class="o-wrapper">
+          <header class="o-entry__header">
+            <h1 class="o-entry__title" id="lineup">Interactive Lineup</h1>
+          </header>
+          <div class="c-2017-grid">
+            {artists.map((artist) => (
+              <div class="c-2017-artist">
+                <div
+                  class="c-2017-artist__img"
+                  style={artist.image ? `background-image:url(${assetBase}/uploads/${artist.image})` : undefined}
+                ></div>
+                <div class="c-2017-artist__body">
+                  <p class="c-2017-artist__name">{artist.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div data-id="tickets" class="o-navbar__content">
+        <div class="o-wrapper">
+          <header class="o-entry__header">
+            <h1 class="o-entry__title" id="tickets">Tickets</h1>
+          </header>
+          <div class="o-entry__content">
+            <p class="c-2017-poster-sub">
+              Two-day passes for <strong>June 3&ndash;4, 2017</strong> at Eleanor Tinsley Park.
+              Prices increase at a later date.
+            </p>
+            <div class="c-2017-tickets">
+              {tickets.map((tier) => (
+                <div class="c-2017-tier">
+                  <h3 class="c-2017-tier__name">{tier.name}</h3>
+                  <p class="c-2017-tier__price">{tier.price}</p>
+                  {tier.blurb && <p class="c-2017-tier__blurb">{tier.blurb}</p>}
+                  {tier.includes && (
+                    <ul class="c-2017-tier__list">
+                      {tier.includes.map((inc) => <li>{inc}</li>)}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+            <p class="c-2017-tickets__note">Lockers available for $35. Kids 10 &amp; under free with a ticketed adult.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style is:global>
+    .c-2017-poster-sub {
+      text-align: center;
+      margin: 0 auto 1.5rem;
+      max-width: 40rem;
+    }
+    .c-2017-poster {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+    .c-2017-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.35);
+    }
+    .c-2017-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 4px;
+      margin: 1.5rem 0 3rem;
+    }
+    .c-2017-artist {
+      position: relative;
+      background: #101010;
+      overflow: hidden;
+    }
+    .c-2017-artist__img {
+      position: relative;
+      width: 100%;
+      padding-bottom: 66%;
+      background-size: cover;
+      background-position: center center;
+      background-color: #181818;
+    }
+    .c-2017-artist__body {
+      padding: 0.6rem 0.75rem 0.85rem;
+    }
+    .c-2017-artist__name {
+      margin: 0;
+      font-family: flamamedium, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      line-height: 1.15;
+      color: #fff;
+    }
+    .c-2017-tickets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0 1.5rem;
+    }
+    .c-2017-tier {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      padding: 1.5rem 1.4rem;
+      color: #e8e8e8;
+    }
+    .c-2017-tier__name {
+      margin: 0;
+      font-family: flamamedium, 'PT Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+    }
+    .c-2017-tier__price {
+      margin: 0.35rem 0 0.75rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffd23f;
+    }
+    .c-2017-tier__blurb {
+      margin: 0 0 0.85rem;
+      font-size: 0.9rem;
+      color: #b8b8b8;
+    }
+    .c-2017-tier__list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .c-2017-tier__list li {
+      margin-bottom: 0.35rem;
+    }
+    .c-2017-tickets__note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9a9a9a;
+      margin: 0 0 3rem;
+    }
+    /* Sub-nav tab switching */
+    .o-navbar__content { display: none; }
+    .o-navbar__content--active { display: block; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var tabs = document.querySelectorAll('.js-sub-nav .o-navbar__item');
+      var panels = document.querySelectorAll('.o-navbar__content');
+      function activate(id) {
+        tabs.forEach(function (t) {
+          t.classList.toggle('o-navbar__item--active', t.getAttribute('data-tab') === id);
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('o-navbar__content--active', p.getAttribute('data-id') === id);
+        });
+      }
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function (e) {
+          e.preventDefault();
+          activate(t.getAttribute('data-tab'));
+        });
+      });
+      // Deep-link support: #interactive / #tickets open the right tab.
+      var hash = (window.location.hash || '').replace('#', '');
+      if (hash === 'interactive' || hash === 'lineup') activate('interactive');
+      else if (hash === 'tickets') activate('tickets');
+    })();
+  </script>
+</Fpsf2017Layout>

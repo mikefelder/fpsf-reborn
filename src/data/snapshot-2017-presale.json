@@ -1,0 +1,475 @@
+{
+  "year": 2017,
+  "edition": "Free Press Summer Festival 2017",
+  "dates": "June 3-4, 2017",
+  "startDate": "2017-06-03",
+  "endDate": "2017-06-04",
+  "location": "Eleanor Tinsley Park, Houston, TX",
+  "sourceSnapshot": "20170318205131",
+  "sourceDomain": "www.fpsf.com",
+  "phase": "presale",
+  "title": "Free Press Summer Festival 2017 — June 3-4 | Houston",
+  "description": "Free Press Summer Festival 2017 — June 3-4 at Eleanor Tinsley Park, Houston, TX. Lorde, Flume, G-Eazy, Cage The Elephant, Solange, The Shins, and more. Tickets on sale.",
+  "header": {
+    "title": "FPSF",
+    "byline": "Houston, TX",
+    "image": "uploads/2017/01/fpsf17-nav-logo-250x125.png"
+  },
+  "nav": [
+    {
+      "label": "Tickets",
+      "href": "/2017/lineup/#tickets",
+      "subnav": [
+        {
+          "label": "General Admission",
+          "href": "/2017/lineup/#tickets"
+        },
+        {
+          "label": "VIP",
+          "href": "/2017/lineup/#tickets"
+        },
+        {
+          "label": "Platinum",
+          "href": "/2017/lineup/#tickets"
+        }
+      ]
+    },
+    {
+      "label": "Lineup",
+      "href": "/2017/lineup/",
+      "subnav": [
+        {
+          "label": "2017 Lineup",
+          "href": "/2017/lineup/"
+        },
+        {
+          "label": "Past Lineups",
+          "href": "/2016/"
+        }
+      ]
+    },
+    {
+      "label": "Experience",
+      "href": "/2017/",
+      "subnav": [
+        {
+          "label": "Experience FPSF",
+          "href": "/2017/"
+        },
+        {
+          "label": "VIP & Platinum",
+          "href": "/2017/lineup/#tickets"
+        }
+      ]
+    },
+    {
+      "label": "Information",
+      "href": "/2017/"
+    }
+  ],
+  "secondaryNav": [
+    {
+      "label": "Hotels",
+      "href": "https://events.hotelsforhope.com/group-event?id=22205",
+      "external": true
+    },
+    {
+      "label": "Merch",
+      "href": "https://fpsf.shop.redstarmerch.com/",
+      "external": true
+    },
+    {
+      "label": "News",
+      "href": "/2017/"
+    },
+    {
+      "label": "Connect",
+      "href": "/2017/"
+    }
+  ],
+  "social": [
+    {
+      "label": "Facebook",
+      "href": "https://www.facebook.com/FPSFHOUSTON",
+      "className": "facebook",
+      "title": "Facebook"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/fpsf",
+      "className": "twitter",
+      "title": "Twitter"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/fpsf",
+      "className": "instagram",
+      "title": "Instagram"
+    }
+  ],
+  "sponsors": [],
+  "footerMap": [
+    {
+      "heading": "",
+      "items": [
+        {
+          "label": "2016 Lineup",
+          "href": "/2016/"
+        },
+        {
+          "label": "2015 Lineup",
+          "href": "/2015/"
+        },
+        {
+          "label": "Tickets",
+          "href": "/2017/lineup/#tickets"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "© 2017 Free Press Summer Fest",
+  "knownGaps": [
+    "The 2017 site ran on WordPress (Forte-child theme); this is a static Astro rebuild of the recovered theme CSS — MyFest login, live search, and e-list signup are non-functional stubs.",
+    "This is the presale state of FPSF 2017 (lineup announced and tickets on sale, captured March 18, 2017). The event was later cancelled and rebranded; the archived presale home is preserved here. The Experience, Information, News, and Connect subpages are not yet rebuilt — those nav links point to the home for now.",
+    "Interactive-lineup artist photos: only the Lorde thumbnail is the original festival image recovered from the Wayback Machine. The other 51 were archived only as deduplicated revisit records (their raw bytes are unretrievable), so they are shown as representative stand-ins sourced from Deezer and the iTunes Search API rather than the festival originals.",
+    "Venue is presented as Eleanor Tinsley Park, Houston, TX, matching the archived spring 2017 site."
+  ],
+  "eventDate": {
+    "headline": "June 3-4, 2017",
+    "city": "Eleanor Tinsley Park · Houston, TX"
+  },
+  "home": {
+    "heroVenue": "Eleanor Tinsley Park",
+    "billboards": [
+      {
+        "type": "lineup",
+        "image": "uploads/2017/02/fpsf17-website-lineup.jpg",
+        "href": "/2017/lineup/",
+        "alt": "2017 lineup poster"
+      },
+      {
+        "type": "imagecopy",
+        "image": "uploads/2017/02/fpsf17-billboard-half-width-onsale.jpg",
+        "title": "Tickets on sale now",
+        "subtitle": "2-Day GA, VIP, and Platinum tickets available",
+        "cta": "Buy Now",
+        "href": "/2017/lineup/#tickets"
+      },
+      {
+        "type": "elist",
+        "image": "uploads/2016/06/FPSF16-Half-Billboard-TwoGirls.jpg",
+        "title": "Join the e-list",
+        "subtitle": "Be the first to know about 2017 announcements, tickets, giveaways, and more!"
+      },
+      {
+        "type": "imagecopy-full",
+        "image": "uploads/2017/02/fpsf17-billboard-full-width-vip-2.jpg",
+        "title": "Front row. Exclusive perks.",
+        "subtitle": "2-Day VIP and Platinum tickets are on sale now",
+        "cta": "Learn More",
+        "href": "/2017/lineup/#tickets"
+      }
+    ]
+  },
+  "tickets": [
+    {
+      "name": "2-Day General Admission",
+      "price": "$148 + fees",
+      "blurb": "Admittance to the park for both days of FPSF.",
+      "includes": [
+        "One commemorative RFID-enabled wristband",
+        "Over 55 performances on 4 stages",
+        "Food available for purchase including vegan, vegetarian & gluten-free options",
+        "Official band and festival merch"
+      ]
+    },
+    {
+      "name": "2-Day VIP",
+      "price": "$250 + fees",
+      "blurb": "Admittance for both days with special access & amenities.",
+      "includes": [
+        "Weekend admission to FPSF 2017",
+        "Air-conditioned VIP Lounge with sightlines to the main stage",
+        "Access to private bars",
+        "Air-conditioned flushable restrooms"
+      ]
+    },
+    {
+      "name": "2-Day Platinum",
+      "price": "$999 + fees",
+      "blurb": "Admittance for both days with exclusive perks & amenities.",
+      "includes": [
+        "Weekend admission to FPSF 2017",
+        "Air-conditioned Platinum Lounge with sightlines to the main stage",
+        "Platinum front-of-stage viewing areas",
+        "Complimentary amenities"
+      ]
+    }
+  ],
+  "lineup": {
+    "note": "Below is the 2017 Lineup.",
+    "posterFull": "uploads/2017/02/fpsf17-website-lineup.jpg",
+    "artists": [
+      {
+        "name": "Lorde",
+        "slug": "lorde",
+        "image": "2017/02/lordenew.jpg"
+      },
+      {
+        "name": "Flume",
+        "slug": "flume",
+        "image": "2017/02/flumexx32818850x.jpg"
+      },
+      {
+        "name": "G-Eazy",
+        "slug": "g-eazy",
+        "image": "2017/02/g-eazyx39271.jpg"
+      },
+      {
+        "name": "Cage The Elephant",
+        "slug": "cage-the-elephant",
+        "image": "2017/02/cage-the-elephant32523.jpg"
+      },
+      {
+        "name": "Solange",
+        "slug": "solange",
+        "image": "2017/02/solangexx832669x.jpg"
+      },
+      {
+        "name": "The Shins",
+        "slug": "the-shins",
+        "image": "2017/02/theshinsx327572xxx.jpg"
+      },
+      {
+        "name": "Tove Lo",
+        "slug": "tove-lo",
+        "image": "2017/02/tove-lox39271.jpg"
+      },
+      {
+        "name": "CARNAGE",
+        "slug": "carnage",
+        "image": "2017/02/carnagex3288.jpg"
+      },
+      {
+        "name": "Post Malone",
+        "slug": "post-malone",
+        "image": "2017/02/postmalonex32622.jpg"
+      },
+      {
+        "name": "Lil Uzi Vert",
+        "slug": "lil-uzi-vert",
+        "image": "2017/02/lil-uzi-vertx32599947.jpg"
+      },
+      {
+        "name": "Jon Bellion",
+        "slug": "jon-bellion",
+        "image": "2017/02/jon-bellionx331.jpg"
+      },
+      {
+        "name": "JAUZ",
+        "slug": "jauz",
+        "image": "2017/02/jauzx93271.jpg"
+      },
+      {
+        "name": "Grouplove",
+        "slug": "grouplove",
+        "image": "2017/02/grouplovex32667.jpg"
+      },
+      {
+        "name": "Milky Chance",
+        "slug": "milky-chance",
+        "image": "2017/02/milky-chancex3299.jpg"
+      },
+      {
+        "name": "DVBBS",
+        "slug": "dvbbs",
+        "image": "2017/02/dvbbsx3832221.jpg"
+      },
+      {
+        "name": "Portugal. The Man",
+        "slug": "portugal-the-man",
+        "image": "2017/02/portugalthemannewx32522.jpeg"
+      },
+      {
+        "name": "St. Paul & the Broken Bones",
+        "slug": "st-paul-and-the-broken-bones",
+        "image": "2017/02/st.-paul-the-broken-bonesx3995.jpg"
+      },
+      {
+        "name": "Rüfüs Du Sol",
+        "slug": "r-f-s-du-sol",
+        "image": "2017/02/rufus-du-solx582734.jpg"
+      },
+      {
+        "name": "Big K.R.I.T.",
+        "slug": "big-k-r-i-t",
+        "image": "2017/02/big-k.r.i.t.jpg"
+      },
+      {
+        "name": "Charli XCX",
+        "slug": "charli-xcx",
+        "image": "2017/02/charli-xcxx9375572.jpg"
+      },
+      {
+        "name": "The Strumbellas",
+        "slug": "the-strumbellas",
+        "image": "2017/02/the-strumbellasx54732.jpg"
+      },
+      {
+        "name": "Cashmere Cat",
+        "slug": "cashmere-cat",
+        "image": "2017/02/cashmere-catx35223a.jpg"
+      },
+      {
+        "name": "Jai Wolf",
+        "slug": "jai-wolf",
+        "image": "2017/02/jai-wolfx32002.jpg"
+      },
+      {
+        "name": "Bishop Briggs",
+        "slug": "bishop-briggs",
+        "image": "2017/02/bishop-briggsx32533.jpg"
+      },
+      {
+        "name": "The Struts",
+        "slug": "the-struts",
+        "image": "2017/02/the-strutsx3298.jpg"
+      },
+      {
+        "name": "Frightened Rabbit",
+        "slug": "frightened-rabbit",
+        "image": "2017/02/frightened-rabbitx893238.jpg"
+      },
+      {
+        "name": "Aminé",
+        "slug": "amin",
+        "image": "2017/02/aminex32774.jpg"
+      },
+      {
+        "name": "Cheat Codes",
+        "slug": "cheat-codes",
+        "image": "2017/02/cheat-codesx366221.jpg"
+      },
+      {
+        "name": "Anna Lunoe",
+        "slug": "anna-lunoe",
+        "image": "2017/02/annalunoex438374x.jpg"
+      },
+      {
+        "name": "Bad Suns",
+        "slug": "bad-suns",
+        "image": "2017/02/bad-sunsx3211.jpg"
+      },
+      {
+        "name": "Vanic",
+        "slug": "vanic",
+        "image": "2017/02/vanicx3114.jpg"
+      },
+      {
+        "name": "Stick Figure",
+        "slug": "stick-figure",
+        "image": "2017/02/stick-figurex3311.jpg"
+      },
+      {
+        "name": "Hurray for the Riff Raff",
+        "slug": "hurray-for-the-riff-raff",
+        "image": "2017/02/hurray-for-the-riff-raffx990002.jpg"
+      },
+      {
+        "name": "Hippo Campus",
+        "slug": "hippo-campus",
+        "image": "2017/02/hippo-campusx7726x.jpg"
+      },
+      {
+        "name": "Khruangbin",
+        "slug": "khruangbin",
+        "image": "2017/02/khruangbinx284887.jpg"
+      },
+      {
+        "name": "JAHKOY",
+        "slug": "jahkoy",
+        "image": "2017/02/jahkoyx5546.jpg"
+      },
+      {
+        "name": "GRITS & BISCUITS",
+        "slug": "grits-and-biscuits",
+        "image": "2017/02/grits-biscuitsx32124.jpg"
+      },
+      {
+        "name": "Cherry Glazerr",
+        "slug": "cherry-glazerr",
+        "image": "2017/02/cherry-glazerrx34929.jpg"
+      },
+      {
+        "name": "K.I.D.",
+        "slug": "k-i-d",
+        "image": "2017/02/k.i.dx5554.jpg"
+      },
+      {
+        "name": "Echos",
+        "slug": "echos",
+        "image": "2017/02/echosx32881.jpg"
+      },
+      {
+        "name": "Zipper Club",
+        "slug": "zipper-club",
+        "image": "2017/02/zipper-clubx311.jpg"
+      },
+      {
+        "name": "DREAMERS",
+        "slug": "dreamers",
+        "image": "2017/02/dreamersx35992.jpg"
+      },
+      {
+        "name": "Coast Modern",
+        "slug": "coast-modern",
+        "image": "2017/02/coast-modernx3927.jpg"
+      },
+      {
+        "name": "Rose Ette",
+        "slug": "rose-ette",
+        "image": "2017/02/rose-ettex399753.jpg"
+      },
+      {
+        "name": "Night Drive",
+        "slug": "night-drive",
+        "image": "2017/02/night-drivex3182.jpg"
+      },
+      {
+        "name": "-Us",
+        "slug": "us",
+        "image": "2017/02/us.x3242.jpg"
+      },
+      {
+        "name": "Bang Bangz",
+        "slug": "bang-bangz",
+        "image": "2017/02/bang-bangzx32642.jpg"
+      },
+      {
+        "name": "Camera Cult",
+        "slug": "camera-cult",
+        "image": "2017/02/cameracultnew.jpeg"
+      },
+      {
+        "name": "The Wheel Workers",
+        "slug": "the-wheel-workers",
+        "image": "2017/02/the-wheel-workersx39217.jpg"
+      },
+      {
+        "name": "Deep Cuts",
+        "slug": "deep-cuts",
+        "image": "2017/02/deep-cutsx3288.jpg"
+      },
+      {
+        "name": "Kay Weathers",
+        "slug": "kay-weathers",
+        "image": "2017/02/kay-weathersx329.jpg"
+      },
+      {
+        "name": "MIEARS",
+        "slug": "miears",
+        "image": "2017/02/miearsx328.jpg"
+      }
+    ]
+  }
+}

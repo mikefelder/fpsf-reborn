@@ -1,0 +1,278 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import EventJsonLd from '@components/EventJsonLd.astro';
+import type { Snapshot } from '@/types/snapshot';
+import { canonicalHref } from '@data/show-years';
+
+export interface Props {
+  snapshot: Snapshot;
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  bodyClass?: string;
+  currentHref?: string;
+  /** Nav label to mark active (e.g. "Lineup", "Tickets"). */
+  activeNav?: string;
+  /** Show the big gradient1 branding hero on desktop (home page). */
+  heroBranding?: boolean;
+  /**
+   * Replace the branding details (byline · dates · venue) with a single line,
+   * e.g. the post-festival home which shows only "Houston, TX".
+   */
+  heroDetails?: string;
+}
+
+const {
+  snapshot,
+  title,
+  description,
+  ogImage,
+  bodyClass = 'singular page page-template-page-navbar',
+  currentHref,
+  activeNav = 'Lineup',
+  heroBranding = false,
+  heroDetails,
+} = Astro.props;
+
+const data = snapshot;
+const pageTitle = title ?? data.title;
+const pageDescription = description ?? data.description;
+const assetBase = '/shared-assets/2017';
+const homeHref = canonicalHref(data.year) ?? `/${data.year}/`;
+const logo = `${assetBase}/${data.header.image}`;
+// Authentic Forte-child theme favicon (forte-child/img/favicon.png), shared by
+// every 2017 page in the archive — not the nav logo.
+const favicon = `${assetBase}/img/favicon.png`;
+const posterPath = data.lineup?.posterFull;
+const posterOg = posterPath ? `${assetBase}/${posterPath}` : undefined;
+const resolvedOgImage = ogImage ?? posterOg;
+const performers = (data.lineup?.artists ?? []).slice(0, 12).map((a) => a.name);
+const heroVenue = (data as { home?: { heroVenue?: string } }).home?.heroVenue;
+
+const faIcon: Record<string, string> = {
+  facebook: 'fa-facebook',
+  twitter: 'fa-twitter',
+  instagram: 'fa-instagram',
+};
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={resolvedOgImage}
+  bodyClass={bodyClass}
+  year={data.year}
+  knownGaps={data.knownGaps}
+  currentHref={currentHref}
+  favicon={favicon}
+>
+  <Fragment slot="head">
+    <EventJsonLd
+      name={data.edition}
+      url={homeHref}
+      description={data.description}
+      location={data.location}
+      image={posterOg}
+      startDate={data.startDate}
+      endDate={data.endDate}
+      performers={performers}
+    />
+    <link rel="stylesheet" href={`${assetBase}/css/fonts.css`} />
+    <link rel="stylesheet" href={`${assetBase}/css/style.css`} />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </Fragment>
+
+  <div id="page" class="hfeed site canvas canvasblending backgroundblendmode">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <div class="c-sticky-footer-wrapper">
+      <header id="masthead" class="header c-logo-bottom" role="banner">
+        <div id="engagement-bar" class="o-engagement-bar">
+          <div id="engagement-bar-wrapper" class="o-engagement-bar__wrapper o-wrapper clearfix">
+            <div class="o-engagement-bar__connect o-connect">
+              <div class="o-connect__social">
+                <ul class="clearfix">
+                  {data.social.map((s) => (
+                    <li class="o-connect__social__network ">
+                      <a href={s.href} class="js-social-click" target="_blank" rel="noopener noreferrer" title={s.title ?? s.label}>
+                        <i class={`o-connect__social__network__icon fa ${faIcon[s.className ?? ''] ?? 'fa-link'}`}></i>
+                      </a>
+                    </li>
+                  ))}
+                  <li class="o-connect__social__network">
+                    <a href={homeHref} class="js-social-click"><i class="o-connect__social__network__icon fa fa-ellipsis-h"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div id="header-connect" class="o-connect__elist float--right--palm">
+                <form class="o-connect__elist__form js-elist-form" action="#" method="post">
+                  <input class="o-connect__elist__form__input" type="email" name="email" placeholder="E-List" />
+                  <input type="submit" class="o-connect__elist__form__submit" value="Join" />
+                </form>
+                <div class="o-connect__elist__response o-elist-response js-elist-response" data-success="You've subscribed. Stay tuned for more information."></div>
+              </div>
+            </div>
+            <div class="o-engagement-bar__myfest">
+              <div class="o-engagement-bar__myfest__out">
+                <div class="btn btn--secondary btn--engagement-bar js-login">
+                  <i class="fa fa-user fa-before btn__icon--left"></i> MyFest
+                </div>
+              </div>
+            </div>
+            <div class="o-engagement-bar__search">
+              <form class="search-form" role="search" method="get" action="#">
+                <input class="search__input" type="text" value="" name="s" />
+                <button type="submit" class="search__submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <nav id="navigation" class="main-navigation main-navigation--logo-bottom" role="navigation">
+          <div class="o-wrapper u-p0--palm">
+            <div class="layout layout--flush">
+              <div class="layout__item u-2-of-10 desk-is-hidden c-complex">
+                <i class="c-complex__label fa fa-music"></i>
+                <i class="c-complex__close fa fa-close is-hidden"></i>
+                <div id="palm-audioplayer" class="c-complex__target palm-is-hidden"></div>
+              </div>
+              <div id="palm-myfest-menu-out" class="layout__item u-3-of-10 desk-is-hidden c-complex">
+                <span class="c-complex__label js-login">MyFest</span>
+              </div>
+              <div class="layout__item u-2-of-10 desk-is-hidden c-complex">
+                <i class="c-complex__label fa fa-search"></i>
+                <i class="c-complex__close fa fa-close is-hidden"></i>
+                <div id="search-expandee" class="c-complex__target palm-is-hidden">
+                  <form class="search-form" role="search" method="get" action="#">
+                    <input class="search__input" type="text" value="" name="s" />
+                    <button type="submit" class="search__submit"><i class="fa fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+              <div class="layout__item u-3-of-10 u-1-of-1-desk c-complex">
+                <span class="c-complex__label js-complex-toggle">Menu <i class="fa fa-navicon"></i></span>
+                <i class="c-complex__close fa fa-close is-hidden"></i>
+                <div id="menu-primary-expandee" class="c-complex__target palm-is-hidden">
+                  <ul class="o-menu o-menu--justified o-menu--dropdowns c-complex__menu">
+                    <li class={`o-menu__logo${heroBranding ? '' : ' o-menu__logo--show'}`}><a href={homeHref}><img src={logo} alt="Free Press Summer Festival" /></a></li>{' '}
+                    {data.nav.map((item) => (
+                      <Fragment>
+                        <li class={`o-menu__item c-complex__item${item.label === activeNav ? ' is-active' : ''}${item.subnav ? ' has-children' : ''}`}>
+                          <a href={item.href}>{item.label}</a>
+                          {item.subnav && (
+                            <ul class="o-menu__submenu c-complex__submenu">
+                              {item.subnav.map((sub) => (
+                                <li class="o-menu__item c-complex__item o-menu__item--submenu c-complex__item--submenu">
+                                  <a href={sub.href}>{sub.label}</a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>{' '}
+                      </Fragment>
+                    ))}
+                    <ul class="o-menu o-menu--secondary">
+                      {(data.secondaryNav ?? []).map((item) => (
+                        <Fragment>
+                          <li class="o-menu__item c-complex__item">
+                            <a href={item.href} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{item.label}</a>
+                          </li>{' '}
+                        </Fragment>
+                      ))}
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav><!-- #navigation -->
+
+        <div class={`o-branding ${heroBranding ? '' : 'desk-is-hidden'}`}>
+          <h1 class="o-branding__title gradient1">
+            <a href={homeHref} rel="home" class="o-logo">{data.header.title}</a>
+          </h1>
+          <p class="o-branding__details">
+            {heroDetails ? heroDetails : (
+              <>
+                {data.dates}
+                {heroVenue && (
+                  <>
+                    <span class="o-text-divider"></span>{heroVenue.toUpperCase()}
+                  </>
+                )}
+                <span class="o-text-divider palm-is-hidden"></span>
+                <br class="desk-is-hidden" />{data.header.byline.toUpperCase()}
+              </>
+            )}
+          </p>
+        </div>
+      </header><!-- #masthead -->
+
+      <div id="content" class="page-content">
+        <slot />
+      </div>
+    </div><!-- .c-sticky-footer-wrapper -->
+
+    <footer id="colophon" class="o-footer" role="contentinfo">
+      <div class="o-footer__bg">
+        <div class="o-wrapper">
+          <ul class="o-menu o-menu--delimited">
+            {(data.footerMap?.[0]?.items ?? []).map((item) => (
+              <Fragment>
+                <li class="o-menu__item"><a href={item.href}>{item.label}</a></li>{' '}
+              </Fragment>
+            ))}
+          </ul>
+          <p class="o-footer__copyright">{data.footerLegal ?? '© FPSF'}</p>
+        </div>
+      </div>
+    </footer><!-- #colophon -->
+  </div><!-- #page -->
+
+  <script is:inline>
+    (function () {
+      // Forte "c-complex" expandee toggles (mobile menu / search).
+      document.querySelectorAll('.c-complex__label').forEach(function (label) {
+        label.addEventListener('click', function () {
+          var complex = label.closest('.c-complex');
+          if (!complex) return;
+          var target = complex.querySelector('.c-complex__target');
+          var close = complex.querySelector('.c-complex__close');
+          if (!target) return;
+          var open = target.classList.toggle('palm-is-hidden') === false;
+          if (close) close.classList.toggle('is-hidden', !open);
+        });
+      });
+      // Mobile submenu toggles inside the primary menu.
+      document.querySelectorAll('.o-menu__item.has-children > a').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          if (window.matchMedia('(min-width: 768px)').matches) return;
+          var li = a.parentElement;
+          if (li.classList.contains('is-open')) return; // second tap follows link
+          e.preventDefault();
+          li.classList.add('is-open');
+          var sub = li.querySelector('.o-menu__submenu');
+          if (sub) sub.style.display = 'block';
+        });
+      });
+      // E-list + search are non-functional stubs on the archive.
+      document.querySelectorAll('.js-elist-form').forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var resp = form.parentElement && form.parentElement.querySelector('.js-elist-response');
+          if (resp) resp.textContent = resp.getAttribute('data-success') || 'Thanks!';
+          form.reset();
+        });
+      });
+      document.querySelectorAll('.search-form').forEach(function (form) {
+        form.addEventListener('submit', function (e) { e.preventDefault(); });
+      });
+      document.querySelectorAll('.js-login, #mobile-elist-btn').forEach(function (el) {
+        el.addEventListener('click', function (e) { e.preventDefault(); });
+      });
+    })();
+  </script>
+</BaseLayout>

@@ -164,10 +164,23 @@ export interface MainExt {
     posterFull?: string;
     headliners?: LineupArtist[];
     undercard?: LineupArtist[];
+    artists?: LineupArtist[];
   };
 }
 
-export type Snapshot = BaseSnapshot & Partial<PresaleExt & HeroExt & MainExt>;
+export interface TicketTier {
+  name: string;
+  price: string;
+  blurb?: string;
+  includes?: string[];
+}
+
+export interface TicketsExt {
+  tickets?: TicketTier[];
+}
+
+export type Snapshot = BaseSnapshot &
+  Partial<PresaleExt & HeroExt & MainExt & TicketsExt>;
 
 // Show-year directory: source of truth for the year picker and year pill.
 // `routes` lists the rebuilt URLs for that year (canonical landing,

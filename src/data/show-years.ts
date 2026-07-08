@@ -102,7 +102,18 @@ export const showYears: ShowYearSummary[] = [
       },
     ],
   },
-  { year: 2017, edition: 'Free Press Summer Festival 2017', routes: [] },
+  {
+    year: 2017,
+    edition: 'Free Press Summer Festival 2017',
+    routes: [
+      {
+        label: 'Presale',
+        href: '/2017/',
+        description: 'March 2017 lineup announced — Lorde, Flume, G-Eazy headline; tickets on sale before the event was cancelled',
+        sourceSnapshot: '20170318205131',
+      },
+    ],
+  },
   { year: 2018, edition: 'Free Press Summer Festival 2018', routes: [] },
 ];
 
