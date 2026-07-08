@@ -1,0 +1,21 @@
+---
+import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
+import snapshot from '@data/snapshot-2016-main.json';
+import pageHtml from '@data/pages/2016/sponsors.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2016Layout
+  snapshot={data}
+  title="Sponsors — Free Press Summer Festival 2016"
+  description="The sponsors and partners of Free Press Summer Festival 2016."
+  activeNav=""
+  currentHref="/2016/sponsors/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2016Layout>

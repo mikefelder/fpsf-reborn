@@ -1,0 +1,21 @@
+---
+import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
+import snapshot from '@data/snapshot-2016-main.json';
+import pageHtml from '@data/pages/2016/tickets.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2016Layout
+  snapshot={data}
+  title="Tickets — Free Press Summer Festival 2016"
+  description="Free Press Summer Festival 2016 tickets — June 4-5 at NRG Park, Houston, TX."
+  activeNav="Tickets"
+  currentHref="/2016/tickets/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2016Layout>

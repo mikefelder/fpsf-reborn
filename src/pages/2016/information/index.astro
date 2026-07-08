@@ -1,0 +1,21 @@
+---
+import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
+import snapshot from '@data/snapshot-2016-main.json';
+import pageHtml from '@data/pages/2016/information.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2016Layout
+  snapshot={data}
+  title="Information — Free Press Summer Festival 2016"
+  description="FPSF 2016 festival information and FAQs — NRG Park, Houston, June 4-5, 2016."
+  activeNav="Information"
+  currentHref="/2016/information/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2016Layout>

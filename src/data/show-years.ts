@@ -78,7 +78,18 @@ export const showYears: ShowYearSummary[] = [
       sourceSnapshot: '20150703195456',
     },
   ] },
-  { year: 2016, edition: 'Free Press Summer Festival 2016', routes: [] },
+  {
+    year: 2016,
+    edition: 'Free Press Summer Festival 2016',
+    routes: [
+      {
+        label: 'Main',
+        href: '/2016/',
+        description: 'June 2016 lineup page (WordPress/Forte-child era, NRG Park)',
+        sourceSnapshot: '20160712153331',
+      },
+    ],
+  },
   { year: 2017, edition: 'Free Press Summer Festival 2017', routes: [] },
   { year: 2018, edition: 'Free Press Summer Festival 2018', routes: [] },
 ];

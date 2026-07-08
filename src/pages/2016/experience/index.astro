@@ -1,0 +1,21 @@
+---
+import Fpsf2016Layout from '@layouts/Fpsf2016Layout.astro';
+import snapshot from '@data/snapshot-2016-main.json';
+import pageHtml from '@data/pages/2016/experience.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2016Layout
+  snapshot={data}
+  title="Experience — Free Press Summer Festival 2016"
+  description="The FPSF 2016 experience — food, activities, and more at NRG Park, Houston."
+  activeNav="Experience"
+  currentHref="/2016/experience/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2016Layout>
