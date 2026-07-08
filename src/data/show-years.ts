@@ -113,14 +113,26 @@ export const showYears: ShowYearSummary[] = [
 // are no 2012-2013 time jumps in the tour. FPSF ran through 2018.
 export const HOSTED_FROM_YEAR = 2014;
 
+// Routes for a year in chronological state order: presale → main →
+// recap/post-festival. Ordered by source capture timestamp (presale captures
+// predate the event; recaps follow it). Returns a new array; never mutates.
+export function orderedRoutes(routes: BuiltRoute[]): BuiltRoute[] {
+  return [...routes].sort((a, b) =>
+    (a.sourceSnapshot ?? '').localeCompare(b.sourceSnapshot ?? ''),
+  );
+}
+
 export const liveShowYears = showYears.filter(
   (show) => show.routes.length > 0 && show.year >= HOSTED_FROM_YEAR,
 );
 
 // Flat, ordered list of every hosted (year, route) for rotation, year-pill
 // prev/next, and the root landing index — contiguous from HOSTED_FROM_YEAR.
+// Within each year, routes are ordered chronologically by their source capture
+// timestamp, which yields the intended state order: presale → main →
+// recap/post-festival (presale captures predate the event, recaps follow it).
 export const liveSnapshots: SnapshotLink[] = liveShowYears.flatMap((show) =>
-  show.routes.map((route) => ({
+  orderedRoutes(show.routes).map((route) => ({
     year: show.year,
     edition: show.edition,
     label: route.label,

@@ -1,5 +1,5 @@
 ---
-import { liveSnapshots, showYears, HOSTED_FROM_YEAR } from '@data/show-years';
+import { liveSnapshots, showYears, HOSTED_FROM_YEAR, orderedRoutes } from '@data/show-years';
 
 const isDev = import.meta.env.DEV;
 
@@ -161,7 +161,7 @@ const noscriptFallback = [...liveSnapshots].reverse();
             </div>
             {show.routes.length > 0 ? (
               <ul class="routes">
-                {show.routes.map((route) => (
+                {orderedRoutes(show.routes).map((route) => (
                   <li>
                     <a href={route.href}>
                       <code>{route.href}</code>
