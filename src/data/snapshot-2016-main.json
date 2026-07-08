@@ -174,8 +174,8 @@
   "footerLegal": "© FPSF",
   "knownGaps": [
     "The 2016 site ran on WordPress (Forte-child theme); this is a static Astro rebuild of the recovered theme CSS — MyFest login, live search, and e-list signup are non-functional stubs.",
-    "Sponsor and some social-icon logos are recovered where the Wayback Machine archived them; a few festival press images were never captured.",
-    "Interactive-lineup artist photos are sourced from TheAudioDB, Wikipedia, Deezer, and the iTunes Search API — the original festival thumbnails were not archived. 63 of 64 artists have a photo; only the local act PRIVATE EXCITEMENT (no streaming-platform presence) shows as a name-only card. Schedule times and video links reflect the archived July 2016 (post-festival) capture.",
+    "Several festival press images — the sponsor logos, some Experience (food/activities) tiles, the Last.fm press logo, and a couple of lineup crops — were never captured by the Wayback Machine, and are shown as representative stand-ins sourced from Wikimedia Commons, Wikipedia, and music databases rather than the festival originals. (The news-post thumbnails were recovered from the Wayback Machine.)",
+    "Interactive-lineup artist photos are sourced from TheAudioDB, Wikipedia, Deezer, and the iTunes Search API — the original festival thumbnails were not archived. All 64 lineup cards show an image; the one local act with no streaming-platform presence (PRIVATE EXCITEMENT) uses a representative live-music photo rather than an artist portrait. Schedule times and video links reflect the archived July 2016 (post-festival) capture.",
     "Venue is presented as Eleanor Tinsley Park, matching the archived spring 2016 site (and the reborn 2015 presentation). The archived July 2016 lineup poster shows the later NRG Park (Yellow Lot) relocation — that original poster image is preserved on the Lineup page."
   ],
   "eventDate": {

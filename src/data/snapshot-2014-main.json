@@ -185,6 +185,7 @@
     "DIN (DIN-Cond/DIN-Reg) and Symbolset (ss-social/ss-standard/ss-symbolicons-line) icon fonts are recovered as .woff only (no .ttf/.eot fallbacks); modern browsers render them fine.",
     "Typekit font kit (sir3lyk — abril-text + ff-din-web) and StatCounter/Google Analytics widgets are deprecated external services and have been omitted; the local DIN webfonts cover the DIN-Cond/DIN-Reg stack the design falls back to.",
     "Hero 'Play' overlay links out to the YouTube lineup-release video (youtu.be/_7HmBdlIidQ) rather than opening the original fpsfMusicVid lightbox.",
-    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) render the archived .content HTML verbatim via ?raw imports from src/data/pages/2014/*.html. The .rslides galleries are animated by a lightweight vanilla crossfader (replacing the jQuery responsiveSlides plugin) and the footer newsletter form is a graceful client-side stub (no dead ymlp.com POST); tweet-aggregation blocks remain static."
+    "Sub-pages (learn, go, join, contact, videos, contests, morefpsf) render the archived .content HTML verbatim via ?raw imports from src/data/pages/2014/*.html. The .rslides galleries are animated by a lightweight vanilla crossfader (replacing the jQuery responsiveSlides plugin) and the footer newsletter form is a graceful client-side stub (no dead ymlp.com POST); tweet-aggregation blocks remain static.",
+    "A few decorative theme sprites (x-bullet/button-x/hed-X.png and the prettyPhoto lightbox sprites) were not archived; they back unused plugin controls and are non-critical."
   ]
 }
