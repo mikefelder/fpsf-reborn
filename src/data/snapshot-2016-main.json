@@ -30,7 +30,7 @@
         },
         {
           "label": "2016 Fancy Pants Tent",
-          "href": "/2016/lineup/"
+          "href": "/2016/tickets/#fancy-pants"
         },
         {
           "label": "Past Lineups",
@@ -40,17 +40,7 @@
     },
     {
       "label": "Experience",
-      "href": "/2016/experience/",
-      "subnav": [
-        {
-          "label": "2016 Food",
-          "href": "/2016/experience/"
-        },
-        {
-          "label": "2016 Activities",
-          "href": "/2016/experience/"
-        }
-      ]
+      "href": "/2016/experience/"
     },
     {
       "label": "Information",

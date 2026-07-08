@@ -9,7 +9,7 @@ const data = snapshot as unknown as Snapshot;
 <Fpsf2016Layout
   snapshot={data}
   title="Tickets — Free Press Summer Festival 2016"
-  description="Free Press Summer Festival 2016 tickets — June 4-5 at NRG Park, Houston, TX."
+  description="Free Press Summer Festival 2016 tickets — June 4-5 at Eleanor Tinsley Park, Houston, TX."
   activeNav="Tickets"
   currentHref="/2016/tickets/"
 >
@@ -19,3 +19,43 @@ const data = snapshot as unknown as Snapshot;
     </main>
   </div>
 </Fpsf2016Layout>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('.o-tickets');
+    if (!root) return;
+    var items = root.querySelectorAll('.o-tickets__sub-nav__item');
+    var panels = root.querySelectorAll('.o-tickets__details');
+    var select = root.querySelector('.js-select-sync');
+    function activate(id) {
+      var matched = false;
+      panels.forEach(function (p) {
+        var on = p.id === id;
+        p.classList.toggle('o-tickets__details--active', on);
+        if (on) matched = true;
+      });
+      items.forEach(function (li) {
+        var a = li.querySelector('a[href^="#"]');
+        var on = a && a.getAttribute('href') === '#' + id;
+        li.classList.toggle('o-tickets__sub-nav__item--active', !!on);
+      });
+      if (matched && select && select.value !== id) select.value = id;
+      return matched;
+    }
+    items.forEach(function (li) {
+      var a = li.querySelector('a[href^="#"]');
+      if (!a) return;
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = a.getAttribute('href').slice(1);
+        activate(id);
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+    if (select) {
+      select.addEventListener('change', function () { activate(select.value); });
+    }
+    var hash = window.location.hash.replace('#', '');
+    if (hash) activate(hash);
+  })();
+</script>
