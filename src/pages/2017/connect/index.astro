@@ -1,0 +1,21 @@
+---
+import Fpsf2017Layout from '@layouts/Fpsf2017Layout.astro';
+import snapshot from '@data/snapshot-2017-presale.json';
+import pageHtml from '@data/pages/2017/connect.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2017Layout
+  snapshot={data}
+  title="Connect — Free Press Summer Festival 2017"
+  description="Connect with Free Press Summer Festival 2017 — Eleanor Tinsley Park, Houston, June 3-4, 2017."
+  activeNav=""
+  currentHref="/2017/connect/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2017Layout>

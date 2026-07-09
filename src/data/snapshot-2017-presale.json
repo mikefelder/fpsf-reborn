@@ -18,19 +18,19 @@
   "nav": [
     {
       "label": "Tickets",
-      "href": "/2017/lineup/#tickets",
+      "href": "/2017/tickets/",
       "subnav": [
         {
           "label": "General Admission",
-          "href": "/2017/lineup/#tickets"
+          "href": "/2017/tickets/#general-admission"
         },
         {
           "label": "VIP",
-          "href": "/2017/lineup/#tickets"
+          "href": "/2017/tickets/#vip"
         },
         {
           "label": "Platinum",
-          "href": "/2017/lineup/#tickets"
+          "href": "/2017/tickets/#platinum"
         }
       ]
     },
@@ -50,21 +50,21 @@
     },
     {
       "label": "Experience",
-      "href": "/2017/",
+      "href": "/2017/experience/",
       "subnav": [
         {
           "label": "Experience FPSF",
-          "href": "/2017/"
+          "href": "/2017/experience/"
         },
         {
           "label": "VIP & Platinum",
-          "href": "/2017/lineup/#tickets"
+          "href": "/2017/premium-experience/"
         }
       ]
     },
     {
       "label": "Information",
-      "href": "/2017/"
+      "href": "/2017/information/"
     }
   ],
   "secondaryNav": [
@@ -80,11 +80,11 @@
     },
     {
       "label": "News",
-      "href": "/2017/"
+      "href": "/2017/news/"
     },
     {
       "label": "Connect",
-      "href": "/2017/"
+      "href": "/2017/connect/"
     }
   ],
   "social": [
@@ -113,25 +113,35 @@
       "heading": "",
       "items": [
         {
-          "label": "2016 Lineup",
-          "href": "/2016/"
+          "label": "Sponsors",
+          "href": "/2017/sponsors/"
         },
         {
-          "label": "2015 Lineup",
-          "href": "/2015/"
+          "label": "Press",
+          "href": "/2017/press/"
         },
         {
-          "label": "Tickets",
-          "href": "/2017/lineup/#tickets"
+          "label": "Privacy",
+          "href": "https://concerts.livenation.com/h/privacy.html"
+        },
+        {
+          "label": "Terms & Conditions",
+          "href": "https://concerts.livenation.com/h/terms.html"
+        },
+        {
+          "label": "Contact Us",
+          "href": "/2017/connect/"
         }
       ]
     }
   ],
-  "footerLegal": "© 2017 Free Press Summer Fest",
+  "footerLegal": "© FPSF",
   "knownGaps": [
     "The 2017 site ran on WordPress (Forte-child theme); this is a static Astro rebuild of the recovered theme CSS — MyFest login, live search, and e-list signup are non-functional stubs.",
-    "This is the presale state of FPSF 2017 (lineup announced and tickets on sale, captured March 18, 2017). The event was later cancelled and rebranded; the archived presale home is preserved here. The Experience, Information, News, and Connect subpages are not yet rebuilt — those nav links point to the home for now.",
+    "This is the presale state of FPSF 2017 (lineup announced and tickets on sale, captured March 18, 2017). The event was later cancelled and rebranded; the archived presale site is preserved here.",
+    "The engagement bar's MyFest login, live search, and the audio player + song search that appeared to the right of the MyFest button are non-functional stubs (the audio player is omitted).",
     "Interactive-lineup artist photos: only the Lorde thumbnail is the original festival image recovered from the Wayback Machine. The other 51 were archived only as deduplicated revisit records (their raw bytes are unretrievable), so they are shown as representative stand-ins sourced from Deezer and the iTunes Search API rather than the festival originals.",
+    "Some festival press images on the subpages (sponsor logos, experience/food tiles, news thumbnails) were not captured by the Wayback Machine and may render as broken images pending recovery.",
     "Venue is presented as Eleanor Tinsley Park, Houston, TX, matching the archived spring 2017 site."
   ],
   "eventDate": {
@@ -153,7 +163,7 @@
         "title": "Tickets on sale now",
         "subtitle": "2-Day GA, VIP, and Platinum tickets available",
         "cta": "Buy Now",
-        "href": "/2017/lineup/#tickets"
+        "href": "/2017/tickets/"
       },
       {
         "type": "elist",
@@ -167,7 +177,7 @@
         "title": "Front row. Exclusive perks.",
         "subtitle": "2-Day VIP and Platinum tickets are on sale now",
         "cta": "Learn More",
-        "href": "/2017/lineup/#tickets"
+        "href": "/2017/premium-experience/"
       }
     ]
   },

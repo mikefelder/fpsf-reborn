@@ -1,0 +1,61 @@
+---
+import Fpsf2017Layout from '@layouts/Fpsf2017Layout.astro';
+import snapshot from '@data/snapshot-2017-presale.json';
+import pageHtml from '@data/pages/2017/tickets.html?raw';
+import type { Snapshot } from '@/types/snapshot';
+
+const data = snapshot as unknown as Snapshot;
+---
+<Fpsf2017Layout
+  snapshot={data}
+  title="Tickets — Free Press Summer Festival 2017"
+  description="Free Press Summer Festival 2017 tickets — 2-Day GA $148, VIP $250, Platinum $999. June 3-4 at Eleanor Tinsley Park, Houston, TX."
+  activeNav="Tickets"
+  currentHref="/2017/tickets/"
+>
+  <div id="primary">
+    <main id="main" class="o-main" role="main">
+      <Fragment set:html={pageHtml} />
+    </main>
+  </div>
+</Fpsf2017Layout>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('.o-tickets');
+    if (!root) return;
+    var items = root.querySelectorAll('.o-tickets__sub-nav__item');
+    var panels = root.querySelectorAll('.o-tickets__details');
+    var select = root.querySelector('.js-select-sync');
+    function activate(id) {
+      var matched = false;
+      panels.forEach(function (p) {
+        var on = p.id === id;
+        p.classList.toggle('o-tickets__details--active', on);
+        if (on) matched = true;
+      });
+      items.forEach(function (li) {
+        var a = li.querySelector('a[href^="#"]');
+        var on = a && a.getAttribute('href') === '#' + id;
+        li.classList.toggle('o-tickets__sub-nav__item--active', !!on);
+      });
+      if (matched && select && select.value !== id) select.value = id;
+      return matched;
+    }
+    items.forEach(function (li) {
+      var a = li.querySelector('a[href^="#"]');
+      if (!a) return;
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = a.getAttribute('href').slice(1);
+        activate(id);
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+    if (select) {
+      select.addEventListener('change', function () { activate(select.value); });
+    }
+    var hash = window.location.hash.replace('#', '');
+    if (hash) activate(hash);
+  })();
+</script>
