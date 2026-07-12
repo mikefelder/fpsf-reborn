@@ -114,14 +114,16 @@ export const showYears: ShowYearSummary[] = [
       },
     ],
   },
-  { year: 2018, edition: 'Free Press Summer Festival 2018', routes: [] },
 ];
 
 // Years at or after this are the contiguous "hosted" rotation. 2009-2013
 // (and the already-built 2010 + 2011) remain directly reachable by URL and
 // listed in the dev index, but are intentionally excluded from the public
 // year-picker, random-snapshot landing, and year-pill prev/next so there
-// are no 2012-2013 time jumps in the tour. FPSF ran through 2018.
+// are no 2012-2013 time jumps in the tour. FPSF's final edition was 2017 —
+// the lineup was announced and tickets went on sale, but the event was
+// cancelled and the brand was retired/rebranded (its successor, In Bloom,
+// is a separate festival). There is no FPSF 2018.
 export const HOSTED_FROM_YEAR = 2014;
 
 // Routes for a year in chronological state order: presale → main →
