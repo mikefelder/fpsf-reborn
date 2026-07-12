@@ -1,0 +1,58 @@
+version: 2
+updates:
+  # --- npm dependencies (React, TS, Astro, etc.) ---
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Chicago"
+    open-pull-requests-limit: 10
+    versioning-strategy: increase-if-necessary
+    groups:
+      # Batch low-risk updates into one PR instead of 20 separate ones
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+      astro-ecosystem:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+      react-ecosystem:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+    ignore:
+      # Major bumps of framework-critical packages get their own manual review
+      - dependency-name: "astro"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # --- GitHub Actions workflow versions ---
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Chicago"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore"
