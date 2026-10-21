@@ -28,7 +28,8 @@ not delayed by the weekly version-update schedule or its open-PR limit.
 `Site CI` runs `npm ci` and `npm run build` on Node.js 22 for every PR to `main`,
 including dependency and workflow-only PRs, and on pushes to `main`. It has a
 read-only token, no deployment secrets, and does not deploy. The existing CodeQL
-analysis remains separate. There is no automated browser or unit test suite;
+workflow remains separate and was manually disabled at setup; this change does
+not re-enable it. There is no automated browser or unit test suite;
 a successful build is not proof of visual or runtime compatibility. Review
 release notes and preview affected pages before merging dependency updates.
 
@@ -36,8 +37,9 @@ release notes and preview affected pages before merging dependency updates.
 updates were enabled, repository auto-merge was disabled, and `main` had no branch
 protection or rulesets. This change does not modify those live settings. After
 the workflow lands and produces a successful run, a maintainer should protect
-`main` and require `Build static site` and the existing
-`Analyze (javascript-typescript)` CodeQL check, preserving any other requirements.
+`main` and require `Build static site`, preserving any other requirements.
+Review why CodeQL was disabled before re-enabling it; if restored, require its
+`Analyze (javascript-typescript)` check after a successful run.
 The YAML groups alone do not enable security updates; keep that repository
 security setting enabled.
 
