@@ -15,6 +15,41 @@ Astro static rebuild of Free Press Summer Fest show-year sites, reconstructed fr
   `python3 scripts/strip_wayback_urls.py [--dry-run]`  
   Use `--target raw` and `--root ../fpsf-archivist/raw` to clean the source archive too.
 
+## Dependency maintenance
+
+Dependabot checks npm and GitHub Actions every Monday at 06:00
+America/Chicago. Routine minor/patch updates are grouped separately by ecosystem,
+with at most five open version-update PRs per ecosystem. Major version updates
+are not ignored or included in those groups: review and merge them manually.
+Security updates have their own groups per ecosystem, including fixes that
+require major upgrades; those also require manual review. Security updates are
+not delayed by the weekly version-update schedule or its open-PR limit.
+
+`Site CI` runs `npm ci` and `npm run build` on Node.js 22 for every PR to `main`,
+including dependency and workflow-only PRs, and on pushes to `main`. It has a
+read-only token, no deployment secrets, and does not deploy. The existing CodeQL
+analysis remains separate. There is no automated browser or unit test suite;
+a successful build is not proof of visual or runtime compatibility. Review
+release notes and preview affected pages before merging dependency updates.
+
+**Auto-merge is not configured.** At setup time, Dependabot alerts and security
+updates were enabled, repository auto-merge was disabled, and `main` had no branch
+protection or rulesets. This change does not modify those live settings. After
+the workflow lands and produces a successful run, a maintainer should protect
+`main` and require `Build static site` and the existing
+`Analyze (javascript-typescript)` CodeQL check, preserving any other requirements.
+The YAML groups alone do not enable security updates; keep that repository
+security setting enabled.
+
+Failed checks, merge conflicts, security fixes, and major upgrades stay visible
+in the PR list for manual action. This change does not approve, close, or merge
+existing PRs; Dependabot may refresh or supersede its own PRs as usual.
+Any future auto-merge policy must first verify branch protections
+and adequate regression coverage, use trusted Dependabot metadata plus a narrow
+dependency allowlist, and preserve all required reviews and checks. SemVer
+patch/minor classification alone is not an eligibility rule. GitHub Actions
+updates remain manual because they can change workflow permissions and execution.
+
 ## Show year status
 
 | Show year | Status | Live routes | Source state(s) |
